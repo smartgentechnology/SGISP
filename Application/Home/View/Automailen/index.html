@@ -1,0 +1,108 @@
+<!-- BEGIN LAYOUT--> 
+<layout name="layout" />
+	<!-- BEGIN CONTAINER -->
+	
+	<div class="page-container  page-full-width">
+	
+		<!-- 页面光被导航栏覆盖掉 -->
+		
+		<div style="margin-top:42px;">
+		
+		<!-- BEGIN PAGE -->
+	
+		<div class="page-content">
+		
+			<!-- BEGIN PAGE CONTAINER-->
+
+			<div class="container-fluid">
+			
+				<br>
+				
+				<!-- BEGIN PAGE CONTENT-->
+		
+					<div class="row-fluid">
+		
+						<div class="span12">
+		
+							<!-- BEGIN EXAMPLE TABLE PORTLET-->
+		
+							<div class="portlet box light-grey">
+		
+								<div class="portlet-title">
+		
+									<div class="caption"><i class="icon-globe"></i>{$pagetitle}-({$count}条)</div>
+		
+									<div class="tools">
+		
+										<a href="javascript:;" class="collapse"></a>
+		
+									</div>
+		
+								</div>
+		
+								<div class="portlet-body">
+		
+									<table class="table table-striped table-bordered table-hover" id="sample_1">
+		
+										<thead>
+		
+											<tr>
+		
+												<th style="width:8px;"><input type="checkbox" class="group-checkable" data-set="#sample_1 .checkboxes" /></th>
+												<th class="hidden-480">型号</th>
+												<th class="hidden-480">特点</th>
+												<th class="hidden-480">发送次数</th>
+												<th class="hidden-480">正式</th>
+												<th class="hidden-480">测试</th>
+											</tr>
+		
+										</thead>
+		
+										<tbody>
+											
+											<foreach name="datalist" item="d">
+												<tr class="odd gradeX">
+		
+													<td><input type="checkbox" class="checkboxes" value="{$d['product_id']}" /></td>
+													<td>{$d['product_name']}</td>
+													<td>{$d['product_feature']}</td>
+													<td>{$d['cishu']}</td>
+													<td><a class="automailen" name="{$d['product_id']}">发送</a></td>
+													<td><a class="testmailen" name="{$d['product_id']}">测试</a></td>
+												</tr>
+											
+											</foreach>
+		
+										</tbody>
+		
+									</table>
+									
+									<input type="hidden" id="automailenurl" name="{:U('Automailen/send')}" />
+									<input type="hidden" id="testmailenurl" name="{:U('Automailen/testsend')}" />
+		
+								</div>
+		
+							</div>
+		
+							<!-- END EXAMPLE TABLE PORTLET-->
+		
+						</div>
+		
+					<!-- END PAGE CONTENT-->
+				
+				</div>
+			
+				<!-- END PAGE CONTAINER--> 
+
+			</div>
+	
+		<!-- END PAGE -->
+		</div>
+		
+	</div>
+
+	<!-- END CONTAINER -->
+	
+</div>
+
+<!-- END LAYOUT--> 

@@ -1,0 +1,1 @@
+2018-06-07 17:27:35 select barcode from hy_bar_scandetails where  keyval = '0000002471' and cinvcode= '02.02.02.05.044' and cvouchtype=05

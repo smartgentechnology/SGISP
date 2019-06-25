@@ -1,0 +1,259 @@
+﻿---20151016以前---
+1、建立数据库cp
+2、建立表
+---oem(代理商证)
+create table shuang(
+id int(10) unsigned not null primary key auto_increment,
+qi varchar(40) not null default '',
+h1 varchar(10) not null default '',
+h2 varchar(10) not null default '',
+h3 varchar(10) not null default '',
+h4 varchar(10) not null default '',
+h5 varchar(10) not null default '',
+h6 varchar(10) not null default '',
+h7 varchar(10) not null default '',
+h8 varchar(10) not null default '',
+h9 varchar(10) not null default '',
+h10 varchar(10) not null default '',
+h11 varchar(10) not null default '',
+h12 varchar(10) not null default '',
+h13 varchar(10) not null default '',
+h14 varchar(10) not null default '',
+h15 varchar(10) not null default '',
+h16 varchar(10) not null default '',
+h17 varchar(10) not null default '',
+h18 varchar(10) not null default '',
+h19 varchar(10) not null default '',
+h20 varchar(10) not null default '',
+h21 varchar(10) not null default '',
+h22 varchar(10) not null default '',
+h23 varchar(10) not null default '',
+h24 varchar(10) not null default '',
+h25 varchar(10) not null default '',
+h26 varchar(10) not null default '',
+h27 varchar(10) not null default '',
+h28 varchar(10) not null default '',
+h29 varchar(10) not null default '',
+h30 varchar(10) not null default '',
+h31 varchar(10) not null default '',
+h32 varchar(10) not null default '',
+h33 varchar(10) not null default '',
+l1 varchar(10) not null default '',
+l2 varchar(10) not null default '',
+l3 varchar(10) not null default '',
+l4 varchar(10) not null default '',
+l5 varchar(10) not null default '',
+l6 varchar(10) not null default '',
+l7 varchar(10) not null default '',
+l8 varchar(10) not null default '',
+l9 varchar(10) not null default '',
+l10 varchar(10) not null default '',
+l11 varchar(10) not null default '',
+l12 varchar(10) not null default '',
+l13 varchar(10) not null default '',
+l14 varchar(10) not null default '',
+l15 varchar(10) not null default '',
+l16 varchar(10) not null default ''
+)engine myisam charset utf8;
+---manager(管理员账户表)
+create table da(
+id int(10) unsigned not null primary key auto_increment,
+qi varchar(40) not null default '',
+h1 varchar(10) not null default '',
+h2 varchar(10) not null default '',
+h3 varchar(10) not null default '',
+h4 varchar(10) not null default '',
+h5 varchar(10) not null default '',
+h6 varchar(10) not null default '',
+h7 varchar(10) not null default '',
+h8 varchar(10) not null default '',
+h9 varchar(10) not null default '',
+h10 varchar(10) not null default '',
+h11 varchar(10) not null default '',
+h12 varchar(10) not null default '',
+h13 varchar(10) not null default '',
+h14 varchar(10) not null default '',
+h15 varchar(10) not null default '',
+h16 varchar(10) not null default '',
+h17 varchar(10) not null default '',
+h18 varchar(10) not null default '',
+h19 varchar(10) not null default '',
+h20 varchar(10) not null default '',
+h21 varchar(10) not null default '',
+h22 varchar(10) not null default '',
+h23 varchar(10) not null default '',
+h24 varchar(10) not null default '',
+h25 varchar(10) not null default '',
+h26 varchar(10) not null default '',
+h27 varchar(10) not null default '',
+h28 varchar(10) not null default '',
+h29 varchar(10) not null default '',
+h30 varchar(10) not null default '',
+h31 varchar(10) not null default '',
+h32 varchar(10) not null default '',
+h33 varchar(10) not null default '',
+h34 varchar(10) not null default '',
+h35 varchar(10) not null default '',
+l1 varchar(10) not null default '',
+l2 varchar(10) not null default '',
+l3 varchar(10) not null default '',
+l4 varchar(10) not null default '',
+l5 varchar(10) not null default '',
+l6 varchar(10) not null default '',
+l7 varchar(10) not null default '',
+l8 varchar(10) not null default '',
+l9 varchar(10) not null default '',
+l10 varchar(10) not null default '',
+l11 varchar(10) not null default '',
+l12 varchar(10) not null default ''
+)engine myisam charset utf8;
+---workplan(月工作计划表)
+create table workplan(
+id int(10) unsigned not null primary key auto_increment,
+dept_id int unsigned not null default 0,
+month int(10) unsigned not null default 0,
+number int unsigned not null default 0,
+content text not null default '',
+date varchar(40) not null default '',
+manager_id varchar(40) not null default '',
+state varchar(40) not null default '',
+reason varchar(100) not null default '',
+remarks varchar(100) not null default '',
+reviewer varchar(40) not null default '',
+manager_add int(10) unsigned not null default 0,
+add_time int(10) unsigned not null default 0
+)engine myisam charset utf8;
+---dept(部门表)
+create table dept(
+dept_id int unsigned primary key auto_increment,
+dept_name varchar(16) not null default '',
+parent_id int(10) not null default 0,
+rank int(10) not null default 0
+)engine myisam charset utf8;
+
+---role(角色表)
+create table role(
+role_id int unsigned primary key auto_increment,
+role_name varchar(50) not null default ''
+)engine myisam charset utf8;
+---user_role(用户角色关系表)
+create table user_role(
+id int unsigned primary key auto_increment,
+manager_id int unsigned not null default 0,
+role_name varchar(50) not null default ''
+)engine myisam charset utf8;
+---access(权限表)
+create table access(
+access_id int unsigned primary key auto_increment,
+title varchar(50) not null default '',
+)engine myisam charset utf8;
+---menu(功能表)
+create table menu(
+menu_id int unsigned primary key auto_increment,
+title varchar(50) not null default '',
+url varchar(100) not null default '',
+dept_id int unsigned not null default 0
+)engine myisam charset utf8;
+---role_access(角色权限表)
+create table role_access_menu(
+id int unsigned primary key auto_increment,
+role_id int unsigned not null default 0,
+access_id int unsigned not null default 0,
+menu_id int unsigned not null default 0
+)engine myisam charset utf8;
+
+---lc_tlibrary(翻译库)
+create table lc_tlibrary(
+id int(10) unsigned not null primary key auto_increment,
+cn text not null default '',
+en text not null default '',
+sp text not null default '',
+jp text not null default '',
+ru text not null default '',
+abben text not null default '',
+remarks varchar(100) not null default '',
+manager_id int(10) unsigned not null default 0,
+mdate int(10) unsigned not null default 0,
+flag int(4) unsigned not null default 0
+)engine myisam charset utf8;
+
+---lc_sendfile(下发文件)
+create table lc_sendfile(
+id int(10) unsigned not null primary key auto_increment,
+model varchar(100) not null default '',
+filename varchar(100) not null default '',
+filepath varchar(100) not null default '',
+mdate int(10) unsigned not null default 0
+)engine myisam charset utf8;
+
+---lc_pschedule(生产计划表)
+create table lc_pschedule(
+id int(10) unsigned not null primary key auto_increment,
+model varchar(100) not null default '',
+batch varchar(100) not null default '',
+number int(10) unsigned not null default 0,
+remark varchar(100) not null default '',
+ontime int(10) unsigned not null default 0,
+downtime int(10) unsigned not null default 0,
+onnumber int(10) unsigned not nulldefault 0,
+flag int(4) unsigned not null default 0 
+)engine myisam charset utf8;
+
+---lc_pprocedure(生产工序表)
+(flag:0表示未完成，1表示已完成 ，2表示焊接入库，3表示初试入库，4表示出厂入库，5表示报废，6表示包装入库，7表示焊接报废入库，8表示初试报废入库，9表示出厂报废入库,10 表示待包装入库，11表示包装完入库)
+(type:1表示焊接工序，2表示初试工序 ，3表示出厂工序，4表示包装工序，5表示成品库，6表示在制品库，7表示电控库，8表示待料库)
+create table lc_pprocedure(
+id int(10) unsigned not null primary key auto_increment,
+model varchar(100) not null default '',
+batch varchar(100) not null default '',
+starttime int(10) unsigned not null default 0,
+endtime int(10) unsigned not null default 0,
+number int(10) unsigned not null default 0,
+hours float(5,1) unsigned not null default 0,
+people int(10) unsigned not null default 1,
+sn varchar(100) not null default '',
+manager_id int(10) not null default 0,
+type int(10) unsigned not null default 0,
+flag int(4) unsigned not null default 0,
+remark varchar(100) not null default ''
+)engine myisam charset utf8;
+
+---lc_train(培训计划表)
+create table lc_train(
+id int(10) unsigned not null primary key auto_increment,
+dept_id int(10) unsigned not null default 0,
+quarter int(10) unsigned not null default 0,
+number int(10) unsigned not null default 0,
+ontime int(10) unsigned not null default 0,
+downtime int(10) unsigned not null default NULL,
+train_content text not null default '',
+train_people varchar(100) not null default '',
+lecturer varchar(100) not null default '',
+remark varchar(100) not null default '',
+manager_id int(10) unsigned not null default 0,
+checkcontent varchar(100) not null default '',
+flag int(4) unsigned not null default 0
+)engine myisam charset utf8;
+
+---lc_tiaoxiu(调休条表)
+create table lc_tiaoxiu(
+id int(10) unsigned not null primary key auto_increment,
+manager_id int(10) not null default 0,
+txxs int(10) unsigned not null default 0,
+txsyxs int(10) unsigned not null default 0,
+sxsj int(10) unsigned not null default 0,
+bz varchar(100) not null default ''
+)engine myisam charset utf8;
+
+---lc_txshiyong(调休使用情况)
+create table lc_txshiyong(
+id int(10) unsigned not null primary key auto_increment,
+tx_id int(10) not null default 0,
+qjxs int(10) unsigned not null default 0,
+syxs int(10) unsigned not null default 0,
+flag int(10) unsigned not null default 0,
+bz varchar(100) not null default '',
+tjsj int(10) unsigned not null default 0,
+qrsj int(10) unsigned not null default 0
+)engine myisam charset utf8;
+

@@ -1,0 +1,247 @@
+<!-- BEGIN LAYOUT--> 
+<layout name="layout" />
+	<!-- BEGIN CONTAINER -->
+	
+	<div class="page-container page-full-width">
+	
+		<!-- 页面光被导航栏覆盖掉 -->
+		
+		<div style="margin-top:42px;">
+		
+		<!-- BEGIN PAGE -->
+	
+		<div class="page-content">
+		
+		<!-- BEGIN PAGE CONTAINER-->
+		
+			<div class="container-fluid">
+			
+				<br>
+				
+				
+				<!-- BEGIN PAGE CONTENT-->
+		
+					<div class="row-fluid">
+		
+						<div class="span12">
+		
+							<!-- BEGIN EXAMPLE TABLE PORTLET-->
+		
+							<div>
+		
+							<div class="portlet box light-grey">
+		
+								<div class="portlet-title">
+		
+									<div class="caption"><i class="icon-globe"></i>{$pagetitle}&nbsp;应收总额：{$yingshou}&nbsp;/&nbsp;应付总额：{$yingfu}</div>
+		
+									<div class="tools">
+		
+										<a href="javascript:;" class="collapse"></a>
+		
+									</div>
+		
+								</div>
+		
+								<div class="portlet-body">
+		
+									<div class="clearfix">
+									
+										<div class="btn-group">
+											<a id="lc_customeranalysis_dir"  data-toggle="modal" href="#customeranalysis_dir"  class="btn black">
+		
+												 {$Think.lang.lc_dir} <i class="icon-search"></i>
+		
+											</a>
+										</div>
+										<div class="btn-group">
+											
+											<a id="lc_customeranalysis_export" href="{:U('Customeranalysis/exportExcel')}"  class="btn black">
+		
+												 {$Think.lang.lc_export} <i class="icon-external-link"></i>
+		
+											</a>
+											
+										</div>
+		
+									</div>
+		
+									
+					
+									<table class="table table-striped table-bordered table-hover" id="sample_1">
+
+										<thead>
+		
+											<tr>
+												<th class="hidden-480">编码</th>
+												<th class="hidden-480">名称</th>
+												<th class="hidden-480">业务员</th>
+												<th class="hidden-480">期初</th>
+												<th class="hidden-480">发货</th>
+												<th class="hidden-480">回款</th>
+												<th class="hidden-480">应收</th>
+												<th class="hidden-480">应付</th>
+												<th class="hidden-480">发货倒一天</th>
+												<th class="hidden-480">间隔</th>
+												<th class="hidden-480">发货倒一金额</th>
+												<th class="hidden-480">发货倒二天</th>
+												<th class="hidden-480">间隔</th>
+												<th class="hidden-480">发货倒二金额</th>
+												<th class="hidden-480">收款倒一天</th>
+												<th class="hidden-480">间隔</th>
+												<th class="hidden-480">收款倒一金额</th>
+												<th class="hidden-480">收款倒二天</th>
+												<th class="hidden-480">间隔</th>
+												<th class="hidden-480">收款倒二金额</th>
+											</tr>
+		
+										</thead>
+		
+										<tbody>
+											
+											<foreach name="datalist" item="d">
+												<tr class="odd gradeX">
+													<td>{$d['ccuscode']}</td>
+													<td>{$d['ccusabbname']}</td>
+													<td>{$d['cpersonname']}</td>
+													<td><notempty name="d.qichu">{$d['qichu']|round=2}</notempty></td>
+													<td><notempty name="d.fahuo">{$d['fahuo']|round=2}</notempty></td>
+													<td><notempty name="d.shoufukuan">{$d['shoufukuan']|round=2}</notempty></td>
+													<notempty name="d.yingshou"><td style="background-color:#FFCC00">{$d['yingshou']}</td><else /><td></td></notempty>
+													<td><notempty name="d.yingfu">{$d['yingfu']}</notempty></td>
+													<td>{$d['diyitime']|substr=0,10}</td>
+													<td><notempty name="d.diyijiange">{$d['diyijiange']/86400|round=0}天/{$d['diyijiange']/2592000|round=1}月</notempty></td>
+													<td><notempty name="d.diyijine">{$d['diyijine']|round=2}</notempty></td>
+													<td>{$d['diertime']|substr=0,10}</td>
+													<td><notempty name="d.dierjiange">{$d['dierjiange']/86400|round=0}天/{$d['dierjiange']/2592000|round=1}月</notempty></td>
+													<td><notempty name="d.dierjine">{$d['dierjine']|round=2}</notempty></td>
+													<td>{$d['diyihuikuantime']|substr=0,10}</td>
+													<td><notempty name="d.diyihuikuanjiange">{$d['diyihuikuanjiange']/86400|round=0}天/{$d['diyihuikuanjiange']/2592000|round=1}月</notempty></td>
+													<td><notempty name="d.diyihuikuanjine">{$d['diyihuikuanjine']|round=2}</notempty></td>
+													<td>{$d['dierhuikuantime']|substr=0,10}</td>
+													<td><notempty name="d.dierhuikuanjiange">{$d['dierhuikuanjiange']/86400|round=0}天/{$d['dierhuikuanjiange']/2592000|round=1}月</notempty></td>
+													<td><notempty name="d.dierhuikuanjine">{$d['dierhuikuanjine']|round=2}</notempty></td>
+												</tr>
+											
+											</foreach>
+		
+										</tbody>
+		
+									</table>
+					
+												
+									
+									
+									<!--查询条件层开始-->
+									
+									<div id="customeranalysis_dir" class="modal hide fade" tabindex="-1" data-width="760">
+
+										<div class="modal-header">
+	
+											<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+	
+											<h3>查询条件</h3>
+	
+										</div>
+										<!--START modal-body-->
+										<div class="modal-body">
+	
+											<div class="row-fluid">
+	
+												<div class="span12">
+	
+													<!-- BEGIN FORM-->
+														<form action="{:U('Customeranalysis/index')}" method="post" id="form_customeranalysis_dir" class="form-horizontal">
+						
+															<div class="alert alert-error hide">
+						
+																<button class="close" data-dismiss="alert"></button>
+						
+																您输入的信息有误，请重新输入！
+						
+															</div>
+						
+															<div class="alert alert-success hide">
+						
+																<button class="close" data-dismiss="alert"></button>
+						
+																完成验证！
+						
+															</div>
+															
+															<div class="control-group">
+						
+																<label class="control-label span5">业务员</label>
+						
+																<div class="controls span6">
+																	<select id="analysis_customer_dir" name="analysis_customer_dir">
+																		<option value="0"></option>
+																		<foreach name="personlist" item="p">
+										
+																			<option value="{$p['cpersoncode']}">{$p['cpersonname']}</option>
+																		</foreach>
+									
+																	</select>
+																	
+																</div>
+						
+															</div>
+															<div class="control-group">
+						
+																<label class="control-label span5">日期</label>
+						
+																<div class="controls span6">
+																	<input type="text" id="workplan_date_dir_end" style="width:100px;" name="workplan_date_dir_end" readonly>
+																	
+						
+																</div>
+						
+															</div>
+															<div class="control-group" align="center">
+						
+																<button type="submit" class="btn green">查询</button>
+						
+															</div>
+						
+														</form>
+						
+														<!-- END FORM-->
+	
+												</div>
+	
+											</div>
+	
+										</div><!--END modal-body-->
+	
+										
+	
+									</div>
+
+									<!--查询条件层结束-->
+		
+								</div>
+		
+							</div>
+		
+							<!-- END EXAMPLE TABLE PORTLET-->
+		
+						</div>
+		
+						<!-- END PAGE CONTENT-->
+				
+				</div>
+			
+				<!-- END PAGE CONTAINER--> 
+
+			</div>
+	
+		<!-- END PAGE -->
+		</div>
+		
+	</div>
+
+	<!-- END CONTAINER -->
+	
+</div>
+
+<!-- END LAYOUT-->

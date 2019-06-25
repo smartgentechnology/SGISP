@@ -1,0 +1,99 @@
+<!-- BEGIN LAYOUT--> 
+<layout name="layout" />
+	<!-- BEGIN CONTAINER -->
+	
+	<div class="page-container page-full-width">
+	
+		<!-- 页面光被导航栏覆盖掉 -->
+		
+		<div style="margin-top:42px;">
+		
+		<!-- BEGIN PAGE -->
+	
+		<div class="page-content">
+		
+		<!-- BEGIN PAGE CONTAINER-->
+		
+			<div class="container-fluid">
+			
+				<br>
+				
+				
+				<!-- BEGIN PAGE CONTENT-->
+		
+					<div class="row-fluid">
+		
+						<div class="span12">
+		
+							<!-- BEGIN EXAMPLE TABLE PORTLET-->
+		
+							<div>
+		
+							<div class="portlet box light-grey">
+		
+								<div class="portlet-title">
+		
+									<div class="caption"><i class="icon-globe"></i>{$pagetitle}</div>
+		
+									<div class="tools">
+		
+										<a href="javascript:;" class="collapse"></a>
+		
+									</div>
+		
+								</div>
+		
+								<div class="portlet-body">
+								
+									<div class="row-fluid ">
+										<div class="span12">
+											<!-- BEGIN FORM-->
+											<form id="fukuanform" name="{:U('Fukuan/getfukuan')}" class="form-inline">
+												<div class="form-group" align="center">
+													<label class="sr-only">月份：</label>
+													<input type="text" id="workplan_month_a" name="workplan_month_a" readonly>
+													&nbsp;&nbsp;&nbsp;&nbsp;
+													<button id="fukuan_chaxun" type="button" class="btn green">查询</button>
+													<a id="lc_fukuan_export" href="{:U('Fukuan/exportExcel')}"  class="btn black">
+													{$Think.lang.lc_export} <i class="icon-external-link"></i>
+													</a>
+												</div>
+											</form>
+			
+											<!-- END FORM-->
+										</div>
+									</div>
+									<div class="row-fluid">
+
+										<div class="span12">
+											<div id="fukuan" style="width:100%; height:800px;"></div>
+										</div>
+
+									</div>
+											
+								</div>
+		
+							</div>
+		
+							<!-- END EXAMPLE TABLE PORTLET-->
+		
+						</div>
+		
+						<!-- END PAGE CONTENT-->
+				
+				</div>
+			
+				<!-- END PAGE CONTAINER--> 
+
+			</div>
+	
+		<!-- END PAGE -->
+		</div>
+		
+	</div>
+
+	<!-- END CONTAINER -->
+	
+</div>
+
+<!-- END LAYOUT-->

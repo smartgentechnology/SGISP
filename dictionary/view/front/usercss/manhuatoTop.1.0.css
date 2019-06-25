@@ -1,0 +1,6 @@
+*{padding:0; margin:0}
+body{height:2000px}
+#totop{position:fixed;bottom:20px;left:20px;z-index:999;width:71px; cursor:pointer; display:none;}
+*html #totop{position:absolute;cursor:pointer;left:20px; display:none;top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight)-112+"px")}
+#totop a{display:block;width:71px;height:72px;padding-top:48px;background:url(../userimage/toTop.gif) no-repeat;text-align:center;color:#888}
+#totop a.cur{background-position:-88px 0;text-decoration:none;color:#ff0000}

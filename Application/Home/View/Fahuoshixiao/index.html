@@ -1,0 +1,1004 @@
+<!-- BEGIN LAYOUT--> 
+<layout name="layout" />
+	<!-- BEGIN CONTAINER -->
+	
+	<div class="page-container page-full-width">
+	
+		<!-- 页面光被导航栏覆盖掉 -->
+		
+		<div style="margin-top:42px;">
+		
+		<!-- BEGIN PAGE -->
+	
+		<div class="page-content">
+		
+		<!-- BEGIN PAGE CONTAINER-->
+		
+			<div class="container-fluid">
+			
+				<br>
+				
+				
+				<!-- BEGIN PAGE CONTENT-->
+		
+					<div class="row-fluid">
+		
+						<div class="span12">
+		
+							<!-- BEGIN EXAMPLE TABLE PORTLET-->
+		
+							<div>
+		
+								<div class="portlet-title">
+		
+									<div class="caption"><i class="icon-globe"></i>{$pagetitle}</div>
+								</div>
+		
+								<div class="portlet-body">
+		
+									<div class="clearfix">
+									
+										<div class="btn-group">
+											<a id="lc_fahuoshixiao_dir"  data-toggle="modal" href="#fahuoshixiao_dir"  class="btn black">
+		
+												 {$Think.lang.lc_dir} <i class="icon-search"></i>
+		
+											</a>
+										</div>
+		
+									</div>
+		
+									<div class="row-fluid ">
+		
+										<div class="span12">
+
+											<!-- BEGIN CONDENSED TABLE PORTLET-->
+					
+											<div class="portlet box green">
+					
+												<div class="portlet-title">
+					
+													<div class="caption"><i class="icon-picture"></i>{$year}常规控制器&加热器发货周期</div>
+					
+												</div>
+					
+												<div class="portlet-body">
+					
+													<table class="table table-condensed table-bordered table-hover">
+					
+														<thead>
+					
+															<tr>
+																<th rowspan="2">周期(天)</th>
+																<th colspan="2">1月</th>
+																<th colspan="2">2月</th>
+																<th colspan="2">3月</th>
+																<th colspan="2">4月</th>
+																<th colspan="2">5月</th>
+																<th colspan="2">6月</th>
+																<th colspan="2">7月</th>
+																<th colspan="2">8月</th>
+																<th colspan="2">9月</th>
+																<th colspan="2">10月</th>
+																<th colspan="2">11月</th>
+																<th colspan="2">12月</th>
+															</tr>
+															<tr>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+															</tr>
+																
+														</thead>
+					
+														<tbody>
+					
+															<tr>
+																<td class="highlight">9小时内</td>
+																<for start="1" end="13">
+																<td>{$data1[$i][0]}</td>
+																<td>{$data1[$i][0]/$data1[$i][7]*100|round=6}</td>
+																</for>
+															</tr>
+															<tr>
+																<td class="highlight">1天内</td>
+																<for start="1" end="13">
+																<td>{$data1[$i][1]}</td>
+																<td>{$data1[$i][1]/$data1[$i][7]*100|round=2}</td>
+																</for>
+															</tr>
+															<tr>
+																<td class="highlight">1-3天</td>
+																<for start="1" end="13">
+																<td>{$data1[$i][2]}</td>
+																<td>{$data1[$i][2]/$data1[$i][7]*100|round=2}</td>
+																</for>
+															</tr>
+															<tr>
+																<td class="highlight">3-10天</td>
+																<for start="1" end="13">
+																<td>{$data1[$i][3]}</td>
+																<td>{$data1[$i][3]/$data1[$i][7]*100|round=2}</td>
+																</for>
+															</tr>
+															<tr>
+																<td class="highlight">10-15天</td>
+																<for start="1" end="13">
+																<td>{$data1[$i][4]}</td>
+																<td>{$data1[$i][4]/$data1[$i][7]*100|round=2}</td>
+																</for>
+															</tr>
+															<tr>
+																<td class="highlight">15-20天</td>
+																<for start="1" end="13">
+																<td>{$data1[$i][5]}</td>
+																<td>{$data1[$i][5]/$data1[$i][7]*100|round=2}</td>
+																</for>
+															</tr>
+															<tr>
+																<td class="highlight">20-31天</td>
+																<for start="1" end="13">
+																<td>{$data1[$i][6]}</td>
+																<td>{$data1[$i][6]/$data1[$i][7]*100|round=2}</td>
+																</for>
+															</tr>
+															<tr>
+																<td class="highlight">总单据</td>
+																<for start="1" end="13">
+																<td>{$data1[$i][7]}</td>
+																<td></td>
+																</for>
+															</tr>
+															<tr>
+																<td class="highlight">未完成</td>
+																<for start="1" end="13">
+																<td>{$data1[$i][8]}</td>
+																<td></td>
+																</for>
+															</tr>
+														</tbody>
+					
+													</table>
+					
+												</div>
+					
+											</div>
+					
+											<!-- END CONDENSED TABLE PORTLET-->
+					
+										</div>
+									</div>
+									
+									<div class="row-fluid ">
+		
+										<div class="span12">
+
+											<!-- BEGIN CONDENSED TABLE PORTLET-->
+					
+											<div class="portlet box green">
+					
+												<div class="portlet-title">
+					
+													<div class="caption"><i class="icon-picture"></i>{$year}非常规控制器&加热器发货周期</div>
+					
+												</div>
+					
+												<div class="portlet-body">
+					
+													<table class="table table-condensed table-bordered table-hover">
+					
+														<thead>
+					
+															<tr>
+																<th rowspan="2">周期(天)</th>
+																<th colspan="2">1月</th>
+																<th colspan="2">2月</th>
+																<th colspan="2">3月</th>
+																<th colspan="2">4月</th>
+																<th colspan="2">5月</th>
+																<th colspan="2">6月</th>
+																<th colspan="2">7月</th>
+																<th colspan="2">8月</th>
+																<th colspan="2">9月</th>
+																<th colspan="2">10月</th>
+																<th colspan="2">11月</th>
+																<th colspan="2">12月</th>
+															</tr>
+															<tr>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+															</tr>
+																
+														</thead>
+					
+														<tbody>
+					
+															<tr>
+																<td class="highlight">9小时内</td>
+																<for start="1" end="13">
+																<td>{$data2[$i][0]}</td>
+																<td>{$data2[$i][0]/$data2[$i][7]*100|round=6}</td>
+																</for>
+															</tr>
+															<tr>
+																<td class="highlight">1天内</td>
+																<for start="1" end="13">
+																<td>{$data2[$i][1]}</td>
+																<td>{$data2[$i][1]/$data2[$i][7]*100|round=2}</td>
+																</for>
+															</tr>
+															<tr>
+																<td class="highlight">1-3天</td>
+																<for start="1" end="13">
+																<td>{$data2[$i][2]}</td>
+																<td>{$data2[$i][2]/$data2[$i][7]*100|round=2}</td>
+																</for>
+															</tr>
+															<tr>
+																<td class="highlight">3-10天</td>
+																<for start="1" end="13">
+																<td>{$data2[$i][3]}</td>
+																<td>{$data2[$i][3]/$data2[$i][7]*100|round=2}</td>
+																</for>
+															</tr>
+															<tr>
+																<td class="highlight">10-15天</td>
+																<for start="1" end="13">
+																<td>{$data2[$i][4]}</td>
+																<td>{$data2[$i][4]/$data2[$i][7]*100|round=2}</td>
+																</for>
+															</tr>
+															<tr>
+																<td class="highlight">15-20天</td>
+																<for start="1" end="13">
+																<td>{$data2[$i][5]}</td>
+																<td>{$data2[$i][5]/$data2[$i][7]*100|round=2}</td>
+																</for>
+															</tr>
+															<tr>
+																<td class="highlight">20-31天</td>
+																<for start="1" end="13">
+																<td>{$data2[$i][6]}</td>
+																<td>{$data2[$i][6]/$data2[$i][7]*100|round=2}</td>
+																</for>
+															</tr>
+															<tr>
+																<td class="highlight">总单据</td>
+																<for start="1" end="13">
+																<td>{$data2[$i][7]}</td>
+																<td></td>
+																</for>
+															</tr>
+															<tr>
+																<td class="highlight">未完成</td>
+																<for start="1" end="13">
+																<td>{$data2[$i][8]}</td>
+																<td></td>
+																</for>
+															</tr>
+														</tbody>
+					
+													</table>
+					
+												</div>
+					
+											</div>
+					
+											<!-- END CONDENSED TABLE PORTLET-->
+					
+										</div>
+					
+									</div>
+									
+									<div class="row-fluid ">
+		
+										<div class="span12">
+
+											<!-- BEGIN CONDENSED TABLE PORTLET-->
+					
+											<div class="portlet box green">
+					
+												<div class="portlet-title">
+					
+													<div class="caption"><i class="icon-picture"></i>{$year}控制器&加热器发货周期</div>
+					
+												</div>
+					
+												<div class="portlet-body">
+					
+													<table class="table table-condensed table-bordered table-hover">
+					
+														<thead>
+					
+															<tr>
+																<th rowspan="2">周期(天)</th>
+																<th colspan="2">1月</th>
+																<th colspan="2">2月</th>
+																<th colspan="2">3月</th>
+																<th colspan="2">4月</th>
+																<th colspan="2">5月</th>
+																<th colspan="2">6月</th>
+																<th colspan="2">7月</th>
+																<th colspan="2">8月</th>
+																<th colspan="2">9月</th>
+																<th colspan="2">10月</th>
+																<th colspan="2">11月</th>
+																<th colspan="2">12月</th>
+															</tr>
+															<tr>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+															</tr>
+																
+														</thead>
+					
+														<tbody>
+					
+															<tr>
+																<td class="highlight">9小时内</td>
+																<for start="1" end="13">
+																<td>{$data3[$i][0]}</td>
+																<td>{$data3[$i][0]/$data3[$i][7]*100|round=6}</td>
+																</for>
+															</tr>
+															<tr>
+																<td class="highlight">1天内</td>
+																<for start="1" end="13">
+																<td>{$data3[$i][1]}</td>
+																<td>{$data3[$i][1]/$data3[$i][7]*100|round=2}</td>
+																</for>
+															</tr>
+															<tr>
+																<td class="highlight">1-3天</td>
+																<for start="1" end="13">
+																<td>{$data3[$i][2]}</td>
+																<td>{$data3[$i][2]/$data3[$i][7]*100|round=2}</td>
+																</for>
+															</tr>
+															<tr>
+																<td class="highlight">3-10天</td>
+																<for start="1" end="13">
+																<td>{$data3[$i][3]}</td>
+																<td>{$data3[$i][3]/$data3[$i][7]*100|round=2}</td>
+																</for>
+															</tr>
+															<tr>
+																<td class="highlight">10-15天</td>
+																<for start="1" end="13">
+																<td>{$data3[$i][4]}</td>
+																<td>{$data3[$i][4]/$data3[$i][7]*100|round=2}</td>
+																</for>
+															</tr>
+															<tr>
+																<td class="highlight">15-20天</td>
+																<for start="1" end="13">
+																<td>{$data3[$i][5]}</td>
+																<td>{$data3[$i][5]/$data3[$i][7]*100|round=2}</td>
+																</for>
+															</tr>
+															<tr>
+																<td class="highlight">20-31天</td>
+																<for start="1" end="13">
+																<td>{$data3[$i][6]}</td>
+																<td>{$data3[$i][6]/$data3[$i][7]*100|round=2}</td>
+																</for>
+															</tr>
+															<tr>
+																<td class="highlight">总单据</td>
+																<for start="1" end="13">
+																<td>{$data3[$i][7]}</td>
+																<td></td>
+																</for>
+															</tr>
+															<tr>
+																<td class="highlight">未完成</td>
+																<for start="1" end="13">
+																<td>{$data3[$i][8]}</td>
+																<td></td>
+																</for>
+															</tr>
+														</tbody>
+					
+													</table>
+					
+												</div>
+					
+											</div>
+					
+											<!-- END CONDENSED TABLE PORTLET-->
+					
+										</div>
+										
+					
+									</div>
+									
+									<div class="row-fluid ">
+		
+										<div class="span12">
+
+											<!-- BEGIN CONDENSED TABLE PORTLET-->
+					
+											<div class="portlet box green">
+					
+												<div class="portlet-title">
+					
+													<div class="caption"><i class="icon-picture"></i>{$year}控制柜发货周期</div>
+					
+												</div>
+					
+												<div class="portlet-body">
+					
+													<table class="table table-condensed table-bordered table-hover">
+					
+														<thead>
+					
+															<tr>
+																<th rowspan="2">周期(天)</th>
+																<th colspan="2">1月</th>
+																<th colspan="2">2月</th>
+																<th colspan="2">3月</th>
+																<th colspan="2">4月</th>
+																<th colspan="2">5月</th>
+																<th colspan="2">6月</th>
+																<th colspan="2">7月</th>
+																<th colspan="2">8月</th>
+																<th colspan="2">9月</th>
+																<th colspan="2">10月</th>
+																<th colspan="2">11月</th>
+																<th colspan="2">12月</th>
+															</tr>
+															<tr>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+															</tr>
+																
+														</thead>
+					
+														<tbody>
+					
+															<tr>
+																<td class="highlight">9小时内</td>
+																<for start="1" end="13">
+																<td>{$data4[$i][0]}</td>
+																<td>{$data4[$i][0]/$data4[$i][7]*100|round=6}</td>
+																</for>
+															</tr>
+															<tr>
+																<td class="highlight">1天内</td>
+																<for start="1" end="13">
+																<td>{$data4[$i][1]}</td>
+																<td>{$data4[$i][1]/$data4[$i][7]*100|round=2}</td>
+																</for>
+															</tr>
+															<tr>
+																<td class="highlight">1-3天</td>
+																<for start="1" end="13">
+																<td>{$data4[$i][2]}</td>
+																<td>{$data4[$i][2]/$data4[$i][7]*100|round=2}</td>
+																</for>
+															</tr>
+															<tr>
+																<td class="highlight">3-10天</td>
+																<for start="1" end="13">
+																<td>{$data4[$i][3]}</td>
+																<td>{$data4[$i][3]/$data4[$i][7]*100|round=2}</td>
+																</for>
+															</tr>
+															<tr>
+																<td class="highlight">10-15天</td>
+																<for start="1" end="13">
+																<td>{$data4[$i][4]}</td>
+																<td>{$data4[$i][4]/$data4[$i][7]*100|round=2}</td>
+																</for>
+															</tr>
+															<tr>
+																<td class="highlight">15-20天</td>
+																<for start="1" end="13">
+																<td>{$data4[$i][5]}</td>
+																<td>{$data4[$i][5]/$data4[$i][7]*100|round=2}</td>
+																</for>
+															</tr>
+															<tr>
+																<td class="highlight">20-31天</td>
+																<for start="1" end="13">
+																<td>{$data4[$i][6]}</td>
+																<td>{$data4[$i][6]/$data4[$i][7]*100|round=2}</td>
+																</for>
+															</tr>
+															<tr>
+																<td class="highlight">总单据</td>
+																<for start="1" end="13">
+																<td>{$data4[$i][7]}</td>
+																<td></td>
+																</for>
+															</tr>
+															<tr>
+																<td class="highlight">未完成</td>
+																<for start="1" end="13">
+																<td>{$data4[$i][8]}</td>
+																<td></td>
+																</for>
+															</tr>
+														</tbody>
+					
+													</table>
+					
+												</div>
+					
+											</div>
+					
+											<!-- END CONDENSED TABLE PORTLET-->
+					
+										</div>
+					
+									</div>
+									
+									<div class="row-fluid ">
+		
+										<div class="span12">
+
+											<!-- BEGIN CONDENSED TABLE PORTLET-->
+					
+											<div class="portlet box green">
+					
+												<div class="portlet-title">
+					
+													<div class="caption"><i class="icon-picture"></i>{$year}外购件发货周期</div>
+					
+												</div>
+					
+												<div class="portlet-body">
+					
+													<table class="table table-condensed table-bordered table-hover">
+					
+														<thead>
+					
+															<tr>
+																<th rowspan="2">周期(天)</th>
+																<th colspan="2">1月</th>
+																<th colspan="2">2月</th>
+																<th colspan="2">3月</th>
+																<th colspan="2">4月</th>
+																<th colspan="2">5月</th>
+																<th colspan="2">6月</th>
+																<th colspan="2">7月</th>
+																<th colspan="2">8月</th>
+																<th colspan="2">9月</th>
+																<th colspan="2">10月</th>
+																<th colspan="2">11月</th>
+																<th colspan="2">12月</th>
+															</tr>
+															<tr>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+															</tr>
+																
+														</thead>
+					
+														<tbody>
+					
+															<tr>
+																<td class="highlight">9小时内</td>
+																<for start="1" end="13">
+																<td>{$data5[$i][0]}</td>
+																<td>{$data5[$i][0]/$data5[$i][7]*100|round=6}</td>
+																</for>
+															</tr>
+															<tr>
+																<td class="highlight">1天内</td>
+																<for start="1" end="13">
+																<td>{$data5[$i][1]}</td>
+																<td>{$data5[$i][1]/$data5[$i][7]*100|round=2}</td>
+																</for>
+															</tr>
+															<tr>
+																<td class="highlight">1-3天</td>
+																<for start="1" end="13">
+																<td>{$data5[$i][2]}</td>
+																<td>{$data5[$i][2]/$data5[$i][7]*100|round=2}</td>
+																</for>
+															</tr>
+															<tr>
+																<td class="highlight">3-10天</td>
+																<for start="1" end="13">
+																<td>{$data5[$i][3]}</td>
+																<td>{$data5[$i][3]/$data5[$i][7]*100|round=2}</td>
+																</for>
+															</tr>
+															<tr>
+																<td class="highlight">10-15天</td>
+																<for start="1" end="13">
+																<td>{$data5[$i][4]}</td>
+																<td>{$data5[$i][4]/$data5[$i][7]*100|round=2}</td>
+																</for>
+															</tr>
+															<tr>
+																<td class="highlight">15-20天</td>
+																<for start="1" end="13">
+																<td>{$data5[$i][5]}</td>
+																<td>{$data5[$i][5]/$data5[$i][7]*100|round=2}</td>
+																</for>
+															</tr>
+															<tr>
+																<td class="highlight">20-31天</td>
+																<for start="1" end="13">
+																<td>{$data5[$i][6]}</td>
+																<td>{$data5[$i][6]/$data5[$i][7]*100|round=2}</td>
+																</for>
+															</tr>
+															<tr>
+																<td class="highlight">总单据</td>
+																<for start="1" end="13">
+																<td>{$data5[$i][7]}</td>
+																<td></td>
+																</for>
+															</tr>
+															<tr>
+																<td class="highlight">未完成</td>
+																<for start="1" end="13">
+																<td>{$data5[$i][8]}</td>
+																<td></td>
+																</for>
+															</tr>
+														</tbody>
+					
+													</table>
+					
+												</div>
+					
+											</div>
+					
+											<!-- END CONDENSED TABLE PORTLET-->
+					
+										</div>
+					
+									</div>
+									<div class="row-fluid ">
+		
+										<div class="span12">
+
+											<!-- BEGIN CONDENSED TABLE PORTLET-->
+					
+											<div class="portlet box green">
+					
+												<div class="portlet-title">
+					
+													<div class="caption"><i class="icon-picture"></i>{$year}原材料发货周期</div>
+					
+												</div>
+					
+												<div class="portlet-body">
+					
+													<table class="table table-condensed table-bordered table-hover">
+					
+														<thead>
+					
+															<tr>
+																<th rowspan="2">周期(天)</th>
+																<th colspan="2">1月</th>
+																<th colspan="2">2月</th>
+																<th colspan="2">3月</th>
+																<th colspan="2">4月</th>
+																<th colspan="2">5月</th>
+																<th colspan="2">6月</th>
+																<th colspan="2">7月</th>
+																<th colspan="2">8月</th>
+																<th colspan="2">9月</th>
+																<th colspan="2">10月</th>
+																<th colspan="2">11月</th>
+																<th colspan="2">12月</th>
+															</tr>
+															<tr>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+																<th>单据(条)</th>
+																<th>占比(%)</th>
+															</tr>
+																
+														</thead>
+					
+														<tbody>
+					
+															<tr>
+																<td class="highlight">9小时内</td>
+																<for start="1" end="13">
+																<td>{$data6[$i][0]}</td>
+																<td>{$data6[$i][0]/$data6[$i][7]*100|round=6}</td>
+																</for>
+															</tr>
+															<tr>
+																<td class="highlight">1天内</td>
+																<for start="1" end="13">
+																<td>{$data6[$i][1]}</td>
+																<td>{$data6[$i][1]/$data6[$i][7]*100|round=2}</td>
+																</for>
+															</tr>
+															<tr>
+																<td class="highlight">1-3天</td>
+																<for start="1" end="13">
+																<td>{$data6[$i][2]}</td>
+																<td>{$data6[$i][2]/$data6[$i][7]*100|round=2}</td>
+																</for>
+															</tr>
+															<tr>
+																<td class="highlight">3-10天</td>
+																<for start="1" end="13">
+																<td>{$data6[$i][3]}</td>
+																<td>{$data6[$i][3]/$data6[$i][7]*100|round=2}</td>
+																</for>
+															</tr>
+															<tr>
+																<td class="highlight">10-15天</td>
+																<for start="1" end="13">
+																<td>{$data6[$i][4]}</td>
+																<td>{$data6[$i][4]/$data6[$i][7]*100|round=2}</td>
+																</for>
+															</tr>
+															<tr>
+																<td class="highlight">15-20天</td>
+																<for start="1" end="13">
+																<td>{$data6[$i][5]}</td>
+																<td>{$data6[$i][5]/$data6[$i][7]*100|round=2}</td>
+																</for>
+															</tr>
+															<tr>
+																<td class="highlight">20-31天</td>
+																<for start="1" end="13">
+																<td>{$data6[$i][6]}</td>
+																<td>{$data6[$i][6]/$data6[$i][7]*100|round=2}</td>
+																</for>
+															</tr>
+															<tr>
+																<td class="highlight">总单据</td>
+																<for start="1" end="13">
+																<td>{$data6[$i][7]}</td>
+																<td></td>
+																</for>
+															</tr>
+															<tr>
+																<td class="highlight">未完成</td>
+																<for start="1" end="13">
+																<td>{$data6[$i][8]}</td>
+																<td></td>
+																</for>
+															</tr>
+														</tbody>
+					
+													</table>
+					
+												</div>
+					
+											</div>
+					
+											<!-- END CONDENSED TABLE PORTLET-->
+					
+										</div>
+					
+									</div>
+									
+									<!--查询条件层开始-->
+									
+									<div id="fahuoshixiao_dir" class="modal hide fade" tabindex="-1" data-width="760">
+
+										<div class="modal-header">
+	
+											<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+	
+											<h3>查询条件</h3>
+	
+										</div>
+										<!--START modal-body-->
+										<div class="modal-body">
+	
+											<div class="row-fluid">
+	
+												<div class="span12">
+	
+													<!-- BEGIN FORM-->
+														<form action="{:U('Fahuoshixiao/index')}" method="post" id="form_fahuoshixiao_dir" class="form-horizontal">
+						
+															<div class="alert alert-error hide">
+						
+																<button class="close" data-dismiss="alert"></button>
+						
+																您输入的信息有误，请重新输入！
+						
+															</div>
+						
+															<div class="alert alert-success hide">
+						
+																<button class="close" data-dismiss="alert"></button>
+						
+																完成验证！
+						
+															</div>
+															
+															<div class="control-group">
+						
+																<label class="control-label span5">审核日期</label>
+						
+																<div class="controls span6">
+						
+																	<input type="text" id="fahuoshixiao_date_dir" style="width:100px;" name="fahuoshixiao_date_dir" readonly>
+																	
+						
+																</div>
+						
+															</div>
+															<div class="control-group" align="center">
+						
+																<button type="submit" class="btn green">查询</button>
+						
+															</div>
+						
+														</form>
+						
+														<!-- END FORM-->
+	
+												</div>
+	
+											</div>
+	
+										</div><!--END modal-body-->
+	
+										
+	
+									</div>
+
+									<!--查询条件层结束-->
+		
+								</div>
+		
+							</div>
+		
+							<!-- END EXAMPLE TABLE PORTLET-->
+		
+						</div>
+		
+						<!-- END PAGE CONTENT-->
+				
+				</div>
+			
+				<!-- END PAGE CONTAINER--> 
+
+			</div>
+	
+		<!-- END PAGE -->
+		</div>
+		
+	</div>
+
+	<!-- END CONTAINER -->
+	
+</div>
+
+<!-- END LAYOUT-->

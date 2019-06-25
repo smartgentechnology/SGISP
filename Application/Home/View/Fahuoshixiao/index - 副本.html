@@ -1,0 +1,1237 @@
+<!-- BEGIN LAYOUT--> 
+<layout name="layout" />
+	<!-- BEGIN CONTAINER -->
+	
+	<div class="page-container page-full-width">
+	
+		<!-- 页面光被导航栏覆盖掉 -->
+		
+		<div style="margin-top:42px;">
+		
+		<!-- BEGIN PAGE -->
+	
+		<div class="page-content">
+		
+		<!-- BEGIN PAGE CONTAINER-->
+		
+			<div class="container-fluid">
+			
+				<br>
+				
+				
+				<!-- BEGIN PAGE CONTENT-->
+		
+					<div class="row-fluid">
+		
+						<div class="span12">
+		
+							<!-- BEGIN EXAMPLE TABLE PORTLET-->
+		
+							<div>
+		
+								<div class="portlet-title">
+		
+									<div class="caption"><i class="icon-globe"></i>{$pagetitle}</div>
+								</div>
+		
+								<div class="portlet-body">
+		
+									<div class="clearfix">
+									
+										<div class="btn-group">
+											<a id="lc_fahuoshixiao_dir"  data-toggle="modal" href="#fahuoshixiao_dir"  class="btn black">
+		
+												 {$Think.lang.lc_dir} <i class="icon-search"></i>
+		
+											</a>
+										</div>
+										<div class="btn-group">
+											
+											<a id="lc_fahuoshixiao_export" href="{:U('Fahuoshixiao/exportExcel')}"  class="btn black">
+		
+												 {$Think.lang.lc_export} <i class="icon-external-link"></i>
+		
+											</a>
+											
+										</div>
+		
+									</div>
+		
+									<div class="row-fluid ">
+		
+										<div class="span6">
+
+											<!-- BEGIN CONDENSED TABLE PORTLET-->
+					
+											<div class="portlet box green">
+					
+												<div class="portlet-title">
+					
+													<div class="caption"><i class="icon-picture"></i>{$startdate}-{$enddate}常规控制器&加热器发货周期(已发)</div>
+					
+												</div>
+					
+												<div class="portlet-body">
+					
+													<table class="table table-condensed table-bordered table-hover">
+					
+														<thead>
+					
+															<tr>
+					
+																<th>周期(天)</th>
+					
+																<th>单据(条)</th>
+					
+																<th>占比(%)</th>
+					
+																<th>周期(天)</th>
+					
+																<th>单据(条)</th>
+					
+																<th>占比(%)</th>
+					
+															</tr>
+					
+														</thead>
+					
+														<tbody>
+					
+															<tr>
+					
+																<td class="highlight">9小时内</td>
+					
+																<td>{$changguitongji[0]}</td>
+					
+																<td>{$changguitongji[0]/$changguitongji[14]*100|round=2}</td>
+					
+																<td>平均值{$changguitongji[7]/86400|round=6}天</td>
+					
+																<td></td>
+																<td></td>
+															</tr>
+															<tr>
+					
+																<td class="highlight">1天内</td>
+					
+																<td>{$changguitongji[1]}</td>
+					
+																<td>{$changguitongji[1]/$changguitongji[14]*100|round=2}</td>
+					
+																<td><=平均值</td>
+					
+																<td>{$changguitongji[8]}</td>
+																<td>{$changguitongji[8]/$changguitongji[14]*100|round=2}</td>
+															</tr>
+															<tr>
+					
+																<td class="highlight">1-3天</td>
+					
+																<td>{$changguitongji[2]}</td>
+					
+																<td>{$changguitongji[2]/$changguitongji[14]*100|round=2}</td>
+					
+																<td style="background-color:#FFCC00"><3</td>
+					
+																<td style="background-color:#FFCC00">{$changguitongji[9]}</td>
+																<td style="background-color:#FFCC00">{$changguitongji[9]/$changguitongji[14]*100|round=2}</td>
+															</tr>
+															<tr>
+					
+																<td class="highlight">3-10天</td>
+					
+																<td>{$changguitongji[3]}</td>
+					
+																<td>{$changguitongji[3]/$changguitongji[14]*100|round=2}</td>
+					
+																<td style="background-color:#FFCC00">>=3</td>
+					
+																<td style="background-color:#FFCC00">{$changguitongji[10]}</td>
+																<td style="background-color:#FFCC00">{$changguitongji[10]/$changguitongji[14]*100|round=2}</td>
+															</tr>
+															<tr>
+					
+																<td class="highlight">10-15天</td>
+					
+																<td>{$changguitongji[4]}</td>
+					
+																<td>{$changguitongji[4]/$changguitongji[14]*100|round=2}</td>
+					
+																<td>>=10</td>
+					
+																<td>{$changguitongji[11]}</td>
+																<td>{$changguitongji[11]/$changguitongji[14]*100|round=2}</td>
+															</tr>
+															<tr>
+					
+																<td class="highlight">15-20天</td>
+					
+																<td>{$changguitongji[5]}</td>
+					
+																<td>{$changguitongji[5]/$changguitongji[14]*100|round=2}</td>
+					
+																<td>>=15</td>
+					
+																<td>{$changguitongji[12]}</td>
+																<td>{$changguitongji[12]/$changguitongji[14]*100|round=2}</td>
+															</tr>
+															<tr>
+					
+																<td class="highlight">20-31天</td>
+					
+																<td>{$changguitongji[6]}</td>
+					
+																<td>{$changguitongji[6]/$changguitongji[14]*100|round=2}</td>
+					
+																<td>>=20</td>
+					
+																<td>{$changguitongji[13]}</td>
+																<td>{$changguitongji[13]/$changguitongji[14]*100|round=2}</td>
+															</tr>
+															<tr>
+					
+																<td class="highlight">总单据(条)</td>
+					
+																<td>{$changguitongji[14]}</td>
+					
+																<td></td>
+					
+																<td>总单据(条)</td>
+					
+																<td>{$changguitongji[14]}</td>
+																<td></td>
+															</tr>
+														</tbody>
+					
+													</table>
+					
+												</div>
+					
+											</div>
+					
+											<!-- END CONDENSED TABLE PORTLET-->
+					
+										</div>
+										<div class="span6">
+
+											<!-- BEGIN CONDENSED TABLE PORTLET-->
+					
+											<div class="portlet box yellow">
+					
+												<div class="portlet-title">
+					
+													<div class="caption"><i class="icon-picture"></i>{$startdate}-{$enddate}常规控制器&加热器未发货{$changguiweifahuocount}条</div>
+					
+												</div>
+					
+												<div class="portlet-body">
+													<div style="height:270px; overflow:auto;">
+													<table class="table table-condensed table-bordered table-hover">
+					
+														<thead>
+					
+															<tr>
+																<th>单号</th>
+					
+																<th>客户</th>
+					
+																<th>型号</th>
+					
+																<th>订单</th>
+					
+																<th>数量</th>
+					
+															</tr>
+					
+														</thead>
+														
+														<tbody>
+															
+															<foreach name="changguiweifahuolist" item="d">
+																<tr class="odd gradeX">
+																	<td>{$d['csocode']}</td>
+																	<td>{$d['ccusname']}</td>
+																	<td>{$d['cinvstd']}</td>
+																	<td>{$d['dverifysystime']}</td>
+																	<td>{$d['iquantity']}</td>
+																</tr>
+															
+															</foreach>
+															
+														</tbody>
+														
+													</table>
+													</div>
+												</div>
+					
+											</div>
+					
+											<!-- END CONDENSED TABLE PORTLET-->
+					
+										</div>
+					
+									</div>
+									
+									<div class="row-fluid ">
+		
+										<div class="span6">
+
+											<!-- BEGIN CONDENSED TABLE PORTLET-->
+					
+											<div class="portlet box green">
+					
+												<div class="portlet-title">
+					
+													<div class="caption"><i class="icon-picture"></i>{$startdate}-{$enddate}非常规控制器&加热器发货周期(已发)</div>
+					
+												</div>
+					
+												<div class="portlet-body">
+					
+													<table class="table table-condensed table-bordered table-hover">
+					
+														<thead>
+					
+															<tr>
+					
+																<th>周期(天)</th>
+					
+																<th>单据(条)</th>
+					
+																<th>占比(%)</th>
+					
+																<th>周期(天)</th>
+					
+																<th>单据(条)</th>
+					
+																<th>占比(%)</th>
+					
+															</tr>
+					
+														</thead>
+					
+														<tbody>
+					
+															<tr>
+					
+																<td class="highlight">9小时内</td>
+					
+																<td>{$feichangguitongji[0]}</td>
+					
+																<td>{$feichangguitongji[0]/$feichangguitongji[14]*100|round=2}</td>
+					
+																<td>平均值{$feichangguitongji[7]/86400|round=6}天</td>
+					
+																<td></td>
+																<td></td>
+															</tr>
+															<tr>
+					
+																<td class="highlight">1天内</td>
+					
+																<td>{$feichangguitongji[1]}</td>
+					
+																<td>{$feichangguitongji[1]/$feichangguitongji[14]*100|round=2}</td>
+					
+																<td><=平均值</td>
+					
+																<td>{$feichangguitongji[8]}</td>
+																<td>{$feichangguitongji[8]/$feichangguitongji[14]*100|round=2}</td>
+															</tr>
+															<tr>
+					
+																<td class="highlight">1-3天</td>
+					
+																<td>{$feichangguitongji[2]}</td>
+					
+																<td>{$feichangguitongji[2]/$feichangguitongji[14]*100|round=2}</td>
+					
+																<td style="background-color:#FFCC00"><3</td>
+					
+																<td style="background-color:#FFCC00">{$feichangguitongji[9]}</td>
+																<td style="background-color:#FFCC00">{$feichangguitongji[9]/$feichangguitongji[14]*100|round=2}</td>
+															</tr>
+															<tr>
+					
+																<td class="highlight">3-10天</td>
+					
+																<td>{$feichangguitongji[3]}</td>
+					
+																<td>{$feichangguitongji[3]/$feichangguitongji[14]*100|round=2}</td>
+					
+																<td style="background-color:#FFCC00">>=3</td>
+					
+																<td style="background-color:#FFCC00">{$feichangguitongji[10]}</td>
+																<td style="background-color:#FFCC00">{$feichangguitongji[10]/$feichangguitongji[14]*100|round=2}</td>
+															</tr>
+															<tr>
+					
+																<td class="highlight">10-15天</td>
+					
+																<td>{$feichangguitongji[4]}</td>
+					
+																<td>{$feichangguitongji[4]/$feichangguitongji[14]*100|round=2}</td>
+					
+																<td>>=10</td>
+					
+																<td>{$feichangguitongji[11]}</td>
+																<td>{$feichangguitongji[11]/$feichangguitongji[14]*100|round=2}</td>
+															</tr>
+															<tr>
+					
+																<td class="highlight">15-20天</td>
+					
+																<td>{$feichangguitongji[5]}</td>
+					
+																<td>{$feichangguitongji[5]/$feichangguitongji[14]*100|round=2}</td>
+					
+																<td>>=15</td>
+					
+																<td>{$feichangguitongji[12]}</td>
+																<td>{$feichangguitongji[12]/$feichangguitongji[14]*100|round=2}</td>
+															</tr>
+															<tr>
+					
+																<td class="highlight">20-31天</td>
+					
+																<td>{$feichangguitongji[6]}</td>
+					
+																<td>{$feichangguitongji[6]/$feichangguitongji[14]*100|round=2}</td>
+					
+																<td>>=20</td>
+					
+																<td>{$feichangguitongji[13]}</td>
+																<td>{$feichangguitongji[13]/$feichangguitongji[14]*100|round=2}</td>
+															</tr>
+															<tr>
+					
+																<td class="highlight">总单据(条)</td>
+					
+																<td>{$feichangguitongji[14]}</td>
+					
+																<td></td>
+					
+																<td>总单据(条)</td>
+					
+																<td>{$feichangguitongji[14]}</td>
+																<td></td>
+															</tr>
+														</tbody>
+					
+													</table>
+					
+												</div>
+					
+											</div>
+					
+											<!-- END CONDENSED TABLE PORTLET-->
+					
+										</div>
+										<div class="span6">
+
+											<!-- BEGIN CONDENSED TABLE PORTLET-->
+					
+											<div class="portlet box yellow">
+					
+												<div class="portlet-title">
+					
+													<div class="caption"><i class="icon-picture"></i>{$startdate}-{$enddate}非常规控制器&加热器未发货{$feichangguiweifahuocount}条</div>
+					
+												</div>
+					
+												<div class="portlet-body">
+													<div style="height:270px; overflow:auto;">
+													<table class="table table-condensed table-bordered table-hover">
+					
+														<thead>
+					
+															<tr>
+																<th>单号</th>
+					
+																<th>客户</th>
+					
+																<th>型号</th>
+					
+																<th>订单审核</th>
+					
+																<th>数量</th>
+					
+															</tr>
+					
+														</thead>
+														
+														<tbody>
+															
+															<foreach name="feichangguiweifahuolist" item="d">
+																<tr class="odd gradeX">
+																	<td>{$d['csocode']}</td>
+																	<td>{$d['ccusname']}</td>
+																	<td>{$d['cinvstd']}</td>
+																	<td>{$d['dverifysystime']}</td>
+																	<td>{$d['iquantity']}</td>
+																</tr>
+															
+															</foreach>
+															
+															
+														</tbody>
+														
+													</table>
+													</div>
+												</div>
+					
+											</div>
+					
+											<!-- END CONDENSED TABLE PORTLET-->
+					
+										</div>
+					
+									</div>
+									
+									<div class="row-fluid ">
+		
+										<div class="span6">
+
+											<!-- BEGIN CONDENSED TABLE PORTLET-->
+					
+											<div class="portlet box green">
+					
+												<div class="portlet-title">
+					
+													<div class="caption"><i class="icon-picture"></i>{$startdate}-{$enddate}控制柜发货周期(已发)</div>
+					
+												</div>
+					
+												<div class="portlet-body">
+					
+													<table class="table table-condensed table-bordered table-hover">
+					
+														<thead>
+					
+															<tr>
+					
+																<th>周期(天)</th>
+					
+																<th>单据(条)</th>
+					
+																<th>占比(%)</th>
+					
+																<th>周期(天)</th>
+					
+																<th>单据(条)</th>
+					
+																<th>占比(%)</th>
+					
+															</tr>
+					
+														</thead>
+					
+														<tbody>
+					
+															<tr>
+					
+																<td class="highlight">9小时内</td>
+					
+																<td>{$kongzhiguitongji[0]}</td>
+					
+																<td>{$kongzhiguitongji[0]/$kongzhiguitongji[14]*100|round=2}</td>
+					
+																<td>平均值{$kongzhiguitongji[7]/86400|round=6}天</td>
+					
+																<td></td>
+																<td></td>
+															</tr>
+															<tr>
+					
+																<td class="highlight">1天内</td>
+					
+																<td>{$kongzhiguitongji[1]}</td>
+					
+																<td>{$kongzhiguitongji[1]/$kongzhiguitongji[14]*100|round=2}</td>
+					
+																<td><=平均值</td>
+					
+																<td>{$kongzhiguitongji[8]}</td>
+																<td>{$kongzhiguitongji[8]/$kongzhiguitongji[14]*100|round=2}</td>
+															</tr>
+															<tr>
+					
+																<td class="highlight">1-3天</td>
+					
+																<td>{$kongzhiguitongji[2]}</td>
+					
+																<td>{$kongzhiguitongji[2]/$kongzhiguitongji[14]*100|round=2}</td>
+					
+																<td style="background-color:#FFCC00"><3</td>
+					
+																<td style="background-color:#FFCC00">{$kongzhiguitongji[9]}</td>
+																<td style="background-color:#FFCC00">{$kongzhiguitongji[9]/$kongzhiguitongji[14]*100|round=2}</td>
+															</tr>
+															<tr>
+					
+																<td class="highlight">3-10天</td>
+					
+																<td>{$kongzhiguitongji[3]}</td>
+					
+																<td>{$kongzhiguitongji[3]/$kongzhiguitongji[14]*100|round=2}</td>
+					
+																<td style="background-color:#FFCC00">>=3</td>
+					
+																<td style="background-color:#FFCC00">{$kongzhiguitongji[10]}</td>
+																<td style="background-color:#FFCC00">{$kongzhiguitongji[10]/$kongzhiguitongji[14]*100|round=2}</td>
+															</tr>
+															<tr>
+					
+																<td class="highlight">10-15天</td>
+					
+																<td>{$kongzhiguitongji[4]}</td>
+					
+																<td>{$kongzhiguitongji[4]/$kongzhiguitongji[14]*100|round=2}</td>
+					
+																<td>>=10</td>
+					
+																<td>{$kongzhiguitongji[11]}</td>
+																<td>{$kongzhiguitongji[11]/$kongzhiguitongji[14]*100|round=2}</td>
+															</tr>
+															<tr>
+					
+																<td class="highlight">15-20天</td>
+					
+																<td>{$kongzhiguitongji[5]}</td>
+					
+																<td>{$kongzhiguitongji[5]/$kongzhiguitongji[14]*100|round=2}</td>
+					
+																<td>>=15</td>
+					
+																<td>{$kongzhiguitongji[12]}</td>
+																<td>{$kongzhiguitongji[12]/$kongzhiguitongji[14]*100|round=2}</td>
+															</tr>
+															<tr>
+					
+																<td class="highlight">20-31天</td>
+					
+																<td>{$kongzhiguitongji[6]}</td>
+					
+																<td>{$kongzhiguitongji[6]/$kongzhiguitongji[14]*100|round=2}</td>
+					
+																<td>>=20</td>
+					
+																<td>{$kongzhiguitongji[13]}</td>
+																<td>{$kongzhiguitongji[13]/$kongzhiguitongji[14]*100|round=2}</td>
+															</tr>
+															<tr>
+					
+																<td class="highlight">总单据(条)</td>
+					
+																<td>{$kongzhiguitongji[14]}</td>
+					
+																<td></td>
+					
+																<td>总单据(条)</td>
+					
+																<td>{$kongzhiguitongji[14]}</td>
+																<td></td>
+															</tr>
+														</tbody>
+					
+													</table>
+					
+												</div>
+					
+											</div>
+					
+											<!-- END CONDENSED TABLE PORTLET-->
+					
+										</div>
+										<div class="span6">
+
+											<!-- BEGIN CONDENSED TABLE PORTLET-->
+					
+											<div class="portlet box yellow">
+					
+												<div class="portlet-title">
+					
+													<div class="caption"><i class="icon-picture"></i>{$startdate}-{$enddate}控制柜未发货{$kongzhiguiweifahuocount}条</div>
+					
+												</div>
+					
+												<div class="portlet-body">
+													<div style="height:270px; overflow:auto;">
+													<table class="table table-condensed table-bordered table-hover">
+					
+														<thead>
+					
+															<tr>
+																<th>单号</th>
+					
+																<th>客户</th>
+					
+																<th>型号</th>
+					
+																<th>订单审核</th>
+					
+																<th>数量</th>
+					
+															</tr>
+					
+														</thead>
+														
+														<tbody>
+															
+															<foreach name="kongzhiguiweifahuolist" item="d">
+																<tr class="odd gradeX">
+																	<td>{$d['csocode']}</td>
+																	<td>{$d['ccusname']}</td>
+																	<td>{$d['cinvstd']}</td>
+																	<td>{$d['dverifysystime']}</td>
+																	<td>{$d['iquantity']}</td>
+																</tr>
+															
+															</foreach>
+															
+															
+														</tbody>
+														
+													</table>
+													</div>
+												</div>
+					
+											</div>
+					
+											<!-- END CONDENSED TABLE PORTLET-->
+					
+										</div>
+					
+									</div>
+									
+									<div class="row-fluid ">
+		
+										<div class="span6">
+
+											<!-- BEGIN CONDENSED TABLE PORTLET-->
+					
+											<div class="portlet box green">
+					
+												<div class="portlet-title">
+					
+													<div class="caption"><i class="icon-picture"></i>{$startdate}-{$enddate}外购件发货周期(已发)</div>
+					
+												</div>
+					
+												<div class="portlet-body">
+					
+													<table class="table table-condensed table-bordered table-hover">
+					
+														<thead>
+					
+															<tr>
+					
+																<th>周期(天)</th>
+					
+																<th>单据(条)</th>
+					
+																<th>占比(%)</th>
+					
+																<th>周期(天)</th>
+					
+																<th>单据(条)</th>
+					
+																<th>占比(%)</th>
+					
+															</tr>
+					
+														</thead>
+					
+														<tbody>
+					
+															<tr>
+					
+																<td class="highlight">9小时内</td>
+					
+																<td>{$waigoutongji[0]}</td>
+					
+																<td>{$waigoutongji[0]/$waigoutongji[14]*100|round=2}</td>
+					
+																<td>平均值{$waigoutongji[7]/86400|round=6}天</td>
+					
+																<td></td>
+																<td></td>
+															</tr>
+															<tr>
+					
+																<td class="highlight">1天内</td>
+					
+																<td>{$waigoutongji[1]}</td>
+					
+																<td>{$waigoutongji[1]/$waigoutongji[14]*100|round=2}</td>
+					
+																<td><=平均值</td>
+					
+																<td>{$waigoutongji[8]}</td>
+																<td>{$waigoutongji[8]/$waigoutongji[14]*100|round=2}</td>
+															</tr>
+															<tr>
+					
+																<td class="highlight">1-3天</td>
+					
+																<td>{$waigoutongji[2]}</td>
+					
+																<td>{$waigoutongji[2]/$waigoutongji[14]*100|round=2}</td>
+					
+																<td style="background-color:#FFCC00"><3</td>
+					
+																<td style="background-color:#FFCC00">{$waigoutongji[9]}</td>
+																<td style="background-color:#FFCC00">{$waigoutongji[9]/$waigoutongji[14]*100|round=2}</td>
+															</tr>
+															<tr>
+					
+																<td class="highlight">3-10天</td>
+					
+																<td>{$waigoutongji[3]}</td>
+					
+																<td>{$waigoutongji[3]/$waigoutongji[14]*100|round=2}</td>
+					
+																<td style="background-color:#FFCC00">>=3</td>
+					
+																<td style="background-color:#FFCC00">{$waigoutongji[10]}</td>
+																<td style="background-color:#FFCC00">{$waigoutongji[10]/$waigoutongji[14]*100|round=2}</td>
+															</tr>
+															<tr>
+					
+																<td class="highlight">10-15天</td>
+					
+																<td>{$waigoutongji[4]}</td>
+					
+																<td>{$waigoutongji[4]/$waigoutongji[14]*100|round=2}</td>
+					
+																<td>>=10</td>
+					
+																<td>{$waigoutongji[11]}</td>
+																<td>{$waigoutongji[11]/$waigoutongji[14]*100|round=2}</td>
+															</tr>
+															<tr>
+					
+																<td class="highlight">15-20天</td>
+					
+																<td>{$waigoutongji[5]}</td>
+					
+																<td>{$waigoutongji[5]/$waigoutongji[14]*100|round=2}</td>
+					
+																<td>>=15</td>
+					
+																<td>{$waigoutongji[12]}</td>
+																<td>{$waigoutongji[12]/$waigoutongji[14]*100|round=2}</td>
+															</tr>
+															<tr>
+					
+																<td class="highlight">20-31天</td>
+					
+																<td>{$waigoutongji[6]}</td>
+					
+																<td>{$waigoutongji[6]/$waigoutongji[14]*100|round=2}</td>
+					
+																<td>>=20</td>
+					
+																<td>{$waigoutongji[13]}</td>
+																<td>{$waigoutongji[13]/$waigoutongji[14]*100|round=2}</td>
+															</tr>
+															<tr>
+					
+																<td class="highlight">总单据(条)</td>
+					
+																<td>{$waigoutongji[14]}</td>
+					
+																<td></td>
+					
+																<td>总单据(条)</td>
+					
+																<td>{$waigoutongji[14]}</td>
+																<td></td>
+															</tr>
+														</tbody>
+					
+													</table>
+					
+												</div>
+					
+											</div>
+					
+											<!-- END CONDENSED TABLE PORTLET-->
+					
+										</div>
+										<div class="span6">
+
+											<!-- BEGIN CONDENSED TABLE PORTLET-->
+					
+											<div class="portlet box yellow">
+					
+												<div class="portlet-title">
+					
+													<div class="caption"><i class="icon-picture"></i>{$startdate}-{$enddate}外购件未发货{$waigouweifahuocount}条</div>
+					
+												</div>
+					
+												<div class="portlet-body">
+													<div style="height:270px; overflow:auto;">
+													<table class="table table-condensed table-bordered table-hover">
+					
+														<thead>
+					
+															<tr>
+																<th>单号</th>
+					
+																<th>客户</th>
+					
+																<th>型号</th>
+					
+																<th>订单审核</th>
+					
+																<th>数量</th>
+					
+															</tr>
+					
+														</thead>
+														
+														<tbody>
+															
+															<foreach name="waigouweifahuolist" item="d">
+																<tr class="odd gradeX">
+																	<td>{$d['csocode']}</td>
+																	<td>{$d['ccusname']}</td>
+																	<td>{$d['cinvstd']}</td>
+																	<td>{$d['dverifysystime']}</td>
+																	<td>{$d['iquantity']}</td>
+																</tr>
+															
+															</foreach>
+															
+															
+														</tbody>
+														
+													</table>
+													</div>
+												</div>
+					
+											</div>
+					
+											<!-- END CONDENSED TABLE PORTLET-->
+					
+										</div>
+					
+									</div>
+									
+									<div class="row-fluid ">
+		
+										<div class="span6">
+
+											<!-- BEGIN CONDENSED TABLE PORTLET-->
+					
+											<div class="portlet box green">
+					
+												<div class="portlet-title">
+					
+													<div class="caption"><i class="icon-picture"></i>{$startdate}-{$enddate}原材料发货周期(已发)</div>
+					
+												</div>
+					
+												<div class="portlet-body">
+					
+													<table class="table table-condensed table-bordered table-hover">
+					
+														<thead>
+					
+															<tr>
+					
+																<th>周期(天)</th>
+					
+																<th>单据(条)</th>
+					
+																<th>占比(%)</th>
+					
+																<th>周期(天)</th>
+					
+																<th>单据(条)</th>
+					
+																<th>占比(%)</th>
+					
+															</tr>
+					
+														</thead>
+					
+														<tbody>
+					
+															<tr>
+					
+																<td class="highlight">9小时内</td>
+					
+																<td>{$yuancailiaotongji[0]}</td>
+					
+																<td>{$yuancailiaotongji[0]/$yuancailiaotongji[14]*100|round=2}</td>
+					
+																<td>平均值{$yuancailiaotongji[7]/86400|round=6}天</td>
+					
+																<td></td>
+																<td></td>
+															</tr>
+															<tr>
+					
+																<td class="highlight">1天内</td>
+					
+																<td>{$yuancailiaotongji[1]}</td>
+					
+																<td>{$yuancailiaotongji[1]/$yuancailiaotongji[14]*100|round=2}</td>
+					
+																<td><=平均值</td>
+					
+																<td>{$yuancailiaotongji[8]}</td>
+																<td>{$yuancailiaotongji[8]/$yuancailiaotongji[14]*100|round=2}</td>
+															</tr>
+															<tr>
+					
+																<td class="highlight">1-3天</td>
+					
+																<td>{$yuancailiaotongji[2]}</td>
+					
+																<td>{$yuancailiaotongji[2]/$yuancailiaotongji[14]*100|round=2}</td>
+					
+																<td style="background-color:#FFCC00"><3</td>
+					
+																<td style="background-color:#FFCC00">{$yuancailiaotongji[9]}</td>
+																<td style="background-color:#FFCC00">{$yuancailiaotongji[9]/$yuancailiaotongji[14]*100|round=2}</td>
+															</tr>
+															<tr>
+					
+																<td class="highlight">3-10天</td>
+					
+																<td>{$yuancailiaotongji[3]}</td>
+					
+																<td>{$yuancailiaotongji[3]/$yuancailiaotongji[14]*100|round=2}</td>
+					
+																<td style="background-color:#FFCC00">>=3</td>
+					
+																<td style="background-color:#FFCC00">{$yuancailiaotongji[10]}</td>
+																<td style="background-color:#FFCC00">{$yuancailiaotongji[10]/$yuancailiaotongji[14]*100|round=2}</td>
+															</tr>
+															<tr>
+					
+																<td class="highlight">10-15天</td>
+					
+																<td>{$yuancailiaotongji[4]}</td>
+					
+																<td>{$yuancailiaotongji[4]/$yuancailiaotongji[14]*100|round=2}</td>
+					
+																<td>>=10</td>
+					
+																<td>{$yuancailiaotongji[11]}</td>
+																<td>{$yuancailiaotongji[11]/$yuancailiaotongji[14]*100|round=2}</td>
+															</tr>
+															<tr>
+					
+																<td class="highlight">15-20天</td>
+					
+																<td>{$yuancailiaotongji[5]}</td>
+					
+																<td>{$yuancailiaotongji[5]/$yuancailiaotongji[14]*100|round=2}</td>
+					
+																<td>>=15</td>
+					
+																<td>{$yuancailiaotongji[12]}</td>
+																<td>{$yuancailiaotongji[12]/$yuancailiaotongji[14]*100|round=2}</td>
+															</tr>
+															<tr>
+					
+																<td class="highlight">20-31天</td>
+					
+																<td>{$yuancailiaotongji[6]}</td>
+					
+																<td>{$yuancailiaotongji[6]/$yuancailiaotongji[14]*100|round=2}</td>
+					
+																<td>>=20</td>
+					
+																<td>{$yuancailiaotongji[13]}</td>
+																<td>{$yuancailiaotongji[13]/$yuancailiaotongji[14]*100|round=2}</td>
+															</tr>
+															<tr>
+					
+																<td class="highlight">总单据(条)</td>
+					
+																<td>{$yuancailiaotongji[14]}</td>
+					
+																<td></td>
+					
+																<td>总单据(条)</td>
+					
+																<td>{$yuancailiaotongji[14]}</td>
+																<td></td>
+															</tr>
+														</tbody>
+					
+													</table>
+					
+												</div>
+					
+											</div>
+					
+											<!-- END CONDENSED TABLE PORTLET-->
+					
+										</div>
+										<div class="span6">
+
+											<!-- BEGIN CONDENSED TABLE PORTLET-->
+					
+											<div class="portlet box yellow">
+					
+												<div class="portlet-title">
+					
+													<div class="caption"><i class="icon-picture"></i>{$startdate}-{$enddate}原材料未发货{$yuancailiaoweifahuocount}条</div>
+					
+												</div>
+					
+												<div class="portlet-body">
+													<div style="height:270px; overflow:auto;">
+													<table class="table table-condensed table-bordered table-hover">
+					
+														<thead>
+					
+															<tr>
+																<th>单号</th>
+					
+																<th>客户</th>
+					
+																<th>型号</th>
+					
+																<th>订单审核</th>
+					
+																<th>数量</th>
+					
+															</tr>
+					
+														</thead>
+														
+														<tbody>
+															
+															<foreach name="yuancailiaoweifahuolist" item="d">
+																<tr class="odd gradeX">
+																	<td>{$d['csocode']}</td>
+																	<td>{$d['ccusname']}</td>
+																	<td>{$d['cinvstd']}</td>
+																	<td>{$d['dverifysystime']}</td>
+																	<td>{$d['iquantity']}</td>
+																</tr>
+															
+															</foreach>
+															
+															
+														</tbody>
+														
+													</table>
+													</div>
+												</div>
+					
+											</div>
+					
+											<!-- END CONDENSED TABLE PORTLET-->
+					
+										</div>
+					
+									</div>
+									
+									
+									<!--查询条件层开始-->
+									
+									<div id="fahuoshixiao_dir" class="modal hide fade" tabindex="-1" data-width="760">
+
+										<div class="modal-header">
+	
+											<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+	
+											<h3>查询条件</h3>
+	
+										</div>
+										<!--START modal-body-->
+										<div class="modal-body">
+	
+											<div class="row-fluid">
+	
+												<div class="span12">
+	
+													<!-- BEGIN FORM-->
+														<form action="{:U('Fahuoshixiao/index')}" method="post" id="form_fahuoshixiao_dir" class="form-horizontal">
+						
+															<div class="alert alert-error hide">
+						
+																<button class="close" data-dismiss="alert"></button>
+						
+																您输入的信息有误，请重新输入！
+						
+															</div>
+						
+															<div class="alert alert-success hide">
+						
+																<button class="close" data-dismiss="alert"></button>
+						
+																完成验证！
+						
+															</div>
+															
+															<div class="control-group">
+						
+																<label class="control-label span5">审核日期</label>
+						
+																<div class="controls span6">
+						
+																	<input type="text" id="workplan_date_dir_start" style="width:100px;" name="workplan_date_dir_start" readonly>&nbsp;一&nbsp;
+																	<input type="text" id="workplan_date_dir_end" style="width:100px;" name="workplan_date_dir_end" readonly>
+																	
+						
+																</div>
+						
+															</div>
+															<div class="control-group" align="center">
+						
+																<button type="submit" class="btn green">查询</button>
+						
+															</div>
+						
+														</form>
+						
+														<!-- END FORM-->
+	
+												</div>
+	
+											</div>
+	
+										</div><!--END modal-body-->
+	
+										
+	
+									</div>
+
+									<!--查询条件层结束-->
+		
+								</div>
+		
+							</div>
+		
+							<!-- END EXAMPLE TABLE PORTLET-->
+		
+						</div>
+		
+						<!-- END PAGE CONTENT-->
+				
+				</div>
+			
+				<!-- END PAGE CONTAINER--> 
+
+			</div>
+	
+		<!-- END PAGE -->
+		</div>
+		
+	</div>
+
+	<!-- END CONTAINER -->
+	
+</div>
+
+<!-- END LAYOUT-->

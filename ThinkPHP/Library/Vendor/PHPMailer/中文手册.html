@@ -1,0 +1,445 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>phpMailer中文文档手册</title>
+<meta name="keywords" content="phpMailer,中文,文档,手册,开源mail类,发送邮件" />
+<meta name="description" content="phpMailer是一个非常强大的php发送邮件类,可以设定发送邮件地址、回复地址、邮件主题、富文本内容,上传附件,并且使用起来非常方便,所以我们特地全面系统的翻译了这个优秀的php邮件类手册,同时对所有的开源软件表示支持" />
+
+<style type="text/css">
+table, caption, tbody, tfoot, thead, tr, th, td{margin:0; padding:0; border:0; font-weight:inherit; font-style:inherit; font-family:inherit; vertical-align:baseline}
+table{border-collapse:separate; border-spacing:0}
+.table{width:100%; margin-top:10px; border-collapse:collapse; border:1px solid #73afc1}
+.table td,.table th{height:17px; padding:3px 8px; border:solid #73afc1; border-width:0 1px 1px 0; background-color:#f8fbfc; color:#555}
+
+
+</style>
+</head>
+<body>
+
+<p>
+phpMailer是一个非常强大的php发送邮件类,可以设定发送邮件地址、回复地址、邮件主题、富文本内容,上传附件,并且使用起来非常方便,所以我们特地全面系统的翻译了这个优秀的php邮件类手册,同时对所有的开源软件表示支持.
+<br />
+phpMailer(支持php5和php6),使用前需要一个初始化对象如：$mail = new PHPMailer();</p>
+<h3>phpMailer5.0.0属性：</h3>
+
+<table class="table">
+    <tbody>
+        <tr>
+            <th valign="top">属性 (v5.0.0)</th>
+
+            <th valign="top">类型</th>
+            <th valign="top">默认</th>
+            <th valign="top" width="100%">描述</th>
+        </tr>
+        <tr>
+            <td valign="top">$Priority</td>
+            <td valign="top">public</td>
+
+            <td valign="top">3</td>
+            <td valign="top">优先级别(1 = 高, 3 = 中, 5 = 低)</td>
+        </tr>
+        <tr>
+            <td valign="top">$CharSet</td>
+            <td valign="top">public</td>
+            <td valign="top">iso-8859-1</td>
+
+            <td valign="top">字符集信息</td>
+        </tr>
+        <tr>
+            <td valign="top">$ContentType</td>
+            <td valign="top">public</td>
+            <td valign="top">text/plain</td>
+            <td valign="top">内容的消息类型</td>
+
+        </tr>
+        <tr>
+            <td valign="top">$Encoding</td>
+            <td valign="top">public</td>
+            <td valign="top">8bit</td>
+            <td valign="top">消息的Encoding,设置有: &quot;8bit&quot;, &quot;7bit&quot;, &quot;binary&quot;, &quot;base64&quot;, &quot;quoted-printable&quot;.</td>
+
+        </tr>
+        <tr>
+            <td valign="top">$ErrorInfo</td>
+            <td valign="top">public</td>
+            <td valign="top">&nbsp;</td>
+            <td valign="top">邮件发送错误信息.</td>
+        </tr>
+
+        <tr>
+            <td valign="top">$From</td>
+            <td valign="top">public</td>
+            <td valign="top">root@localhost</td>
+            <td valign="top">发件人地址.</td>
+        </tr>
+        <tr>
+
+            <td valign="top">$FromName</td>
+            <td valign="top">public</td>
+            <td valign="top">Root User</td>
+            <td valign="top">发件人姓名.</td>
+        </tr>
+        <tr>
+            <td valign="top">$Sender</td>
+
+            <td valign="top">public</td>
+            <td valign="top">&nbsp;</td>
+            <td valign="top">发件人的返回路径信息， If not empty, will be sent via -f to sendmail or as 'MAIL FROM' in smtp mode.</td>
+        </tr>
+        <tr>
+            <td valign="top">$Subject</td>
+            <td valign="top">public</td>
+
+            <td valign="top">&nbsp;</td>
+            <td valign="top">邮件主题</td>
+        </tr>
+        <tr>
+            <td valign="top">$Body</td>
+            <td valign="top">public</td>
+            <td valign="top">&nbsp;</td>
+
+            <td valign="top">邮件正文,可以使用HTML/text,如果是HTML,会设置IsHTML为true.</td>
+        </tr>
+        <tr>
+            <td valign="top">$AltBody</td>
+            <td valign="top">public</td>
+            <td valign="top">&nbsp;</td>
+            <td valign="top">纯文本正文,不支持HTML的备用显示</td>
+
+        </tr>
+        <tr>
+            <td valign="top">$WordWrap</td>
+            <td valign="top">public</td>
+            <td valign="top">0</td>
+            <td valign="top">达到一定数目自动换行.</td>
+        </tr>
+
+        <tr>
+            <td valign="top">$Mailer</td>
+            <td valign="top">public</td>
+            <td valign="top">mail</td>
+            <td valign="top">发送邮件的方法: (&quot;mail&quot;, &quot;sendmail&quot;, or &quot;smtp&quot;).</td>
+
+        </tr>
+        <tr>
+            <td valign="top">$Sendmail</td>
+            <td valign="top">public</td>
+            <td valign="top">/usr/sbin/sendmail</td>
+            <td valign="top">sendmail的路径.</td>
+        </tr>
+
+        <tr>
+            <td valign="top">$PluginDir</td>
+            <td valign="top">public</td>
+            <td valign="top">&nbsp;</td>
+            <td valign="top">
+            <p>PHPMailer插件路径,这是在不同的路径下的PHP include唯一有用的SMTP类</p>
+            <p>Path to PHPMailer plugins. This is now only useful if the SMTP class is in a different directory than the PHP include path.</p>
+
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">$ConfirmReadingTo</td>
+            <td valign="top">public</td>
+            <td valign="top">&nbsp;</td>
+            <td valign="top">回执信息,值为需要接收回执信息的邮箱地址.</td>
+
+        </tr>
+        <tr>
+            <td valign="top">$Hostname</td>
+            <td valign="top">public</td>
+            <td valign="top">&nbsp;</td>
+            <td valign="top">设置主机使用邮件ID和接收头和直升机作为默认字符串.如果为空，由服务器名返回的值是使用或'localhost.localdomain'.</td>
+        </tr>
+
+        <tr>
+            <td valign="top">$Host</td>
+            <td valign="top">public</td>
+            <td valign="top">localhost</td>
+            <td valign="top">
+            <p>SMTP主机,所有主机必须;隔开.可以同时设置多个主机,格式:&quot;smtp1.example.com:25;smtp2.example.com&quot;.发送邮件时按照队列尝试.</p>
+
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">$Port</td>
+            <td valign="top">public</td>
+            <td valign="top">25</td>
+            <td valign="top">SMTP主机端口</td>
+
+        </tr>
+        <tr>
+            <td valign="top">$Helo</td>
+            <td valign="top">public</td>
+            <td valign="top">&nbsp;</td>
+            <td valign="top">设置SMTP信息 (默认是$Hostname).</td>
+        </tr>
+
+        <tr>
+            <td valign="top">$SMTPAuth</td>
+            <td valign="top">public</td>
+            <td valign="top">false</td>
+            <td valign="top">SMTP服务器是否需要认证,使用了用户名和密码变量.</td>
+        </tr>
+        <tr>
+
+            <td valign="top">$Username</td>
+            <td valign="top">public</td>
+            <td valign="top">&nbsp;</td>
+            <td valign="top">设置 SMTP 用户名.</td>
+        </tr>
+        <tr>
+            <td valign="top">$Password</td>
+
+            <td valign="top">public</td>
+            <td valign="top">&nbsp;</td>
+            <td valign="top">设置 SMTP 密码.</td>
+        </tr>
+        <tr>
+            <td valign="top">$Timeout</td>
+            <td valign="top">public</td>
+
+            <td valign="top">10</td>
+            <td valign="top">设置SMTP服务延迟时间.这个功能在win32平台不能用.</td>
+        </tr>
+        <tr>
+            <td valign="top">$SMTPDebug</td>
+            <td valign="top">public</td>
+            <td valign="top">false</td>
+
+            <td valign="top">开启SMTP类调试.</td>
+        </tr>
+        <tr>
+            <td valign="top">$SMTPKeepAlive</td>
+            <td valign="top">public</td>
+            <td valign="top">false</td>
+            <td valign="top">保持连接,关闭则是SmtpClose().</td>
+
+        </tr>
+        <tr>
+            <td valign="top">$Version</td>
+            <td valign="top">public</td>
+            <td valign="top">&nbsp;</td>
+            <td valign="top">返回PHPMailer版本号</td>
+        </tr>
+
+        <tr>
+            <td valign="top">$SingleTo</td>
+            <td valign="top">public</td>
+            <td valign="top">false</td>
+            <td valign="top">Provides the ability to have the TO field process individual emails, instead of sending to entire TO addresses</td>
+        </tr>
+    </tbody>
+
+</table>
+<p>&nbsp;</p>
+<h3>phpMailer5.0.0方法：</h3>
+<p class="tCenter">英文地址：<a target="_blank" href="http://phpmailer.worxware.com/index.php?pg=methods">http://phpmailer.worxware.com/index.php?pg=methods</a></p>
+<table class="table">
+    <tbody>
+        <tr>
+            <th valign="top" width="207">方法 (v5.0.0)</th>
+            <th valign="top" width="132">类型</th>
+
+            <th valign="top" width="45">默认</th>
+            <th valign="top" width="236">描述</th>
+        </tr>
+        <tr>
+            <td valign="top">set($name, $value)</td>
+            <td valign="top">string $name<br />
+            string $value</td>
+
+            <td valign="top">&nbsp;</td>
+            <td valign="top">为用户能够创建自己的自定义伪属性.<br />
+            例子:<br />
+            $mail-&gt;set('X-MSMail-Priority', 'Normal');</td>
+        </tr>
+        <tr>
+            <td valign="top">addCustomHeader($value)</td>
+
+            <td valign="top">string $value</td>
+            <td valign="top">&nbsp;</td>
+            <td valign="top">创建自定义页头 . <br />
+            例子:<br />
+            $mail-&gt;addCustomHeader(&quot;X-Priority: 3&quot;);</td>
+
+        </tr>
+        <tr>
+            <td valign="top">MsgHTML($message)</td>
+            <td valign="top">&nbsp;</td>
+            <td valign="top">&nbsp;</td>
+            <td valign="top">使用HTML发送.比如可以定义一些html代码：<a href="http://www.kmwzjs.com">昆明网站建设</a></td>
+        </tr>
+
+        <tr>
+            <td valign="top">IsMail()</td>
+            <td valign="top">boolean</td>
+            <td valign="top">true</td>
+            <td valign="top">设置phpMailer是否使用mail()函数.(true, false or blank)</td>
+        </tr>
+        <tr>
+
+            <td valign="top">IsSMTP()</td>
+            <td valign="top">boolean</td>
+            <td valign="top">&nbsp;</td>
+            <td valign="top">设置phpMailer是否使用 SMTP. 如果设置了该项，其他相关项也需要设置.(true, false or blank)</td>
+        </tr>
+        <tr>
+            <td valign="top">IsSendmail()</td>
+
+            <td valign="top">boolean</td>
+            <td valign="top">&nbsp;</td>
+            <td valign="top">设置phpMailer是否使用Sendmail().(true, false or blank)</td>
+        </tr>
+        <tr>
+            <td valign="top">IsQmail()</td>
+            <td valign="top">boolean</td>
+
+            <td valign="top">&nbsp;</td>
+            <td valign="top">设置phpMailer是否使用Sendmail() MTA. (true, false or blank)</td>
+        </tr>
+        <tr>
+            <td valign="top">SetFrom($address, $name = &quot;&quot;)</td>
+            <td valign="top">string $address<br />
+            string $name</td>
+
+            <td valign="top">&nbsp;</td>
+            <td valign="top">增加一个邮件发件人地址.</td>
+        </tr>
+        <tr>
+            <td valign="top">AddAddress($address, $name = &quot;&quot;)</td>
+            <td valign="top">string $address<br />
+            string $name</td>
+
+            <td valign="top">&nbsp;</td>
+            <td valign="top">增加一个收件人地址(邮件目的地址).</td>
+        </tr>
+        <tr>
+            <td valign="top">AddCC($address, $name = &quot;&quot;)</td>
+            <td valign="top">string $address<br />
+            string $name</td>
+
+            <td valign="top">&nbsp;</td>
+            <td valign="top">增加一个抄送地址. 注意：此功能需要smtp服务器搭建在win32平台.</td>
+        </tr>
+        <tr>
+            <td valign="top">AddBCC($address, $name = &quot;&quot;)</td>
+            <td valign="top">string $address<br />
+            string $name</td>
+
+            <td valign="top">&nbsp;</td>
+            <td valign="top">增加一个密送地址. 注意：此功能需要smtp服务器搭建在win32平台.</td>
+        </tr>
+        <tr>
+            <td valign="top">AddReplyTo($address, $name = &quot;&quot;)</td>
+            <td valign="top">string $address<br />
+            string $name</td>
+
+            <td valign="top">&nbsp;</td>
+            <td valign="top">增加一个回复地址(别人回复时的地址).</td>
+        </tr>
+        <tr>
+            <td valign="top">Send()</td>
+            <td valign="top">&nbsp;</td>
+            <td valign="top">&nbsp;</td>
+            <td valign="top">创建信息和发送邮件,如果发送不成功则返回false,使用ErrorInfo属性可以显示错误描述,发送成功返回true.</td>
+
+        </tr>
+        <tr>
+            <td valign="top">AddAttachment($path, $name = &quot;&quot;, $encoding = &quot;base64&quot;,<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;$type = &quot;application/octet-stream&quot;)</td>
+            <td valign="top">string $path<br />
+
+            string $name<br />
+            string $encoding<br />
+            string $type</td>
+            <td valign="top">&nbsp;</td>
+            <td valign="top">添加从本地一个附件.如果找不到该附件就返回false.参数分别是:本地路径,编码,文件类型</td>
+        </tr>
+        <tr>
+
+            <td valign="top">AddEmbeddedImage($path, $cid, $name = &quot;&quot;, $encoding = &quot;base64&quot;,<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;$type = &quot;application/octet-stream&quot;)</td>
+            <td valign="top">string $path<br />
+            string $cid<br />
+
+            string $name<br />
+            string $encoding<br />
+            string $type</td>
+            <td valign="top">&nbsp;</td>
+            <td valign="top">
+            <p>增加一个嵌入式附件,包括图像，声音等其他几乎任何文件,一定要设置$type属性,如果是jpeg就使用&quot;image/jpeg&quot;,gif则是&quot;image/gif&quot;,具体对应的请自行参照相关文件.如果使用MsgHTML()就没用必要使用这个方法.</p>
+
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">ClearAddresses()</td>
+            <td valign="top">&nbsp;</td>
+            <td valign="top">&nbsp;</td>
+            <td valign="top">清除所有收件人地址,返回无效.</td>
+        </tr>
+
+        <tr>
+            <td valign="top">ClearCCs()</td>
+            <td valign="top">&nbsp;</td>
+            <td valign="top">&nbsp;</td>
+            <td valign="top">清除所有抄送地址,返回无效.</td>
+        </tr>
+        <tr>
+            <td valign="top">ClearBCCs()</td>
+
+            <td valign="top">&nbsp;</td>
+            <td valign="top">&nbsp;</td>
+            <td valign="top">清除所有密送地址,返回无效.</td>
+        </tr>
+        <tr>
+            <td valign="top">ClearReplyTos()</td>
+            <td valign="top">&nbsp;</td>
+            <td valign="top">&nbsp;</td>
+
+            <td valign="top">清除所有回复地址,返回无效.</td>
+        </tr>
+        <tr>
+            <td valign="top">ClearAllRecipients()</td>
+            <td valign="top">&nbsp;</td>
+            <td valign="top">&nbsp;</td>
+            <td valign="top">清除所有收件人/草送/密送地址,返回无效.</td>
+
+        </tr>
+        <tr>
+            <td valign="top">ClearAttachments()</td>
+            <td valign="top">&nbsp;</td>
+            <td valign="top">&nbsp;</td>
+            <td valign="top">清除所有设置的文件/字符串/二进制附件,返回无效.</td>
+        </tr>
+        <tr>
+
+            <td valign="top">ClearCustomHeaders()</td>
+            <td valign="top">&nbsp;</td>
+            <td valign="top">&nbsp;</td>
+            <td valign="top">清除所有设置的页头,返回无效.</td>
+        </tr>
+        <tr>
+            <td valign="top">Send()</td>
+
+            <td valign="top">&nbsp;</td>
+            <td valign="top">&nbsp;</td>
+            <td valign="top">发送邮件</td>
+        </tr>
+        <tr>
+            <td valign="top">SetLanguage($lang, $langpath)</td>
+            <td valign="top">string $lang<br />
+
+            string $langpath</td>
+            <td valign="top">&nbsp;</td>
+            <td valign="top">设置错误提示语言,默认是英语,第一参数是语言,第二个参数是语言文件路径</td>
+        </tr>
+    </tbody>
+</table>
+<br />
+<br />
+<br />
+<br />
+</body>
+</html>

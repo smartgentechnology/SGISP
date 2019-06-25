@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="renderer" content="webkit">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
+		<script src="view/front/bootstrap/js/jquery-1.11.2.min.js"></script>
+		<!-- 引入 Bootstrap -->
+		<link href="view/front/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<script src="view/front/bootstrap/js/bootstrap.min.js"></script>
+		<!-- 引入 lightbox -->
+		<link rel="stylesheet" href="view/front/lightbox/css/lightbox.min.css">
+		<!-- 引入 自定义样式表 -->
+		<link href="view/front/usercss/l_style.css" rel="stylesheet">
+		<!-- 引入 自定义样式表 -->
+		<script src="view/front/userjs/l_script.js"></script>
+		<!-- 包括所有已编译的插件 -->
+		<link href="view/front/usercss/meidastyles.css" rel="stylesheet">
+		<!-- HTML5 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+		<!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+		<!--[if lt IE 9]>
+		 <script src="view/front/bootstrap/js/html5.js"></script>
+		 <script src="view/front/bootstrap/js/respond.src.js"></script>
+		<![endif]-->
+		<title>众智科技-众智试验室</title>
+		<body>
+	      <!--导航栏-->
+	  <div class="container">
+		    <div class="row">
+				<div class="col-xs-12">
+					<h2 class="text-center">
+					<a style="color:#FF9900; text-decoration:none" href="index.php"><?php echo $product_information;?></a>
+					</h2>
+				</div>
+		    </div>
+	  </div>
+			<br>
+			<br>
+			
+				<ul id="myTab" class="nav nav-tabs nav-justified">
+				   <li class="text-muted"><a href="aboutus.php" target="_self"><h4 class="text-muted"><?php echo $menu_Profile;?></h4></a></li>
+				   <li class="text-muted"><a href="culture.php" target="_self"><h4 class="text-muted"><?php echo $menu_Culture;?></h4></a></li>
+				   <li  class="active"><a href="TestingRoom.php" target="_selfk"><h4 class="text-muted"><?php echo $menu_TestingRoom;?></h4></a></li>
+				   <li  class="text-muted"><a href="domain.php" target="_self"><h4 class="text-muted"><?php echo $domain_Culture;?></h4></a></li>
+				   <li  class="text-muted"><a href="telephone.php" target="_self"><h4 class="text-muted"><?php echo $telephone_name;?></h4></a></li>
+				</ul>
+			
+			<br>
+			<br>
+		 <div class="container">
+			<div class="row">    
+			  	<h4 class="text-center""><?php echo $testingcenter_a;?></h4>
+				<br>
+				<h4 class="text-center""><?php echo $testingcenter_b;?></h4>
+				<br>
+				<h4 class="text-center""><?php echo $testingcenter_c;?></h4>
+			   </div>
+			</div>
+			<br>	
+		<div class="container">
+		    <div class="row">
+			    <h4 class="text-center""><?php echo $testingcenter_a_en;?></h4>
+				<br>
+				<h4 class="text-center""><?php echo $testingcenter_b_en;?></h4>
+				<br>
+				<h4 class="text-center""><?php echo $testingcenter_c_en;?></h4>
+			</div>
+		 </div>
+		<br>
+	 <?php include(ROOT.'bottom.php');?>	
+	   </body>
+</html>

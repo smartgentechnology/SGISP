@@ -1,0 +1,438 @@
+<!-- BEGIN LAYOUT--> 
+<layout name="layout" />
+	<!-- BEGIN CONTAINER -->
+	
+	<div class="page-container  page-full-width">
+	
+		<!-- 页面光被导航栏覆盖掉 -->
+		
+		<div style="margin-top:42px;">
+		
+		<!-- BEGIN PAGE -->
+	
+		<div class="page-content">
+		
+			<!-- BEGIN PAGE CONTAINER-->
+
+			<div class="container-fluid">
+			
+				<br>
+				
+				<!-- BEGIN PAGE CONTENT-->
+		
+					<div class="row-fluid">
+		
+						<div class="span12">
+		
+							<!-- BEGIN EXAMPLE TABLE PORTLET-->
+		
+							<div class="portlet box light-grey">
+		
+								<div class="portlet-title">
+		
+									<div class="caption"><i class="icon-globe"></i>{$pagetitle}</div>
+		
+									<div class="tools">
+		
+										<a href="javascript:;" class="collapse"></a>
+		
+									</div>
+		
+								</div>
+		
+								<div class="portlet-body">
+		
+									<div class="clearfix">
+		
+										<div class="btn-group">
+											<button id="lc_nav_add" name="{:U('Nav/add')}"  class="btn green">
+		
+												 {$Think.lang.lc_add} <i class="icon-plus"></i>
+		
+											</button>
+										</div>
+										<div class="btn-group">
+											<button id="lc_nav_edit" name="{:U('Nav/edit')}"  class="btn purple">
+		
+												 {$Think.lang.lc_edit} <i class="icon-edit"></i>
+		
+											</button>
+										</div>
+										<div class="btn-group">
+											<button id="lc_nav_del" name="{:U('Nav/del')}"  class="btn black">
+		
+												 {$Think.lang.lc_del} <i class="icon-remove"></i>
+		
+											</button>
+										</div>
+		
+									</div>
+		
+									<table class="table table-striped table-bordered table-hover" id="sample_1">
+		
+										<thead>
+		
+											<tr>
+		
+												<th style="width:8px;"><input type="checkbox" class="group-checkable" data-set="#sample_1 .checkboxes" /></th>
+		
+												<th>菜单名</th>
+		
+												<th class="hidden-480">链接</th>
+												<th class="hidden-480">图标</th>
+												<th class="hidden-480">颜色</th>
+												<th class="hidden-480">排序</th>
+		
+											</tr>
+		
+										</thead>
+		
+										<tbody>
+											
+											<foreach name="navlist" item="n">
+												<tr class="odd gradeX">
+		
+													<td><input type="checkbox" class="checkboxes" value="{$n['id']}" /></td>
+			
+													<td>{$n['_name']}</td>
+			
+													<td class="hidden-480">{$n['mca']}</td>
+													<td class="hidden-480"><i class="{$n['ico']}"></i>{$n['ico']}</td>
+													<td class="hidden-480">{$n['color']}</td>
+													<td class="hidden-480">{$n['order_number']}</td>
+			
+												</tr>
+											
+											</foreach>
+		
+										</tbody>
+		
+									</table>
+									
+									<!--添加数据层开始-->
+									
+									<div id="add" style="display:none;" title="添加菜单">
+									<br>
+										<div class="row-fluid">
+		
+											<div class="span12">
+						
+												<!-- BEGIN VALIDATION STATES-->
+						
+												<div class="portlet box green">
+						
+													<div class="portlet-title">
+						
+														<div class="caption"><i class="icon-reorder"></i>添加菜单</div>
+														<div class="tools">
+		
+															<button id="removeadd" class="btn mini black">关闭</button>
+						
+														</div>
+		
+		
+													</div>
+						
+													<div class="portlet-body form">
+						
+														<!-- BEGIN FORM-->
+						
+														<form name="{:U('Nav/add')}" id="form_nav_add" class="form-horizontal">
+						
+															<div class="alert alert-error hide">
+						
+																<button class="close" data-dismiss="alert"></button>
+						
+																您输入的信息有误，请重新输入！
+						
+															</div>
+						
+															<div class="alert alert-success hide">
+						
+																<button class="close" data-dismiss="alert"></button>
+						
+																完成验证！
+						
+															</div>
+															
+															<div class="control-group">
+						
+																<label class="control-label">父菜单<span class="required">*</span></label>
+						
+																<div class="controls">
+						
+																	<select class="span6 m-wrap" id="nav_pid_a" name="nav_pid_a">
+																		<option value="0" <eq name="Think.session.add_nav_pid" value="0">selected="selected"</eq>>根菜单</option>
+																		<foreach name="navlist" item="n">
+																			
+																			<option value="{$n['id']}" <eq name="Think.session.add_nav_pid" value="$n['id']">selected="selected"</eq>>{$n['_name']}</option>
+																		
+																		</foreach>
+						
+																	</select>
+						
+																</div>
+						
+															</div>
+						
+															<div class="control-group">
+						
+																<label class="control-label">菜单名<span class="required">*</span></label>
+						
+																<div class="controls">
+						
+																	<input type="text" name="nav_name_a" id="nav_name_a" data-required="1" class="span6 m-wrap" value="{$Think.session.add_nav_name}"/>
+						
+																</div>
+						
+															</div>
+						
+															<div class="control-group">
+						
+																<label class="control-label">链接<span class="required">*</span></label>
+						
+																<div class="controls">
+						
+																	<input name="nav_mca_a" id="nav_mca_a" type="text" class="span6 m-wrap" value="{$Think.session.add_nav_mca}"/>
+						
+																</div>
+						
+															</div>
+						
+															<div class="control-group">
+						
+																<label class="control-label">图标</label>
+						
+																<div class="controls">
+						
+																	<input name="nav_ico_a" id="nav_ico_a" type="text" class="span6 m-wrap" value="{$Think.session.add_nav_ico}"/>
+						
+																</div>
+						
+															</div>
+															<div class="control-group">
+						
+																<label class="control-label">颜色</label>
+						
+																<div class="controls">
+						
+																	<input name="nav_color_a" id="nav_color_a" type="text" class="span6 m-wrap" value="{$Think.session.add_nav_color}"/>
+						
+																</div>
+						
+															</div>
+															<div class="control-group">
+						
+																<label class="control-label">排序</label>
+						
+																<div class="controls">
+						
+																	<input name="nav_order_number_a" id="nav_order_number_a" type="text" class="span6 m-wrap" value=""/>
+						
+																</div>
+						
+															</div>
+															
+															<div class="form-actions">
+						
+																<button type="submit" class="btn green">添加</button>
+						
+															</div>
+						
+														</form>
+						
+														<!-- END FORM-->
+						
+													</div>
+						
+												</div>
+						
+												<!-- END VALIDATION STATES-->
+						
+											</div>
+						
+										</div>
+		
+		
+										
+									</div>
+									
+									<!--添加数据层结束-->
+									
+									<!--修改数据层开始-->
+									
+									<div id="edit" style="display:none;" title="修改用户">
+									<br>
+										<div class="row-fluid">
+		
+											<div class="span12">
+						
+												<!-- BEGIN VALIDATION STATES-->
+						
+												<div class="portlet box green">
+						
+													<div class="portlet-title">
+						
+														<div class="caption"><i class="icon-reorder"></i>修改用户</div>
+														<div class="tools">
+		
+															<button id="removeedit" class="btn mini black">关闭</button>
+						
+														</div>
+		
+		
+													</div>
+						
+													<div class="portlet-body form">
+						
+														<!-- BEGIN FORM-->
+						
+														<form name="{:U('Nav/edit')}" id="form_nav_edit" class="form-horizontal">
+						
+															<div class="alert alert-error hide">
+						
+																<button class="close" data-dismiss="alert"></button>
+						
+																您输入的信息有误，请重新输入！
+						
+															</div>
+						
+															<div class="alert alert-success hide">
+						
+																<button class="close" data-dismiss="alert"></button>
+						
+																完成验证！
+						
+															</div>
+						
+															<div class="control-group">
+						
+																<label class="control-label">父菜单<span class="required">*</span></label>
+						
+																<div class="controls">
+						
+																	<select class="span6 m-wrap" id="nav_pid_e" name="nav_pid_e">
+																		<option value="0">根菜单</option>
+																		<foreach name="navlist" item="n">
+																			
+																			<option value="{$n['id']}">{$n['_name']}</option>
+																		
+																		</foreach>
+						
+																	</select>
+						
+																</div>
+						
+															</div>
+						
+															<div class="control-group">
+						
+																<label class="control-label">菜单名<span class="required">*</span></label>
+						
+																<div class="controls">
+						
+																	<input type="text" name="nav_name_e" id="nav_name_e" data-required="1" class="span6 m-wrap" value=""/>
+						
+																</div>
+						
+															</div>
+						
+															<div class="control-group">
+						
+																<label class="control-label">链接<span class="required">*</span></label>
+						
+																<div class="controls">
+						
+																	<input name="nav_mca_e" id="nav_mca_e" type="text" class="span6 m-wrap" value=""/>
+						
+																</div>
+						
+															</div>
+						
+															<div class="control-group">
+						
+																<label class="control-label">图标</label>
+						
+																<div class="controls">
+						
+																	<input name="nav_ico_e" id="nav_ico_e" type="text" class="span6 m-wrap" value=""/>
+						
+																</div>
+						
+															</div>
+															<div class="control-group">
+						
+																<label class="control-label">颜色</label>
+						
+																<div class="controls">
+						
+																	<input name="nav_color_e" id="nav_color_e" type="text" class="span6 m-wrap" value=""/>
+						
+																</div>
+						
+															</div>
+															
+															<div class="control-group">
+						
+																<label class="control-label">排序</label>
+						
+																<div class="controls">
+						
+																	<input name="nav_order_number_e" id="nav_order_number_e" type="text" class="span6 m-wrap" value=""/>
+						
+																</div>
+						
+															</div>
+															<input type="hidden" id="nav_id_e"/>
+															<div class="form-actions">
+						
+																<button type="submit" class="btn green">修改</button>
+						
+															</div>
+						
+														</form>
+						
+														<!-- END FORM-->
+						
+													</div>
+						
+												</div>
+						
+												<!-- END VALIDATION STATES-->
+						
+											</div>
+						
+										</div>
+		
+		
+										
+									</div>
+									
+									<!--修改数据层结束-->
+		
+								</div>
+		
+							</div>
+		
+							<!-- END EXAMPLE TABLE PORTLET-->
+		
+						</div>
+		
+					<!-- END PAGE CONTENT-->
+				
+				</div>
+			
+				<!-- END PAGE CONTAINER--> 
+
+			</div>
+	
+		<!-- END PAGE -->
+		</div>
+		
+	</div>
+
+	<!-- END CONTAINER -->
+	
+</div>
+
+<!-- END LAYOUT--> 

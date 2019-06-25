@@ -1,0 +1,832 @@
+<!-- BEGIN LAYOUT--> 
+<layout name="layout" />
+	<!-- BEGIN CONTAINER -->
+	
+	<div class="page-container  page-full-width">
+	
+		<!-- 页面光被导航栏覆盖掉 -->
+		
+		<div style="margin-top:42px;">
+		
+			<!-- BEGIN PAGE -->
+	
+			<div class="page-content">
+			
+			<!-- BEGIN PAGE CONTAINER-->
+			
+				<div class="container-fluid">
+				
+					<br>
+				
+					<!-- BEGIN PAGE CONTENT-->
+						<div class="row-fluid">
+		
+						<div class="span12">
+		
+							<!-- BEGIN EXAMPLE TABLE PORTLET-->
+		
+							<div class="portlet box light-grey">
+		
+								<div class="portlet-title">
+		
+									<div class="caption"><i class="icon-globe"></i>{$pagetitle}-({$count})条</div>
+		
+									<div class="tools">
+		
+										<a href="javascript:;" class="collapse"></a>
+		
+									</div>
+		
+								</div>
+		
+								<div class="portlet-body">
+		
+									<div class="clearfix">
+										
+										<div class="btn-group">
+											<a id="lc_fanxiu_set" data-toggle="modal" href="{:U('Columnset/index/module/1')}" class="btn green">
+		
+												 {$Think.lang.lc_setcolumn} <i class="icon-cog"></i>
+		
+											</a>
+										</div>
+										
+										<div class="btn-group">
+											<a id="lc_fanxiu_dir" data-toggle="modal" href="#fanxiu_dir" class="btn black">
+		
+												 {$Think.lang.lc_dir} <i class="icon-search"></i>
+		
+											</a>
+										</div>
+										<div class="btn-group">
+											<button id="lc_fanxiu_edit" name="{:U('Fanxiu/edit')}"  class="btn purple">
+		
+												 {$Think.lang.lc_edit} <i class="icon-edit"></i>
+		
+											</button>
+										</div>
+										<div class="btn-group">
+											
+											<a id="lc_fanxiu_export" href="{:U('Fanxiu/exportExcel')}"  class="btn black">
+		
+												 {$Think.lang.lc_export} <i class="icon-external-link"></i>
+		
+											</a>
+											
+										</div>
+										<div class="btn-group">
+											<button id="lc_fanxiu_fenxi" name="{:U('Fanxiu/cause')}"  class="btn red">
+		
+												 {$Think.lang.lc_fanxiufenxi} <i class="icon-search"></i>
+		
+											</button>
+											
+										</div>
+										<div class="btn-group">
+											<button id="lc_fanxiud_tabflag" name="{:U('Fanxiud/tabflag')}"  class="btn green">
+		
+												 {$Think.lang.lc_tabflag} 
+		
+											</button>
+										</div>
+										<div class="btn-group">
+											<button id="lc_fanxiud_qutabflag" name="{:U('Fanxiud/qutabflag')}"  class="btn purple">
+		
+												 {$Think.lang.lc_qutabflag} 
+		
+											</button>
+										</div>
+										<div class="btn-group">
+											<button id="lc_fanxiu_remark" name="{:U('Fanxiu/remark')}"  class="btn purple">
+		
+												 {$Think.lang.lc_remark} <i class="icon-edit"></i>
+		
+											</button>
+										</div>
+									</div>
+									<!--批改备注数据层开始-->
+									
+									<div id="remark" style="display:none;" title="批改备注">
+										<div class="row-fluid">
+		
+											<div class="span12">
+						
+												<!-- BEGIN VALIDATION STATES-->
+						
+												<div class="portlet box green">
+						
+													<div class="portlet-title">
+						
+														<div class="caption"><i class="icon-reorder"></i>批改备注</div>
+														<div class="tools">
+		
+															<button id="removeremark" class="btn mini black">关闭</button>
+						
+														</div>
+		
+		
+													</div>
+						
+													<div class="portlet-body form">
+						
+														<!-- BEGIN FORM-->
+						
+														<form name="{:U('Fanxiu/remark')}" id="form_fanxiu_remark" class="form-horizontal">
+						
+															<div class="alert alert-error hide">
+						
+																<button class="close" data-dismiss="alert"></button>
+						
+																您输入的信息有误，请重新输入！
+						
+															</div>
+						
+															<div class="alert alert-success hide">
+						
+																<button class="close" data-dismiss="alert"></button>
+						
+																完成验证！
+						
+															</div>
+															<div class="row-fluid">
+																<div class="control-group span4">
+																	<label class="control-label">备注</label>
+						
+																	<div class="controls">
+							
+																		<textarea id="fanxiu_remark_r" class="m-wrap" name="fanxiu_remark_r" style="width:400px;"></textarea>
+																	</div>
+																	
+																</div>
+																
+																<div class="control-group span1">
+																	<center><button type="submit" class="btn green">修改</button></center>
+																</div>
+																
+															</div>
+															
+															<input type="hidden" id="fanxiu_id_r" name="fanxiu_id_r"/>
+															
+						
+														</form>
+						
+														<!-- END FORM-->
+						
+													</div>
+						
+												</div>
+						
+												<!-- END VALIDATION STATES-->
+						
+											</div>
+						
+										</div>
+									</div>
+									
+									<!--批改备注数据层结束-->
+									
+									<!--修改数据层开始-->
+									
+									<div id="edit" style="display:none;" title="修改返修记录">
+									<br>
+										<div class="row-fluid">
+		
+											<div class="span12">
+						
+												<!-- BEGIN VALIDATION STATES-->
+						
+												<div class="portlet box green">
+						
+													<div class="portlet-title">
+						
+														<div class="caption"><i class="icon-reorder"></i>修改返修记录</div>
+														<div class="tools">
+		
+															<button id="removeedit" class="btn mini black">关闭</button>
+						
+														</div>
+		
+		
+													</div>
+						
+													<div class="portlet-body form">
+						
+														<!-- BEGIN FORM-->
+						
+														<form name="{:U('Fanxiu/edit')}" id="form_fanxiu_edit" class="form-horizontal">
+						
+															<div class="alert alert-error hide">
+						
+																<button class="close" data-dismiss="alert"></button>
+						
+																您输入的信息有误，请重新输入！
+						
+															</div>
+						
+															<div class="alert alert-success hide">
+						
+																<button class="close" data-dismiss="alert"></button>
+						
+																完成验证！
+						
+															</div>
+															
+															<div class="row-fluid">
+																<div class="control-group span6">
+							
+																	<label class="control-label">客户<span class="required">*</span></label>
+																	<div class="controls">
+							
+																		<input type="text" id="fanxiu_customer_e" class="span6 m-wrap" name="fanxiu_customer_e" data-required="1">
+																	
+																	</div>
+							
+																</div>
+																<div class="control-group span6">
+																	<label class="control-label">处理结果<span class="required">*</span></label>
+																	<div class="controls">
+																		
+																		<select class="span6 m-wrap" id="fanxiu_result_e" name="fanxiud_result_e">
+																			<foreach name="result" item="r">
+																				<option value="{$r['id']}">{$r['value']}</option>
+																			</foreach>
+																				
+																		</select>
+																	</div>
+																</div>
+																
+															</div>
+															<div class="row-fluid">
+																
+																<div class="control-group span6">
+																	<label class="control-label">产品型号<span class="required">*</span></label>
+																	<div class="controls chzn-controls">
+
+																		<select id="fanxiu_product_e" class="chosen" data-with-diselect="1" data-placeholder="搜索" tabindex="1" name="fanxiu_product_e" style="width:450px;">
+																			<foreach name="inventorylist" item="d">
+											
+																				<option value="{$d['i_id']}">{$d['cinvstd']}&nbsp;{$d['cinvname']}</option>
+																			</foreach>
+										
+																		</select>
+																		
+																	</div>
+
+																</div>
+																<div class="control-group span6">
+						
+																	<label class="control-label">生产日期<span class="required">*</span></label>
+							
+																	<div class="controls">
+							
+																		<input type="text" id="fanxiu_pdate_e" class="span6 m-wrap" name="fanxiu_pdate_e" data-required="1" readonly>
+																		
+							
+																	</div>
+							
+																</div>
+																
+																
+							
+															</div>
+															<div class="row-fluid">
+																<div class="control-group span6">
+																	<label class="control-label">条形码<span class="required">*</span></label>
+																	<div class="controls">
+																		<input type="text" id="fanxiu_barcode_e" class="span6 m-wrap" name="fanxiu_barcode_e" data-required="1"/>
+																	</div>
+																</div>
+																<div class="control-group span6">
+																	<label class="control-label">数量<span class="required">*</span></label>
+																	<div class="controls chzn-controls">
+
+																		<input type="text" id="fanxiu_qty_e" class="span6 m-wrap" name="fanxiu_qty_e" data-required="1"/>
+																		
+																	</div>
+
+																</div>
+							
+															</div>
+															<div class="row-fluid">
+																<div class="control-group span6">
+																	<label class="control-label">业务经理<span class="required">*</span></label>
+																	<div class="controls chzn-controls">
+
+																		<select id="fanxiu_person_e" class="chosen" data-with-diselect="1" data-placeholder="搜索" tabindex="1" name="fanxiu_person_e">
+																			<foreach name="personlist" item="p">
+											
+																				<option value="{$p['cpersoncode']}">{$p['cpersonname']}</option>
+																			</foreach>
+										
+																		</select>
+																		
+																	</div>
+
+																</div>
+																<div class="control-group span6">
+																	<label class="control-label">备注</label>
+						
+																	<div class="controls">
+							
+																		<textarea id="fanxiu_remark_e" class="span6 m-wrap" style="height:100px;" name="fanxiu_remark_e"></textarea>
+																	</div>
+																</div>
+							
+															</div>
+															
+															<input type="hidden" id="fanxiu_id_e" name="fanxiu_id_e"/>
+															<div class="form-actions">
+						
+																<button type="submit" class="btn green">修改</button>
+						
+															</div>
+						
+														</form>
+						
+														<!-- END FORM-->
+						
+													</div>
+						
+												</div>
+						
+												<!-- END VALIDATION STATES-->
+						
+											</div>
+						
+										</div>
+										
+									</div>
+									
+									<!--修改数据层结束-->
+									<!--返修分析数据层开始-->
+									
+									<div id="cause" style="display:none;" title="返修分析">
+									<br>
+										<div class="row-fluid">
+		
+											<div class="span12">
+						
+												<!-- BEGIN VALIDATION STATES-->
+						
+												<div class="portlet box green">
+						
+													<div class="portlet-title">
+						
+														<div class="caption"><i class="icon-reorder"></i>返修分析</div>
+														<div class="tools">
+		
+															<button id="causeedit" class="btn mini black">关闭</button>
+						
+														</div>
+		
+		
+													</div>
+						
+													<div class="portlet-body form">
+						
+														<!-- BEGIN FORM-->
+						
+														<form name="{:U('Fanxiu/cause')}" id="form_fanxiu_cause" class="form-horizontal">
+						
+															<div class="alert alert-error hide">
+						
+																<button class="close" data-dismiss="alert"></button>
+						
+																您输入的信息有误，请重新输入！
+						
+															</div>
+						
+															<div class="alert alert-success hide">
+						
+																<button class="close" data-dismiss="alert"></button>
+						
+																完成验证！
+						
+															</div>
+															
+															<div class="row-fluid">
+																<div class="control-group span4">
+																	<label class="control-label">不良类型</label>
+																	<div class="controls">
+																		
+																		<select class="span6 m-wrap" id="fanxiucause_bad_e" name="fanxiucause_bad_e">																
+																			<foreach name="badlist" item="b">
+																				<option value="{$b['id']}">{$b['value']}</option>
+																			</foreach>
+																				
+																		</select>
+																			
+																	</div>
+																</div>
+																<div class="control-group span4">
+																	<label class="control-label">原因分析</label>
+																	<div class="controls chzn-controls">
+			
+																		<textarea id="fanxiucause_bad_cause_e" class="span12 m-wrap" style="height:80px;" name="fanxiucause_bad_cause_e"></textarea>
+																			
+																	</div>
+			
+																</div>
+																<div class="control-group span4">
+																	<label class="control-label">改进方案</label>
+																	<div class="controls chzn-controls">
+			
+																		<textarea id="fanxiucause_improve_e" class="span12 m-wrap" style="height:80px;" name="fanxiucause_improve_e"></textarea>
+																			
+																	</div>
+			
+																</div>
+																
+															</div>
+															
+															<input type="hidden" id="fanxiucause_id_e" name="fanxiucause_id_e"/>
+															<div class="form-actions">
+						
+																<button type="submit" class="btn green">提交</button>
+						
+															</div>
+						
+														</form>
+						
+														<!-- END FORM-->
+						
+													</div>
+						
+												</div>
+						
+												<!-- END VALIDATION STATES-->
+						
+											</div>
+						
+										</div>
+		
+		
+										
+									</div>
+									
+									<!--返修分析数据层结束-->
+									<div class="row-fluid">
+	
+											<!--BEGIN TABS-->
+	
+											<div class="span12 tabbable tabbable-custom" style="overflow:scroll; height:600px;">
+													
+												<table style="width:{$width}px;" class="table table-striped table-bordered table-hover" id="sample">
+
+													<thead>
+					
+														<tr>
+					
+															<th><input type="checkbox" class="group-checkable" data-set="#sample .checkboxes" /></th>
+															<foreach name="namelist" item="n">
+															<th style="width:{$n['width']}px;">{$n['name']}</th>
+															</foreach>
+														</tr>
+					
+													</thead>
+					
+													<tbody>
+														
+														<foreach name="datalist" item="d">
+															<tr class="odd gradeX">
+																<td><input type="checkbox" class="checkboxes" value="{$d['id']}" /></td>
+																<foreach name="fieldlist" item="f">
+																<td><notempty name="d[$f]"><switch name="f">
+<case value="qz"><a href="__PUBLIC__/{$d[$f]}" target="_blank">查看</a></case>
+<case value="qb"><a href="__PUBLIC__/{$d[$f]}" target="_blank">查看</a></case>
+<case value="hz"><a href="__PUBLIC__/{$d[$f]}" target="_blank">查看</a></case>
+<case value="hb"><a href="__PUBLIC__/{$d[$f]}" target="_blank">查看</a></case>
+<case value="expressid"><a class="expressid" name="{$d['id']}">{$d[$f]}</a></case>
+<case value="gongneng"><a class="gongneng" name="{$d['id']}">查看</a></case>
+<case value="baozhuang"><a class="baozhuang" name="{$d['id']}">查看</a></case>
+<default />{$d[$f]}
+</switch></notempty></td>
+																</foreach>
+															</tr>
+														
+														</foreach>
+					
+													</tbody>
+					
+												</table>
+												
+											</div>
+											<div class="clearfix">
+
+												{$page}
+				
+											</div>
+											<!--END TABS-->
+										
+									</div>
+									
+									<!--查询条件层开始-->
+									
+									<div id="fanxiu_dir" class="modal hide fade" tabindex="-1" data-width="760">
+
+										<div class="modal-header">
+	
+											<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+	
+											<h3>查询条件</h3>
+	
+										</div>
+										<!--START modal-body-->
+										<div class="modal-body">
+	
+											<div class="row-fluid">
+	
+												<div class="span12">
+	
+													<!-- BEGIN FORM-->
+						
+														<form action="{:U('Fanxiu/index')}" method="post" id="form_fanxiud_dir" class="form-horizontal">
+						
+															<div class="alert alert-error hide">
+						
+																<button class="close" data-dismiss="alert"></button>
+						
+																您输入的信息有误，请重新输入！
+						
+															</div>
+						
+															<div class="alert alert-success hide">
+						
+																<button class="close" data-dismiss="alert"></button>
+						
+																完成验证！
+						
+															</div>
+															<div class="control-group">
+						
+																<label class="control-label span5">客户</label>
+						
+																<div class="controls span7">
+						
+																	<input type="text" id="fanxiud_customer_dir" class="span7 m-wrap" name="fanxiud_customer_dir">
+																	
+						
+																</div>
+						
+															</div>
+															<div class="control-group">
+						
+																<label class="control-label span5">现象-过程</label>
+						
+																<div class="controls span7">
+						
+																	<input type="text" id="fanxiud_fault_dir" class="span7 m-wrap" name="fanxiud_fault_dir">
+																	
+						
+																</div>
+						
+															</div>
+															<div class="control-group">
+						
+																<label class="control-label span5">接收日期</label>
+						
+																<div class="controls span6">
+						
+																	<input type="text" id="fanxiud_rdate_dir_start" style="width:100px;" name="fanxiud_rdate_dir_start" readonly>&nbsp;一&nbsp;
+																	<input type="text" id="fanxiud_rdate_dir_end" style="width:100px;" name="fanxiud_rdate_dir_end" readonly>
+																	
+						
+																</div>
+						
+															</div>
+															
+															<div class="control-group">
+						
+																<label class="control-label span5">产品型号</label>
+						
+																<div class="controls span6">
+																
+																	<input type="text" id="fanxiud_product_dir" class="span5 m-wrap" name="fanxiud_product_dir">
+
+																</div>
+						
+															</div>
+
+															<div class="control-group">
+						
+																<label class="control-label span5">条码</label>
+						
+																<div class="controls span6">
+						
+																	<input type="text" id="fanxiud_barcode_dir" class="span5 m-wrap" name="fanxiud_barcode_dir">
+																	
+						
+																</div>
+						
+															</div>
+															<div class="control-group">
+						
+																<label class="control-label span5">生产日期</label>
+						
+																<div class="controls span6">
+						
+																	<input type="text" id="fanxiud_pdate_dir_start" style="width:100px;" name="fanxiud_pdate_dir_start" readonly>&nbsp;一&nbsp;
+																	<input type="text" id="fanxiud_pdate_dir_end" style="width:100px;" name="fanxiud_pdate_dir_end" readonly>
+																	
+						
+																</div>
+						
+															</div>
+															<div class="control-group">
+						
+																<label class="control-label span5">产-返间隔</label>
+																<div class="controls span6">
+																
+						
+																	<select style="width:60px;" id="fanxiud_prdate_tag_dir" name="fanxiud_prdate_tag_dir">
+																	<option value="0" selected="selected"></option>
+																	<option value="1">></option>
+																	<option value="2">>=</option>
+																	<option value="3">=</option>
+																	<option value="4"><</option>
+																	<option value="5"><=</option>
+							
+																	</select>
+																	<input type="text" style="width:50px;" id="fanxiud_prdate_number_dir" name="fanxiud_prdate_number_dir">&nbsp;&nbsp;(月)
+																</div>
+															</div>
+															<div class="control-group">
+						
+																<label class="control-label span5">处理结果</label>
+																<div class="controls span6">
+																
+						
+																	<select class="span6 m-wrap" id="fanxiud_result_dir" name="fanxiud_result_dir">
+																		<option value="0"></option>
+																		<foreach name="result" item="r">
+																			<option value="{$r['id']}">{$r['value']}</option>
+																		</foreach>
+																			
+																	</select>
+																</div>
+															</div>
+															<div class="control-group">
+						
+																<label class="control-label span5">不良类型</label>
+																<div class="controls span6">
+																
+						
+																	<select class="span6 m-wrap" id="fanxiud_bad_dir" name="fanxiud_bad_dir">
+																		<option value="0"></option>
+																		<foreach name="badlist" item="b">
+																			<option value="{$b['id']}">{$b['value']}</option>
+																		</foreach>
+																			
+																	</select>
+																</div>
+															</div>
+															<div class="control-group">
+						
+																<label class="control-label span5">状态</label>
+																<div class="controls span6">
+																
+						
+																	<select class="span6 m-wrap" id="fanxiud_flag_dir" name="fanxiud_flag_dir">
+																		<option value="0"></option>
+																		<foreach name="flaglist" item="f">
+																			<option value="{$f['id']}">{$f['value']}</option>
+																		</foreach>
+																			
+																	</select>
+																</div>
+															</div>
+															<div class="control-group" align="center">
+						
+																<button type="submit" class="btn green">查询</button>
+						
+															</div>
+						
+														</form>
+						
+														<!-- END FORM-->
+	
+												</div>
+	
+											</div>
+	
+										</div><!--END modal-body-->
+	
+										
+	
+									</div>
+
+									<!--查询条件层结束-->
+									
+									<!--快递记录预览层开始-->
+									
+									<div id="expressid_view" name="{:U('Fanxiu/disexpressid')}" class="modal hide fade" tabindex="-1" data-width="760">
+										<div class="modal-header">
+	
+											<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+	
+											<h3>快递信息</h3>
+	
+										</div>
+	
+										<div class="modal-body">
+	
+											<div class="row-fluid">
+	
+												<div class="span12">
+	
+													<label id="lab_expressid_view" class="span12 m-wrap"></label>
+	
+												</div>
+	
+											</div>
+	
+										</div>
+	
+									</div>
+
+									<!--快递记录预览层结束-->
+									<!--功能记录预览层开始-->
+									
+									<div id="gongneng_view" name="{:U('Fanxiugongneng/disgongneng')}" class="modal hide fade" tabindex="-1" data-width="760">
+
+										<div class="modal-header">
+	
+											<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+	
+											<h3>功能检验记录</h3>
+	
+										</div>
+	
+										<div class="modal-body">
+	
+											<div class="row-fluid">
+	
+												<div class="span12">
+	
+													<label id="lab_gongneng_view" class="span12 m-wrap"></label>
+	
+												</div>
+	
+											</div>
+	
+										</div>
+	
+									</div>
+
+									<!--功能记录预览层结束-->
+									<!--包装记录预览层开始-->
+									
+									<div id="baozhuang_view" name="{:U('Fanxiubaozhuang/disbaozhuang')}" class="modal hide fade" tabindex="-1" data-width="760">
+
+										<div class="modal-header">
+	
+											<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+	
+											<h3>包装检验记录</h3>
+	
+										</div>
+	
+										<div class="modal-body">
+	
+											<div class="row-fluid">
+	
+												<div class="span12">
+	
+													<label id="lab_baozhuang_view" class="span12 m-wrap"></label>
+	
+												</div>
+	
+											</div>
+	
+										</div>
+	
+									</div>
+
+									<!--包装记录预览层结束-->
+		
+								</div>
+		
+							</div>
+		
+							<!-- END EXAMPLE TABLE PORTLET-->
+		
+						</div>
+						
+		
+					<!-- END PAGE CONTENT-->
+				
+				</div>
+			
+				<!-- END PAGE CONTAINER--> 
+
+			</div>
+	
+		<!-- END PAGE -->
+		</div>
+		
+	</div>
+
+	<!-- END CONTAINER -->
+	
+</div>
+<!-- END LAYOUT-->

@@ -1,0 +1,270 @@
+<!-- BEGIN LAYOUT--> 
+<layout name="layout" />
+	<!-- BEGIN CONTAINER -->
+	
+	<div class="page-container  page-full-width">
+	
+		<!-- 页面光被导航栏覆盖掉 -->
+		
+		<div style="margin-top:42px;">
+		<br>
+			<!-- BEGIN PAGE -->
+	
+			<div class="page-content">
+			
+			<!-- BEGIN PAGE CONTAINER-->
+				
+					
+									
+					<!--添加数据层开始-->
+					
+					<div class="row-fluid">
+
+						<div style="width:70%;display:block; float:left; margin-left:-50px;">
+	
+							<!-- BEGIN FORM-->
+
+							<form name="{:U('Fanxiuh/edit')}" id="form_fanxiuh_edit" class="form-horizontal">
+
+								<div class="alert alert-error hide">
+
+									<button class="close" data-dismiss="alert"></button>
+
+									您输入的信息有误，请重新输入！
+
+								</div>
+
+								<div class="alert alert-success hide">
+
+									<button class="close" data-dismiss="alert"></button>
+
+									完成验证！
+
+								</div>
+								
+								<div class="row-fluid">
+									<div class="control-group span4">
+										<label class="control-label">条形码<span class="required">*</span></label>
+										<div class="controls">
+											<input id="fanxiuh_barcode_e" class="m-wrap" name="fanxiuh_barcode_e"/>
+										</div>
+									</div>
+									<div class="control-group span4">
+
+										<label class="control-label">接收日期</label>
+										<div class="controls">
+
+											<input type="text" id="fanxiuh_receive_date_e" class="m-wrap" name="fanxiuh_receive_date_e" readonly/>
+										</div>
+
+									</div>
+									<div class="control-group span4">
+
+										<label class="control-label">客户</label>
+										<div class="controls">
+
+											<input type="text" id="fanxiuh_customer_e" class="m-wrap" name="fanxiuh_customer_e" readonly/>
+										</div>
+
+									</div>
+									
+									
+								</div>
+								<div class="row-fluid">
+									<div class="control-group span4">
+										<label class="control-label">处理结果</label>
+										<div class="controls">
+											
+											<input type="text" class="m-wrap" id="fanxiuh_result_e" name="fanxiuh_result_e" readonly/>
+												
+										</div>
+									</div>
+									<div class="control-group span4">
+										<label class="control-label">产品型号</label>
+										<div class="controls chzn-controls">
+
+											<input type="text" class="m-wrap" id="fanxiuh_product_e" name="fanxiuh_product_e" readonly/>
+												
+										</div>
+
+									</div>
+									<div class="control-group span4">
+
+										<label class="control-label">生产日期</label>
+
+										<div class="controls">
+
+											<input type="text" id="fanxiuh_pdate_e" class="m-wrap" name="fanxiuh_pdate_e" readonly/>
+
+										</div>
+
+									</div>
+								</div>
+								
+								<div class="row-fluid">
+									<div class="control-group span4">
+										<label class="control-label">维修次数</label>
+										<div class="controls chzn-controls">
+
+											<input type="text" class="m-wrap" id="fanxiuh_cishu_e" name="fanxiuh_cishu_e" readonly/>
+										</div>
+
+									</div>
+									<div class="control-group span4">
+
+										<label class="control-label">产-返间隔(月)</label>
+
+										<div class="controls">
+
+											<input type="text" id="fanxiuh_prdate_e" class="m-wrap" name="fanxiuh_prdate_e" readonly/>
+										</div>
+
+									</div>
+									<div class="control-group span4">
+										<label class="control-label">备注</label>
+
+										<div class="controls">
+
+											<input type="text" id="fanxiuh_remark_e" class="m-wrap" name="fanxiuh_remark_e" readonly/>
+										</div>
+									</div>
+								</div>
+								<div class="row-fluid">
+									<div class="control-group span4">
+										<label class="control-label">硬件版本<span class="required">*</span></label>
+										<div class="controls">
+											
+											<input type="text" class="m-wrap" id="fanxiuh_hv_e" name="fanxiuh_hv_e"/>
+												
+										</div>
+									</div>
+									
+									<div class="control-group span4">
+										<label class="control-label">软件版本<span class="required">*</span></label>
+										<div class="controls chzn-controls">
+
+											<input type="text" class="m-wrap" id="fanxiuh_sv_e" name="fanxiuh_sv_e"/>
+												
+										</div>
+
+									</div>
+									<div class="control-group span4">
+										<label class="control-label">修后软件版本<span class="required">*</span></label>
+										<div class="controls chzn-controls">
+
+											<input type="text" class="m-wrap" id="fanxiuh_hsv_e" name="fanxiuh_hsv_e"/>
+												
+										</div>
+
+									</div>
+									
+								</div>
+								<div class="row-fluid">
+									<div class="control-group span4">
+										<label class="control-label">故障现象<span class="required">*</span></label>
+										<div class="controls">
+											
+											<textarea id="fanxiuh_fault_e" class="m-wrap" style="height:80px;" name="fanxiuh_fault_e"></textarea>
+												
+										</div>
+									</div>
+									<div class="control-group span4">
+										<label class="control-label">维修过程<span class="required">*</span></label>
+										<div class="controls">
+											
+											<textarea id="fanxiuh_maint_e" class="m-wrap" style="height:80px;" name="fanxiuh_maint_e"></textarea>
+												
+										</div>
+									</div>
+									
+								</div>
+								<div class="row-fluid">
+									<div class="control-group span4">
+										<label class="control-label">修后拍摄</label>
+										<div class="controls">
+											<div id="camera_xh"></div>
+											<input type="button" value="修前正面" id="qzbtn">
+											<input type="button" value="修前背面" id="qbbtn">
+											<input type="button" value="修后正面" id="hzbtn">
+											<input type="button" value="修后背面" id="hbbtn">
+										</div>
+									</div>
+									<div class="control-group span4">
+										<label class="control-label">修前正面</label>
+										<div class="controls">
+											<input type="hidden" class="m-wrap" id="fanxiuh_qz_e" name="fanxiuh_qz_e" readonly/>
+											<a id="ahqz" href="" target="_blank"><img id="imghqz" /></a>
+											
+											
+										</div>
+									</div>
+									
+									<div class="control-group span4">
+										<label class="control-label">修前背面</label>
+										<div class="controls chzn-controls">
+											<input type="hidden" class="m-wrap" id="fanxiuh_qb_e" name="fanxiuh_qb_e" readonly/>
+											<a id="ahqb" href="" target="_blank"><img id="imghqb" /></a>
+											
+										</div>
+
+									</div>
+								</div>
+								
+								<div class="row-fluid">
+									<div class="control-group span4">
+										<label class="control-label">修后正面</label>
+										<div class="controls">
+											
+											<input type="hidden" class="m-wrap" id="fanxiuh_hz_e" name="fanxiuh_hz_e" readonly/>
+											<a id="ahhz" href="" target="_blank"><img id="imghz" /></a>
+											
+										</div>
+									</div>
+									
+									<div class="control-group span4">
+										<label class="control-label">修后背面</label>
+										<div class="controls chzn-controls">
+
+											<input type="hidden" class="m-wrap" id="fanxiuh_hb_e" name="fanxiuh_hb_e" readonly/>
+											<a id="ahhb" href="" target="_blank"><img id="imghb" /></a>
+										</div>
+
+									</div>
+									
+								</div>
+								<input type="hidden" id="fanxiuh_id_e" name="fanxiuh_id_e"/>
+								<div class="row-fluid">
+									<center>
+										<button id="btn_fanxiu_zancun" name="{:U('Fanxiuh/temp')}" type="button" class="btn yellow">暂存</button>
+										<button id="btn_fanxiu_tijiao" type="button" class="btn green">提交</button>
+									</center>
+								</div>
+
+							</form>
+
+							<!-- END FORM-->
+	
+						</div>
+						
+						<div id="barcode_view" style="overflow:scroll; display:block; float:right; width:25%; height:600px;">
+							
+						</div>
+	
+					</div>
+		
+				
+				
+			
+				<!-- END PAGE CONTAINER--> 
+
+			</div>
+	
+		<!-- END PAGE -->
+		</div>
+		
+	</div>
+
+	<!-- END CONTAINER -->
+	
+</div>
+<!-- END LAYOUT-->

@@ -1,0 +1,336 @@
+<!-- BEGIN LAYOUT--> 
+<layout name="layout" />
+	<!-- BEGIN CONTAINER -->
+	
+	<div class="page-container  page-full-width">
+	
+		<!-- 页面光被导航栏覆盖掉 -->
+		
+		<div style="margin-top:42px;">
+		
+		<!-- BEGIN PAGE -->
+	
+		<div class="page-content">
+		
+		<!-- BEGIN PAGE CONTAINER-->
+		
+			<div class="container-fluid">
+			
+				<br>
+				
+				<!-- BEGIN PAGE CONTENT-->
+		
+					<div class="row-fluid">
+		
+						<div class="span12">
+		
+							<!-- BEGIN EXAMPLE TABLE PORTLET-->
+		
+							<div class="portlet box light-grey">
+		
+								<div class="portlet-title">
+		
+									<div class="caption"><i class="icon-globe"></i>{$pagetitle}</div>
+		
+									<div class="tools">
+		
+										<a href="javascript:;" class="collapse"></a>
+		
+									</div>
+		
+								</div>
+		
+								<div class="portlet-body">
+		
+									<div class="clearfix">
+		
+										<div class="btn-group">
+											<button id="lc_group_add" name="{:U('Group/add')}"  class="btn green">
+		
+												 {$Think.lang.lc_add} <i class="icon-plus"></i>
+		
+											</button>
+										</div>
+										<div class="btn-group">
+											<button id="lc_group_edit" name="{:U('Group/edit')}"  class="btn purple">
+		
+												 {$Think.lang.lc_edit} <i class="icon-edit"></i>
+		
+											</button>
+										</div>
+										
+										<div class="btn-group">
+											<button id="lc_group_del" name="{:U('Group/del')}"  class="btn black">
+		
+												 {$Think.lang.lc_del} <i class="icon-remove"></i>
+		
+											</button>
+										</div>
+		
+									</div>
+		
+									<table class="table table-striped table-bordered table-hover" id="sample_1">
+		
+										<thead>
+		
+											<tr>
+		
+												<th style="width:8px;"><input type="checkbox" class="group-checkable" data-set="#sample_1 .checkboxes" /></th>
+		
+												<th>用户组名称</th>
+		
+												<th class="hidden-480">状态</th>
+												
+												<th class="hidden-480">操作</th>
+		
+											</tr>
+		
+										</thead>
+		
+										<tbody>
+											
+											<foreach name="grouplist" item="g">
+												<tr class="odd gradeX">
+		
+													<td><input type="checkbox" class="checkboxes" value="{$g['id']}" /></td>
+			
+													<td>{$g['title']}</td>
+			
+													<td class="hidden-480">{$g['status']}</td>
+													<th class="hidden-480">
+														<a href="{:U('Group/rule/id/'.$g['id'].'')}" class="btn purple mini">
+															{$Think.lang.lc_rule} <i class="icon-lock icon-white"></i>
+														</a>
+														<a href="{:U('Group/access/id/'.$g['id'].'')}" class="btn purple mini">
+															{$Think.lang.lc_manager} <i class="icon-user icon-white"></i>
+														</a>
+		
+													</th>
+			
+												</tr>
+											
+											</foreach>
+		
+										</tbody>
+		
+									</table>
+									
+									<!--添加数据层开始-->
+									
+									<div id="add" style="display:none;" title="添加用户组">
+									<br>
+										<div class="row-fluid">
+		
+											<div class="span12">
+						
+												<!-- BEGIN VALIDATION STATES-->
+						
+												<div class="portlet box green">
+						
+													<div class="portlet-title">
+						
+														<div class="caption"><i class="icon-reorder"></i>添加用户组</div>
+														<div class="tools">
+		
+															<button id="removeadd" class="btn mini black">关闭</button>
+						
+														</div>
+		
+		
+													</div>
+						
+													<div class="portlet-body form">
+						
+														<!-- BEGIN FORM-->
+						
+														<form name="{:U('Group/add')}" id="form_group_add" class="form-horizontal">
+						
+															<div class="alert alert-error hide">
+						
+																<button class="close" data-dismiss="alert"></button>
+						
+																您输入的信息有误，请重新输入！
+						
+															</div>
+						
+															<div class="alert alert-success hide">
+						
+																<button class="close" data-dismiss="alert"></button>
+						
+																完成验证！
+						
+															</div>
+						
+															<div class="control-group">
+						
+																<label class="control-label">用户组名称<span class="required">*</span></label>
+						
+																<div class="controls">
+						
+																	<input type="text" name="group_title_a" id="group_title_a" data-required="1" class="span6 m-wrap" value="{$Think.session.add_group_title}"/>
+						
+																</div>
+						
+															</div>
+						
+															<div class="control-group">
+						
+																<label class="control-label">状态<span class="required">*</span></label>
+						
+																<div class="controls">
+						
+																	<input name="group_status_a" id="group_status_a" type="text" class="span6 m-wrap" value="1"/>
+						
+																</div>
+						
+															</div>
+						
+						
+															<div class="form-actions">
+						
+																<button type="submit" class="btn green">添加</button>
+						
+															</div>
+						
+														</form>
+						
+														<!-- END FORM-->
+						
+													</div>
+						
+												</div>
+						
+												<!-- END VALIDATION STATES-->
+						
+											</div>
+						
+										</div>
+		
+		
+										
+									</div>
+									
+									<!--添加数据层结束-->
+									
+									<!--修改数据层开始-->
+									
+									<div id="edit" style="display:none;" title="修改用户组">
+									<br>
+										<div class="row-fluid">
+		
+											<div class="span12">
+						
+												<!-- BEGIN VALIDATION STATES-->
+						
+												<div class="portlet box green">
+						
+													<div class="portlet-title">
+						
+														<div class="caption"><i class="icon-reorder"></i>修改用户组</div>
+														<div class="tools">
+		
+															<button id="removeedit" class="btn mini black">关闭</button>
+						
+														</div>
+		
+		
+													</div>
+						
+													<div class="portlet-body form">
+						
+														<!-- BEGIN FORM-->
+						
+														<form name="{:U('Group/edit')}" id="form_group_edit" class="form-horizontal">
+						
+															<div class="alert alert-error hide">
+						
+																<button class="close" data-dismiss="alert"></button>
+						
+																您输入的信息有误，请重新输入！
+						
+															</div>
+						
+															<div class="alert alert-success hide">
+						
+																<button class="close" data-dismiss="alert"></button>
+						
+																完成验证！
+						
+															</div>
+						
+															<div class="control-group">
+						
+																<label class="control-label">用户组名称<span class="required">*</span></label>
+						
+																<div class="controls">
+						
+																	<input type="text" name="group_title_e" id="group_title_e" data-required="1" class="span6 m-wrap" value=""/>
+						
+																</div>
+						
+															</div>
+						
+															<div class="control-group">
+						
+																<label class="control-label">状态<span class="required">*</span></label>
+						
+																<div class="controls">
+						
+																	<input name="group_status_e" id="group_status_e" type="text" class="span6 m-wrap" value="1"/>
+						
+																</div>
+						
+															</div>
+															<input type="hidden" id="group_id_e"/>
+															<div class="form-actions">
+						
+																<button type="submit" class="btn green">修改</button>
+						
+															</div>
+						
+														</form>
+						
+														<!-- END FORM-->
+						
+													</div>
+						
+												</div>
+						
+												<!-- END VALIDATION STATES-->
+						
+											</div>
+						
+										</div>
+		
+		
+										
+									</div>
+									
+									<!--修改数据层结束-->
+		
+								</div>
+		
+							</div>
+		
+							<!-- END EXAMPLE TABLE PORTLET-->
+		
+						</div>
+		
+					<!-- END PAGE CONTENT-->
+				
+				</div>
+			
+				<!-- END PAGE CONTAINER--> 
+
+			</div>
+	
+		<!-- END PAGE -->
+		</div>
+		
+	</div>
+
+	<!-- END CONTAINER -->
+	
+</div>
+
+<!-- END LAYOUT-->

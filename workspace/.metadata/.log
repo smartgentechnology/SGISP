@@ -1,0 +1,309 @@
+!SESSION 2019-05-20 10:06:57.689 -----------------------------------------------
+eclipse.buildId=R3.7.8.201807240049
+java.version=1.8.0_152
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Framework arguments:  -eclipse.keyring @user.home/Application Data/XMind/secure_storage G:\phpStudy\PHPTutorial\WWW\OR\固定资产.xmind
+Command-line arguments:  -os win32 -ws win32 -arch x86 -data ./workspace -eclipse.keyring @user.home/Application Data/XMind/secure_storage G:\phpStudy\PHPTutorial\WWW\OR\固定资产.xmind
+
+!ENTRY org.xmind.cathy 1 0 2019-05-20 10:07:18.894
+!MESSAGE Skip unrecognized command line argument: '-eclipse.keyring'
+
+!ENTRY org.xmind.cathy 1 0 2019-05-20 10:07:18.897
+!MESSAGE Skip unrecognized command line argument: '@user.home/Application Data/XMind/secure_storage'
+
+!ENTRY org.xmind.cathy 1 0 2019-05-20 10:07:28.502
+!MESSAGE Path queued to be opened: G:\phpStudy\PHPTutorial\WWW\OR\固定资产.xmind
+
+!ENTRY org.xmind.cathy 1 0 2019-05-20 10:07:37.547
+!MESSAGE Ready to open files: [G:\phpStudy\PHPTutorial\WWW\OR\固定资产.xmind]
+
+!ENTRY org.xmind.core.command 1 0 2019-05-20 10:07:37.677
+!MESSAGE Malformed URI: G:\phpStudy\PHPTutorial\WWW\OR\固定资产.xmind
+
+!ENTRY org.xmind.core.command.remote.lan 2 23333 2019-05-20 10:07:46.590
+!MESSAGE Bonjour installation is not found or damaged.
+!STACK 0
+java.lang.UnsatisfiedLinkError: no jdns_sd in java.library.path
+	at java.lang.ClassLoader.loadLibrary(ClassLoader.java:1867)
+	at java.lang.Runtime.loadLibrary0(Runtime.java:870)
+	at java.lang.System.loadLibrary(System.java:1122)
+	at com.apple.dnssd.AppleDNSSD.<clinit>(DNSSD.java:544)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:264)
+	at com.apple.dnssd.DNSSD.<clinit>(DNSSD.java:477)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:264)
+	at org.xmind.core.internal.command.remote.lan.LANDiscoveryServiceAdapter.<init>(LANDiscoveryServiceAdapter.java:43)
+	at org.xmind.core.internal.command.remote.lan.LANDiscoveryServiceFactory.createDomainService(LANDiscoveryServiceFactory.java:39)
+	at org.xmind.core.internal.command.remote.CommandServiceDomainImpl.createDomainService(CommandServiceDomainImpl.java:71)
+	at org.xmind.core.internal.command.remote.CommandServiceDomainImpl.getRemoteCommandServiceDiscoverer(CommandServiceDomainImpl.java:135)
+	at org.xmind.core.internal.sharing.LocalNetworkSharingService.activate(LocalNetworkSharingService.java:357)
+	at org.xmind.ui.internal.sharing.ToggleSharingServiceStatusJob.activate(ToggleSharingServiceStatusJob.java:78)
+	at org.xmind.ui.internal.sharing.ToggleSharingServiceStatusJob.run(ToggleSharingServiceStatusJob.java:49)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.xmind.ui.sharing 2 0 2019-05-20 10:09:31.579
+!MESSAGE Bonjour installer quit with unexpected code: 1602
+
+!ENTRY org.xmind.cathy 1 0 2019-05-20 17:09:50.851
+!MESSAGE Path queued to be opened: F:\众智两融体系\众智两融体系.xmind
+
+!ENTRY org.xmind.cathy 1 0 2019-05-20 17:09:50.976
+!MESSAGE Ready to open files: [F:\众智两融体系\众智两融体系.xmind]
+
+!ENTRY org.xmind.core.command 1 0 2019-05-20 17:09:51.087
+!MESSAGE Malformed URI: F:\众智两融体系\众智两融体系.xmind
+
+!ENTRY org.xmind.ui.mindmap 4 4 2019-05-20 17:11:08.006
+!MESSAGE [save] start...[save] add state...[save] clean...[save] doSave start...[save] doSaveWorkbookToTempStorage start...[save] doSaveWorkbookToTempStorage over...[save] doSaveWorkbookToURIFromSource start...[save] new file...[save] serialize start...[save] new FileOutputStream...[save] setOutputStream...[save] serialize success...[save] doSaveWorkbookToURIFromSource over...[save] doSave over...[save] success...over...
+
+!ENTRY org.xmind.ui.mindmap 4 0 2019-05-20 17:12:56.065
+!MESSAGE Failed to locate wizards order xml: org.xmind.ui.mindmap/src/org/xmind/ui/internal/wizards/wizards_order.xml
+
+!ENTRY org.xmind.ui.mindmap 4 4 2019-05-20 19:16:58.458
+!MESSAGE [save] start...[save] add state...[save] clean...[save] doSave start...[save] doSaveWorkbookToTempStorage start...[save] doSaveWorkbookToTempStorage over...[save] doSaveWorkbookToURIFromSource start...[save] new file...[save] serialize start...[save] new FileOutputStream...[save] setOutputStream...[save] serialize success...[save] doSaveWorkbookToURIFromSource over...[save] doSave over...[save] success...over...
+
+!ENTRY org.xmind.ui.mindmap 4 4 2019-05-20 19:56:58.582
+!MESSAGE [save] start...[save] add state...[save] clean...[save] doSave start...[save] doSaveWorkbookToTempStorage start...[save] doSaveWorkbookToTempStorage over...[save] doSaveWorkbookToURIFromSource start...[save] new file...[save] serialize start...[save] new FileOutputStream...[save] setOutputStream...[save] serialize success...[save] doSaveWorkbookToURIFromSource over...[save] doSave over...[save] success...over...
+!SESSION 2019-05-22 19:28:30.112 -----------------------------------------------
+eclipse.buildId=R3.7.8.201807240049
+java.version=1.8.0_152
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Framework arguments:  -eclipse.keyring @user.home/Application Data/XMind/secure_storage G:\phpStudy\PHPTutorial\WWW\OR\固定资产.xmind
+Command-line arguments:  -os win32 -ws win32 -arch x86 -data ./workspace -eclipse.keyring @user.home/Application Data/XMind/secure_storage G:\phpStudy\PHPTutorial\WWW\OR\固定资产.xmind
+
+!ENTRY org.xmind.cathy 1 0 2019-05-22 19:28:42.642
+!MESSAGE Skip unrecognized command line argument: '-eclipse.keyring'
+
+!ENTRY org.xmind.cathy 1 0 2019-05-22 19:28:42.659
+!MESSAGE Skip unrecognized command line argument: '@user.home/Application Data/XMind/secure_storage'
+
+!ENTRY org.xmind.cathy 1 0 2019-05-22 19:28:51.526
+!MESSAGE Path queued to be opened: G:\phpStudy\PHPTutorial\WWW\OR\固定资产.xmind
+
+!ENTRY org.xmind.cathy 1 0 2019-05-22 19:28:59.196
+!MESSAGE Ready to open files: [G:\phpStudy\PHPTutorial\WWW\OR\固定资产.xmind]
+
+!ENTRY org.xmind.core.command 1 0 2019-05-22 19:28:59.295
+!MESSAGE Malformed URI: G:\phpStudy\PHPTutorial\WWW\OR\固定资产.xmind
+!SESSION 2019-05-23 17:30:44.434 -----------------------------------------------
+eclipse.buildId=R3.7.8.201807240049
+java.version=1.8.0_152
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Framework arguments:  -eclipse.keyring @user.home/Application Data/XMind/secure_storage G:\phpStudy\PHPTutorial\WWW\OR\固定资产.xmind
+Command-line arguments:  -os win32 -ws win32 -arch x86 -data ./workspace -eclipse.keyring @user.home/Application Data/XMind/secure_storage G:\phpStudy\PHPTutorial\WWW\OR\固定资产.xmind
+
+!ENTRY org.xmind.cathy 1 0 2019-05-23 17:30:54.371
+!MESSAGE Skip unrecognized command line argument: '-eclipse.keyring'
+
+!ENTRY org.xmind.cathy 1 0 2019-05-23 17:30:54.388
+!MESSAGE Skip unrecognized command line argument: '@user.home/Application Data/XMind/secure_storage'
+
+!ENTRY org.xmind.cathy 1 0 2019-05-23 17:31:03.996
+!MESSAGE Path queued to be opened: G:\phpStudy\PHPTutorial\WWW\OR\固定资产.xmind
+
+!ENTRY org.xmind.cathy 1 0 2019-05-23 17:31:13.222
+!MESSAGE Ready to open files: [G:\phpStudy\PHPTutorial\WWW\OR\固定资产.xmind]
+
+!ENTRY org.xmind.core.command 1 0 2019-05-23 17:31:13.326
+!MESSAGE Malformed URI: G:\phpStudy\PHPTutorial\WWW\OR\固定资产.xmind
+
+!ENTRY net.xmind.workbench 4 0 2019-05-23 17:31:24.899
+!MESSAGE Failed to retrieve site events: 503
+!SESSION 2019-05-24 16:09:44.472 -----------------------------------------------
+eclipse.buildId=R3.7.8.201807240049
+java.version=1.8.0_152
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Framework arguments:  -eclipse.keyring @user.home/Application Data/XMind/secure_storage G:\phpStudy\PHPTutorial\WWW\OR\固定资产.xmind
+Command-line arguments:  -os win32 -ws win32 -arch x86 -data ./workspace -eclipse.keyring @user.home/Application Data/XMind/secure_storage G:\phpStudy\PHPTutorial\WWW\OR\固定资产.xmind
+
+!ENTRY org.xmind.cathy 1 0 2019-05-24 16:09:51.653
+!MESSAGE Skip unrecognized command line argument: '-eclipse.keyring'
+
+!ENTRY org.xmind.cathy 1 0 2019-05-24 16:09:51.670
+!MESSAGE Skip unrecognized command line argument: '@user.home/Application Data/XMind/secure_storage'
+
+!ENTRY org.xmind.cathy 1 0 2019-05-24 16:10:01.234
+!MESSAGE Path queued to be opened: G:\phpStudy\PHPTutorial\WWW\OR\固定资产.xmind
+
+!ENTRY org.xmind.cathy 1 0 2019-05-24 16:10:09.466
+!MESSAGE Ready to open files: [G:\phpStudy\PHPTutorial\WWW\OR\固定资产.xmind]
+
+!ENTRY org.xmind.core.command 1 0 2019-05-24 16:10:09.568
+!MESSAGE Malformed URI: G:\phpStudy\PHPTutorial\WWW\OR\固定资产.xmind
+
+!ENTRY org.xmind.ui.mindmap 4 4 2019-05-24 16:15:13.972
+!MESSAGE [save] start...[save] add state...[save] clean...[save] doSave start...[save] doSaveWorkbookToTempStorage start...[save] doSaveWorkbookToTempStorage over...[save] doSaveWorkbookToURIFromSource start...[save] new file...[save] serialize start...[save] new FileOutputStream...[save] setOutputStream...[save] serialize success...[save] doSaveWorkbookToURIFromSource over...[save] doSave over...[save] success...over...
+
+!ENTRY org.xmind.ui.mindmap 4 4 2019-05-24 16:16:45.647
+!MESSAGE [save] start...[save] add state...[save] clean...[save] doSave start...[save] doSaveWorkbookToTempStorage start...[save] doSaveWorkbookToTempStorage over...[save] doSaveWorkbookToURIFromSource start...[save] new file...[save] serialize start...[save] new FileOutputStream...[save] setOutputStream...[save] serialize success...[save] doSaveWorkbookToURIFromSource over...[save] doSave over...[save] success...over...
+
+!ENTRY org.xmind.ui.mindmap 4 4 2019-05-24 19:53:48.913
+!MESSAGE [save] start...[save] add state...[save] clean...[save] doSave start...[save] doSaveWorkbookToTempStorage start...[save] doSaveWorkbookToTempStorage over...[save] doSaveWorkbookToURIFromSource start...[save] new file...[save] serialize start...[save] new FileOutputStream...[save] setOutputStream...[save] serialize success...[save] doSaveWorkbookToURIFromSource over...[save] doSave over...[save] success...over...
+!SESSION 2019-05-27 09:19:49.459 -----------------------------------------------
+eclipse.buildId=R3.7.8.201807240049
+java.version=1.8.0_152
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Framework arguments:  -eclipse.keyring @user.home/Application Data/XMind/secure_storage G:\phpStudy\PHPTutorial\WWW\OR\固定资产.xmind
+Command-line arguments:  -os win32 -ws win32 -arch x86 -data ./workspace -eclipse.keyring @user.home/Application Data/XMind/secure_storage G:\phpStudy\PHPTutorial\WWW\OR\固定资产.xmind
+
+!ENTRY org.xmind.cathy 1 0 2019-05-27 09:20:01.246
+!MESSAGE Skip unrecognized command line argument: '-eclipse.keyring'
+
+!ENTRY org.xmind.cathy 1 0 2019-05-27 09:20:01.261
+!MESSAGE Skip unrecognized command line argument: '@user.home/Application Data/XMind/secure_storage'
+
+!ENTRY org.xmind.cathy 1 0 2019-05-27 09:20:09.542
+!MESSAGE Path queued to be opened: G:\phpStudy\PHPTutorial\WWW\OR\固定资产.xmind
+
+!ENTRY org.xmind.cathy 1 0 2019-05-27 09:20:15.872
+!MESSAGE Ready to open files: [G:\phpStudy\PHPTutorial\WWW\OR\固定资产.xmind]
+
+!ENTRY org.xmind.core.command 1 0 2019-05-27 09:20:15.915
+!MESSAGE Malformed URI: G:\phpStudy\PHPTutorial\WWW\OR\固定资产.xmind
+
+!ENTRY org.xmind.ui.mindmap 4 4 2019-05-27 19:39:55.700
+!MESSAGE [save] start...[save] add state...[save] clean...[save] doSave start...[save] doSaveWorkbookToTempStorage start...[save] doSaveWorkbookToTempStorage over...[save] doSaveWorkbookToURIFromSource start...[save] new file...[save] serialize start...[save] new FileOutputStream...[save] setOutputStream...[save] serialize success...[save] doSaveWorkbookToURIFromSource over...[save] doSave over...[save] success...over...
+!SESSION 2019-05-28 08:35:30.484 -----------------------------------------------
+eclipse.buildId=R3.7.8.201807240049
+java.version=1.8.0_152
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Framework arguments:  -eclipse.keyring @user.home/Application Data/XMind/secure_storage G:\phpStudy\PHPTutorial\WWW\OR\固定资产.xmind
+Command-line arguments:  -os win32 -ws win32 -arch x86 -data ./workspace -eclipse.keyring @user.home/Application Data/XMind/secure_storage G:\phpStudy\PHPTutorial\WWW\OR\固定资产.xmind
+
+!ENTRY org.xmind.cathy 1 0 2019-05-28 08:35:44.594
+!MESSAGE Skip unrecognized command line argument: '-eclipse.keyring'
+
+!ENTRY org.xmind.cathy 1 0 2019-05-28 08:35:44.615
+!MESSAGE Skip unrecognized command line argument: '@user.home/Application Data/XMind/secure_storage'
+
+!ENTRY org.xmind.cathy 1 0 2019-05-28 08:35:58.373
+!MESSAGE Path queued to be opened: G:\phpStudy\PHPTutorial\WWW\OR\固定资产.xmind
+
+!ENTRY org.xmind.cathy 1 0 2019-05-28 08:36:09.552
+!MESSAGE Ready to open files: [G:\phpStudy\PHPTutorial\WWW\OR\固定资产.xmind]
+
+!ENTRY org.xmind.core.command 1 0 2019-05-28 08:36:09.696
+!MESSAGE Malformed URI: G:\phpStudy\PHPTutorial\WWW\OR\固定资产.xmind
+!SESSION 2019-05-29 10:20:05.971 -----------------------------------------------
+eclipse.buildId=R3.7.8.201807240049
+java.version=1.8.0_152
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Framework arguments:  -eclipse.keyring @user.home/Application Data/XMind/secure_storage G:\phpStudy\PHPTutorial\WWW\OR\固定资产.xmind
+Command-line arguments:  -os win32 -ws win32 -arch x86 -data ./workspace -eclipse.keyring @user.home/Application Data/XMind/secure_storage G:\phpStudy\PHPTutorial\WWW\OR\固定资产.xmind
+
+!ENTRY org.xmind.cathy 1 0 2019-05-29 10:20:14.461
+!MESSAGE Skip unrecognized command line argument: '-eclipse.keyring'
+
+!ENTRY org.xmind.cathy 1 0 2019-05-29 10:20:14.476
+!MESSAGE Skip unrecognized command line argument: '@user.home/Application Data/XMind/secure_storage'
+
+!ENTRY org.xmind.cathy 1 0 2019-05-29 10:20:24.184
+!MESSAGE Path queued to be opened: G:\phpStudy\PHPTutorial\WWW\OR\固定资产.xmind
+
+!ENTRY org.xmind.cathy 1 0 2019-05-29 10:20:32.874
+!MESSAGE Ready to open files: [G:\phpStudy\PHPTutorial\WWW\OR\固定资产.xmind]
+
+!ENTRY org.xmind.core.command 1 0 2019-05-29 10:20:32.959
+!MESSAGE Malformed URI: G:\phpStudy\PHPTutorial\WWW\OR\固定资产.xmind
+!SESSION 2019-05-29 19:41:29.325 -----------------------------------------------
+eclipse.buildId=R3.7.8.201807240049
+java.version=1.8.0_152
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Framework arguments:  -eclipse.keyring @user.home/Application Data/XMind/secure_storage G:\phpStudy\PHPTutorial\WWW\OR\固定资产.xmind
+Command-line arguments:  -os win32 -ws win32 -arch x86 -data ./workspace -eclipse.keyring @user.home/Application Data/XMind/secure_storage G:\phpStudy\PHPTutorial\WWW\OR\固定资产.xmind
+
+!ENTRY org.xmind.cathy 1 0 2019-05-29 19:41:38.075
+!MESSAGE Skip unrecognized command line argument: '-eclipse.keyring'
+
+!ENTRY org.xmind.cathy 1 0 2019-05-29 19:41:38.101
+!MESSAGE Skip unrecognized command line argument: '@user.home/Application Data/XMind/secure_storage'
+
+!ENTRY org.xmind.cathy 1 0 2019-05-29 19:41:46.406
+!MESSAGE Path queued to be opened: G:\phpStudy\PHPTutorial\WWW\OR\固定资产.xmind
+
+!ENTRY org.xmind.cathy 1 0 2019-05-29 19:41:52.694
+!MESSAGE Ready to open files: [G:\phpStudy\PHPTutorial\WWW\OR\固定资产.xmind]
+
+!ENTRY org.xmind.core.command 1 0 2019-05-29 19:41:52.739
+!MESSAGE Malformed URI: G:\phpStudy\PHPTutorial\WWW\OR\固定资产.xmind
+!SESSION 2019-05-30 09:10:57.742 -----------------------------------------------
+eclipse.buildId=R3.7.8.201807240049
+java.version=1.8.0_152
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Framework arguments:  -eclipse.keyring @user.home/Application Data/XMind/secure_storage G:\phpStudy\PHPTutorial\WWW\OR\固定资产.xmind
+Command-line arguments:  -os win32 -ws win32 -arch x86 -data ./workspace -eclipse.keyring @user.home/Application Data/XMind/secure_storage G:\phpStudy\PHPTutorial\WWW\OR\固定资产.xmind
+
+!ENTRY org.xmind.cathy 1 0 2019-05-30 09:11:02.240
+!MESSAGE Skip unrecognized command line argument: '-eclipse.keyring'
+
+!ENTRY org.xmind.cathy 1 0 2019-05-30 09:11:02.242
+!MESSAGE Skip unrecognized command line argument: '@user.home/Application Data/XMind/secure_storage'
+
+!ENTRY org.xmind.cathy 1 0 2019-05-30 09:11:10.303
+!MESSAGE Path queued to be opened: G:\phpStudy\PHPTutorial\WWW\OR\固定资产.xmind
+
+!ENTRY org.xmind.cathy 1 0 2019-05-30 09:11:17.457
+!MESSAGE Ready to open files: [G:\phpStudy\PHPTutorial\WWW\OR\固定资产.xmind]
+
+!ENTRY org.xmind.core.command 1 0 2019-05-30 09:11:17.551
+!MESSAGE Malformed URI: G:\phpStudy\PHPTutorial\WWW\OR\固定资产.xmind
+
+!ENTRY org.xmind.ui.mindmap 4 4 2019-05-30 20:37:45.107
+!MESSAGE [save] start...[save] add state...[save] clean...[save] doSave start...[save] doSaveWorkbookToTempStorage start...[save] doSaveWorkbookToTempStorage over...[save] doSaveWorkbookToURIFromSource start...[save] new file...[save] serialize start...[save] new FileOutputStream...[save] setOutputStream...[save] serialize success...[save] doSaveWorkbookToURIFromSource over...[save] doSave over...[save] success...over...
+!SESSION 2019-05-31 08:48:04.199 -----------------------------------------------
+eclipse.buildId=R3.7.8.201807240049
+java.version=1.8.0_152
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Framework arguments:  -eclipse.keyring @user.home/Application Data/XMind/secure_storage G:\phpStudy\PHPTutorial\WWW\OR\固定资产.xmind
+Command-line arguments:  -os win32 -ws win32 -arch x86 -data ./workspace -eclipse.keyring @user.home/Application Data/XMind/secure_storage G:\phpStudy\PHPTutorial\WWW\OR\固定资产.xmind
+
+!ENTRY org.xmind.cathy 1 0 2019-05-31 08:48:08.625
+!MESSAGE Skip unrecognized command line argument: '-eclipse.keyring'
+
+!ENTRY org.xmind.cathy 1 0 2019-05-31 08:48:08.661
+!MESSAGE Skip unrecognized command line argument: '@user.home/Application Data/XMind/secure_storage'
+
+!ENTRY org.xmind.cathy 1 0 2019-05-31 08:48:17.249
+!MESSAGE Path queued to be opened: G:\phpStudy\PHPTutorial\WWW\OR\固定资产.xmind
+
+!ENTRY org.xmind.cathy 1 0 2019-05-31 08:48:24.404
+!MESSAGE Ready to open files: [G:\phpStudy\PHPTutorial\WWW\OR\固定资产.xmind]
+
+!ENTRY org.xmind.core.command 1 0 2019-05-31 08:48:24.506
+!MESSAGE Malformed URI: G:\phpStudy\PHPTutorial\WWW\OR\固定资产.xmind
+
+!ENTRY org.xmind.ui.mindmap 4 4 2019-05-31 19:58:37.235
+!MESSAGE [save] start...[save] add state...[save] clean...[save] doSave start...[save] doSaveWorkbookToTempStorage start...[save] doSaveWorkbookToTempStorage over...[save] doSaveWorkbookToURIFromSource start...[save] new file...[save] serialize start...[save] new FileOutputStream...[save] setOutputStream...[save] serialize success...[save] doSaveWorkbookToURIFromSource over...[save] doSave over...[save] success...over...
+!SESSION 2019-06-01 10:26:00.025 -----------------------------------------------
+eclipse.buildId=R3.7.8.201807240049
+java.version=1.8.0_152
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=zh_CN
+Framework arguments:  -eclipse.keyring @user.home/Application Data/XMind/secure_storage G:\phpStudy\PHPTutorial\WWW\OR\固定资产.xmind
+Command-line arguments:  -os win32 -ws win32 -arch x86 -data ./workspace -eclipse.keyring @user.home/Application Data/XMind/secure_storage G:\phpStudy\PHPTutorial\WWW\OR\固定资产.xmind
+
+!ENTRY org.xmind.cathy 1 0 2019-06-01 10:26:11.431
+!MESSAGE Skip unrecognized command line argument: '-eclipse.keyring'
+
+!ENTRY org.xmind.cathy 1 0 2019-06-01 10:26:11.460
+!MESSAGE Skip unrecognized command line argument: '@user.home/Application Data/XMind/secure_storage'
+
+!ENTRY org.xmind.cathy 1 0 2019-06-01 10:26:19.880
+!MESSAGE Path queued to be opened: G:\phpStudy\PHPTutorial\WWW\OR\固定资产.xmind
+
+!ENTRY org.xmind.cathy 1 0 2019-06-01 10:26:26.175
+!MESSAGE Ready to open files: [G:\phpStudy\PHPTutorial\WWW\OR\固定资产.xmind]
+
+!ENTRY org.xmind.core.command 1 0 2019-06-01 10:26:26.225
+!MESSAGE Malformed URI: G:\phpStudy\PHPTutorial\WWW\OR\固定资产.xmind

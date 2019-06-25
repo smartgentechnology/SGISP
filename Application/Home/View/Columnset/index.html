@@ -1,0 +1,378 @@
+<!-- BEGIN LAYOUT--> 
+<layout name="layout" />
+	<!-- BEGIN CONTAINER -->
+	
+	<div class="page-container  page-full-width">
+	
+		<!-- 页面光被导航栏覆盖掉 -->
+		
+		<div style="margin-top:42px;">
+		
+		<!-- BEGIN PAGE -->
+	
+		<div class="page-content">
+		
+			<!-- BEGIN PAGE CONTAINER-->
+
+			<div class="container-fluid">
+			
+				<br>
+				
+				<!-- BEGIN PAGE CONTENT-->
+		
+					<div class="row-fluid">
+		
+						<div class="span12">
+		
+							<!-- BEGIN EXAMPLE TABLE PORTLET-->
+		
+							<div class="portlet box light-grey">
+		
+								<div class="portlet-title">
+		
+									<div class="caption"><i class="icon-globe"></i>{$pagetitle}</div>
+		
+									<div class="tools">
+		
+										<a href="javascript:;" class="collapse"></a>
+		
+									</div>
+		
+								</div>
+		
+								<div class="portlet-body">
+		
+									<div class="clearfix">
+									
+										<div class="btn-group">
+											
+											<button id="lc_columnset_addall" name="{:U('Columnset/addall')}"  class="btn black">
+		
+												 {$Think.lang.lc_addall}</i>
+		
+											</button>
+											
+										</div>
+		
+										<div class="btn-group">
+											<button id="lc_columnset_add" name="{:U('Columnset/add')}"  class="btn green">
+		
+												 {$Think.lang.lc_add} <i class="icon-plus"></i>
+		
+											</button>
+										</div>
+										<div class="btn-group">
+											<button id="lc_columnset_edit" name="{:U('Columnset/edit')}"  class="btn purple">
+		
+												 {$Think.lang.lc_edit} <i class="icon-edit"></i>
+		
+											</button>
+										</div>
+										<div class="btn-group">
+											<button id="lc_columnset_del" name="{:U('Columnset/del')}"  class="btn black">
+		
+												 {$Think.lang.lc_del} <i class="icon-remove"></i>
+		
+											</button>
+										</div>
+										<div class="btn-group">
+											<a href="{:U($address)}" class="btn yellow">
+		
+												 {$Think.lang.lc_return} 
+		
+											</a>
+										</div>
+									</div>
+		
+									<table class="table table-striped table-bordered table-hover" id="sample_1">
+		
+										<thead>
+		
+											<tr>
+		
+												<th style="width:8px;"><input type="checkbox" class="group-checkable" data-set="#sample_1 .checkboxes" /></th>
+		
+												<th>栏目名称</th>
+												<th class="hidden-480">顺序</th>
+												<th class="hidden-480">宽度</th>
+		
+											</tr>
+		
+										</thead>
+		
+										<tbody>
+											
+											<foreach name="datalist" item="d">
+												<tr class="odd gradeX">
+		
+													<td><input type="checkbox" class="checkboxes" value="{$d['id']}" /></td>
+			
+													<td>{$d['name']}</td>
+													<td class="hidden-480">{$d['rank']}</td>
+													<td class="hidden-480">{$d['width']}</td>
+			
+												</tr>
+											
+											</foreach>
+		
+										</tbody>
+		
+									</table>
+									
+									<!--添加数据层开始-->
+									
+									<div id="add" style="display:none;" title="添加栏目">
+									<br>
+										<div class="row-fluid">
+		
+											<div class="span12">
+						
+												<!-- BEGIN VALIDATION STATES-->
+						
+												<div class="portlet box green">
+						
+													<div class="portlet-title">
+						
+														<div class="caption"><i class="icon-reorder"></i>添加栏目</div>
+														<div class="tools">
+		
+															<button id="removeadd" class="btn mini black">关闭</button>
+						
+														</div>
+		
+		
+													</div>
+						
+													<div class="portlet-body form">
+						
+														<!-- BEGIN FORM-->
+						
+														<form name="{:U('Columnset/add')}" id="form_columnset_add" class="form-horizontal">
+						
+															<div class="alert alert-error hide">
+						
+																<button class="close" data-dismiss="alert"></button>
+						
+																您输入的信息有误，请重新输入！
+						
+															</div>
+						
+															<div class="alert alert-success hide">
+						
+																<button class="close" data-dismiss="alert"></button>
+						
+																完成验证！
+						
+															</div>
+															
+															<div class="control-group">
+						
+																<label class="control-label">栏目名称<span class="required">*</span></label>
+						
+																<div class="controls">
+						
+																	<select class="span6 m-wrap" id="columnset_columnid_a" name="columnset_columnid_a">
+																	
+																		<foreach name="columnlist" item="c">
+																			
+																			<option value="{$c['id']}" <eq name="Think.session.add_columnset_columnid" value="$c['id']">selected="selected"</eq>>{$c['name']}</option>
+																		
+																		</foreach>
+						
+																	</select>
+						
+																</div>
+						
+															</div>
+						
+															<div class="control-group">
+						
+																<label class="control-label">顺序<span class="required">*</span></label>
+						
+																<div class="controls">
+						
+																	<input type="text" name="columnset_rank_a" id="columnset_rank_a" data-required="1" class="span6 m-wrap"/>
+						
+																</div>
+						
+															</div>
+															<div class="control-group">
+						
+																<label class="control-label">宽度<span class="required">*</span></label>
+						
+																<div class="controls">
+						
+																	<input type="text" name="columnset_width_a" id="columnset_width_a" data-required="1" class="span6 m-wrap"/>
+						
+																</div>
+						
+															</div>
+															<input type="hidden" id="columnset_module_a" value="{$module}"/>
+															<div class="form-actions">
+						
+																<button type="submit" class="btn green">添加</button>
+						
+															</div>
+						
+														</form>
+						
+														<!-- END FORM-->
+						
+													</div>
+						
+												</div>
+						
+												<!-- END VALIDATION STATES-->
+						
+											</div>
+						
+										</div>
+		
+		
+										
+									</div>
+									
+									<!--添加数据层结束-->
+									
+									<!--修改数据层开始-->
+									
+									<div id="edit" style="display:none;" title="修改栏目">
+									<br>
+										<div class="row-fluid">
+		
+											<div class="span12">
+						
+												<!-- BEGIN VALIDATION STATES-->
+						
+												<div class="portlet box green">
+						
+													<div class="portlet-title">
+						
+														<div class="caption"><i class="icon-reorder"></i>修改栏目</div>
+														<div class="tools">
+		
+															<button id="removeedit" class="btn mini black">关闭</button>
+						
+														</div>
+		
+		
+													</div>
+						
+													<div class="portlet-body form">
+						
+														<!-- BEGIN FORM-->
+						
+														<form name="{:U('Columnset/edit')}" id="form_columnset_edit" class="form-horizontal">
+						
+															<div class="alert alert-error hide">
+						
+																<button class="close" data-dismiss="alert"></button>
+						
+																您输入的信息有误，请重新输入！
+						
+															</div>
+						
+															<div class="alert alert-success hide">
+						
+																<button class="close" data-dismiss="alert"></button>
+						
+																完成验证！
+						
+															</div>
+						
+															<div class="control-group">
+						
+																<label class="control-label">栏目名称<span class="required">*</span></label>
+						
+																<div class="controls">
+						
+																	<select class="span6 m-wrap" id="columnset_columnid_e" name="columnset_columnid_e">
+																	
+																		<foreach name="columnlist" item="c">
+																			
+																			<option value="{$c['id']}">{$c['name']}</option>
+																		
+																		</foreach>
+						
+																	</select>
+						
+																</div>
+						
+															</div>
+						
+															<div class="control-group">
+						
+																<label class="control-label">顺序<span class="required">*</span></label>
+						
+																<div class="controls">
+						
+																	<input type="text" name="columnset_rank_e" id="columnset_rank_e" data-required="1" class="span6 m-wrap"/>
+						
+																</div>
+						
+															</div>
+															<div class="control-group">
+						
+																<label class="control-label">宽度<span class="required">*</span></label>
+						
+																<div class="controls">
+						
+																	<input type="text" name="columnset_width_e" id="columnset_width_e" data-required="1" class="span6 m-wrap"/>
+						
+																</div>
+						
+															</div>
+															<input type="hidden" id="columnset_module_e"/>
+															<input type="hidden" id="columnset_id_e"/>
+															<div class="form-actions">
+						
+																<button type="submit" class="btn green">修改</button>
+						
+															</div>
+						
+														</form>
+						
+														<!-- END FORM-->
+						
+													</div>
+						
+												</div>
+						
+												<!-- END VALIDATION STATES-->
+						
+											</div>
+						
+										</div>
+		
+		
+										
+									</div>
+									
+									<!--修改数据层结束-->
+		
+								</div>
+		
+							</div>
+		
+							<!-- END EXAMPLE TABLE PORTLET-->
+		
+						</div>
+		
+					<!-- END PAGE CONTENT-->
+				
+				</div>
+			
+				<!-- END PAGE CONTAINER--> 
+
+			</div>
+	
+		<!-- END PAGE -->
+		</div>
+		
+	</div>
+
+	<!-- END CONTAINER -->
+	
+</div>
+
+<!-- END LAYOUT--> 

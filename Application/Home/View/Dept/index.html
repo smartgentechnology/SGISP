@@ -1,0 +1,362 @@
+<!-- BEGIN LAYOUT--> 
+<layout name="layout" />
+	<!-- BEGIN CONTAINER -->
+	
+	<div class="page-container page-full-width">
+	
+		<!-- 页面光被导航栏覆盖掉 -->
+		
+		<div style="margin-top:42px;">
+		
+		<!-- BEGIN PAGE -->
+	
+		<div class="page-content">
+		
+		<!-- BEGIN PAGE CONTAINER-->
+		
+			<div class="container-fluid">
+			
+				<br>
+				
+				<!-- BEGIN PAGE CONTENT-->
+		
+					<div class="row-fluid">
+		
+						<div class="span12">
+		
+							<!-- BEGIN EXAMPLE TABLE PORTLET-->
+		
+							<div class="portlet box light-grey">
+		
+								<div class="portlet-title">
+		
+									<div class="caption"><i class="icon-globe"></i>{$pagetitle}</div>
+		
+									<div class="tools">
+		
+										<a href="javascript:;" class="collapse"></a>
+		
+									</div>
+		
+								</div>
+		
+								<div class="portlet-body">
+		
+									<div class="clearfix">
+		
+										<div class="btn-group">
+											<button id="lc_dept_add" name="{:U('Dept/add')}"  class="btn green">
+		
+												 {$Think.lang.lc_add} <i class="icon-plus"></i>
+		
+											</button>
+										</div>
+										<div class="btn-group">
+											<button id="lc_dept_edit" name="{:U('Dept/edit')}"  class="btn purple">
+		
+												 {$Think.lang.lc_edit} <i class="icon-edit"></i>
+		
+											</button>
+										</div>
+										<div class="btn-group">
+											<button id="lc_dept_del" name="{:U('Dept/del')}"  class="btn black">
+		
+												 {$Think.lang.lc_del} <i class="icon-remove"></i>
+		
+											</button>
+										</div>
+		
+									</div>
+		
+									<table class="table table-striped table-bordered table-hover" id="sample_1">
+		
+										<thead>
+		
+											<tr>
+		
+												<th style="width:8px;"><input type="checkbox" class="group-checkable" data-set="#sample_1 .checkboxes" /></th>
+		
+												<th>部门名称</th>
+												<th class="hidden-480">排序</th>
+		
+											</tr>
+		
+										</thead>
+		
+										<tbody>
+											
+											<foreach name="deptlist" item="d">
+												<tr class="odd gradeX">
+		
+													<td><input type="checkbox" class="checkboxes" value="{$d['id']}" /></td>
+			
+													<td>{$d['_name']}{$d['dept_name']}</td>
+			
+													<td class="hidden-480">{$d['rank']}</td>
+			
+												</tr>
+											
+											</foreach>
+		
+										</tbody>
+		
+									</table>
+									
+									<!--添加数据层开始-->
+									
+									<div id="add" style="display:none;" title="添加部门">
+									<br>
+										<div class="row-fluid">
+		
+											<div class="span12">
+						
+												<!-- BEGIN VALIDATION STATES-->
+						
+												<div class="portlet box green">
+						
+													<div class="portlet-title">
+						
+														<div class="caption"><i class="icon-reorder"></i>添加部门</div>
+														<div class="tools">
+		
+															<button id="removeadd" class="btn mini black">关闭</button>
+						
+														</div>
+		
+		
+													</div>
+						
+													<div class="portlet-body form">
+						
+														<!-- BEGIN FORM-->
+						
+														<form name="{:U('Dept/add')}" id="form_dept_add" class="form-horizontal">
+						
+															<div class="alert alert-error hide">
+						
+																<button class="close" data-dismiss="alert"></button>
+						
+																您输入的信息有误，请重新输入！
+						
+															</div>
+						
+															<div class="alert alert-success hide">
+						
+																<button class="close" data-dismiss="alert"></button>
+						
+																完成验证！
+						
+															</div>
+															
+															<div class="control-group">
+						
+																<label class="control-label">父部门<span class="required">*</span></label>
+						
+																<div class="controls">
+						
+																	<select class="span6 m-wrap" id="dept_pid_a" name="dept_pid_a">
+																		
+																		<foreach name="deptlist" item="d">
+																			
+																			<option value="{$d['id']}" <eq name="Think.session.add_dept_pid" value="$d['id']">selected="selected"</eq>>{$d['_name']}{$d['dept_name']}</option>
+																		
+																		</foreach>
+						
+																	</select>
+						
+																</div>
+						
+															</div>
+						
+															<div class="control-group">
+						
+																<label class="control-label">部门名称<span class="required">*</span></label>
+						
+																<div class="controls">
+						
+																	<input type="text" name="dept_name_a" id="dept_name_a" data-required="1" class="span6 m-wrap" value="{$Think.session.add_dept_name}"/>
+						
+																</div>
+						
+															</div>
+															
+															<div class="control-group">
+						
+																<label class="control-label">排序</label>
+						
+																<div class="controls">
+						
+																	<input name="dept_rank_a" id="dept_rank_a" type="text" class="span6 m-wrap" value=""/>
+						
+																</div>
+						
+															</div>
+															
+															<div class="form-actions">
+						
+																<button type="submit" class="btn green">添加</button>
+						
+															</div>
+						
+														</form>
+						
+														<!-- END FORM-->
+						
+													</div>
+						
+												</div>
+						
+												<!-- END VALIDATION STATES-->
+						
+											</div>
+						
+										</div>
+		
+		
+										
+									</div>
+									
+									<!--添加数据层结束-->
+									
+									<!--修改数据层开始-->
+									
+									<div id="edit" style="display:none;" title="修改部门">
+									<br>
+										<div class="row-fluid">
+		
+											<div class="span12">
+						
+												<!-- BEGIN VALIDATION STATES-->
+						
+												<div class="portlet box green">
+						
+													<div class="portlet-title">
+						
+														<div class="caption"><i class="icon-reorder"></i>修改部门</div>
+														<div class="tools">
+		
+															<button id="removeedit" class="btn mini black">关闭</button>
+						
+														</div>
+		
+		
+													</div>
+						
+													<div class="portlet-body form">
+						
+														<!-- BEGIN FORM-->
+						
+														<form name="{:U('Dept/edit')}" id="form_dept_edit" class="form-horizontal">
+						
+															<div class="alert alert-error hide">
+						
+																<button class="close" data-dismiss="alert"></button>
+						
+																您输入的信息有误，请重新输入！
+						
+															</div>
+						
+															<div class="alert alert-success hide">
+						
+																<button class="close" data-dismiss="alert"></button>
+						
+																完成验证！
+						
+															</div>
+						
+															<div class="control-group">
+						
+																<label class="control-label">父部门<span class="required">*</span></label>
+						
+																<div class="controls">
+						
+																	<select class="span6 m-wrap" id="dept_pid_e" name="dept_pid_e">
+																		
+																		<foreach name="deptlist" item="d">
+																			
+																			<option value="{$d['id']}">{$d['_name']}{$d['dept_name']}</option>
+																		
+																		</foreach>
+						
+																	</select>
+						
+																</div>
+						
+															</div>
+						
+															<div class="control-group">
+						
+																<label class="control-label">部门名称<span class="required">*</span></label>
+						
+																<div class="controls">
+						
+																	<input type="text" name="dept_name_e" id="dept_name_e" data-required="1" class="span6 m-wrap" />
+						
+																</div>
+						
+															</div>
+															
+															<div class="control-group">
+						
+																<label class="control-label">排序</label>
+						
+																<div class="controls">
+						
+																	<input name="dept_rank_e" id="dept_rank_e" type="text" class="span6 m-wrap" value=""/>
+						
+																</div>
+						
+															</div>
+															<input type="hidden" id="dept_id_e"/>
+															<div class="form-actions">
+						
+																<button type="submit" class="btn green">修改</button>
+						
+															</div>
+						
+														</form>
+						
+														<!-- END FORM-->
+						
+													</div>
+						
+												</div>
+						
+												<!-- END VALIDATION STATES-->
+						
+											</div>
+						
+										</div>
+		
+		
+										
+									</div>
+									
+									<!--修改数据层结束-->
+		
+								</div>
+		
+							</div>
+		
+							<!-- END EXAMPLE TABLE PORTLET-->
+		
+						</div>
+		
+					<!-- END PAGE CONTENT-->
+				
+				</div>
+			
+				<!-- END PAGE CONTAINER--> 
+
+			</div>
+	
+		<!-- END PAGE -->
+		</div>
+		
+	</div>
+
+	<!-- END CONTAINER -->
+	
+</div>
+
+<!-- END LAYOUT-->

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.xmind.ui.export.mpp">
+		<item value="All" key="projectType"/>
+	</section>
+	<section name="org.xmind.ui.export.word">
+	</section>
+	<section name="org.xmind.ui.export.excel">
+		<item value="Row" key="positionType"/>
+		<item value="Merged Cell" key="excelType"/>
+	</section>
+</section>

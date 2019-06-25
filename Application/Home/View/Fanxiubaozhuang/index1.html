@@ -1,0 +1,277 @@
+<!-- BEGIN LAYOUT--> 
+<layout name="layout" />
+	<!-- BEGIN CONTAINER -->
+	
+	<div class="page-container  page-full-width">
+	
+		<!-- 页面光被导航栏覆盖掉 -->
+		
+		<div style="margin-top:42px;">
+		
+			<!-- BEGIN PAGE -->
+	
+			<div class="page-content">
+			
+			<!-- BEGIN PAGE CONTAINER-->
+			
+				<div class="container-fluid">
+				
+					<br>
+				
+					<!-- BEGIN PAGE CONTENT-->
+						<div class="row-fluid">
+		
+						<div class="span12">
+		
+							<!-- BEGIN EXAMPLE TABLE PORTLET-->
+		
+							<div class="portlet box light-grey">
+		
+								<div class="portlet-title">
+		
+									<div class="caption"><i class="icon-globe"></i>{$pagetitle}</div>
+		
+									<div class="tools">
+		
+										<a href="javascript:;" class="collapse"></a>
+		
+									</div>
+		
+								</div>
+		
+								<div class="portlet-body">	
+									
+									<!--添加数据层开始-->
+									
+									<div class="row-fluid">
+	
+										<div class="span12">
+					
+											<!-- BEGIN FORM-->
+			
+											<form name="{:U('Fanxiuquality/add')}" id="form_fanxiuquality_add" class="form-horizontal">
+			
+												<div class="alert alert-error hide">
+			
+													<button class="close" data-dismiss="alert"></button>
+			
+													您输入的信息有误，请重新输入！
+			
+												</div>
+			
+												<div class="alert alert-success hide">
+			
+													<button class="close" data-dismiss="alert"></button>
+			
+													完成验证！
+			
+												</div>
+												
+												<div class="row-fluid">
+													<div class="control-group span4">
+														<label class="control-label">条形码<span class="required">*</span></label>
+														<div class="controls">
+															<input id="fanxiuquality_barcode_e" class="span12 m-wrap" name="fanxiuquality_barcode_e"/>
+														</div>
+													</div>
+													<div class="control-group span4">
+														<label class="control-label">检验结果</label>
+														<div class="controls">
+															
+															<select class="span6 m-wrap" id="fanxiuquality_qresult_e" name="fanxiuquality_qresult_e">
+																<foreach name="result" item="r">
+																	<option value="{$r['id']}">{$r['value']}</option>
+																</foreach>
+																	
+															</select>
+																
+														</div>
+													</div>
+													<div class="control-group span4">
+														<label class="control-label">不合格描述</label>
+														<div class="controls chzn-controls">
+
+															<input type="text" id="fanxiuquality_describe_e" class="span12 m-wrap" name="fanxiuquality_describe_e"/>
+																
+														</div>
+
+													</div>
+													
+												</div>
+												<div class="row-fluid">
+													<center>
+														<button type="submit" class="btn green">提交</button>
+													</center>
+													<br>
+												</div>
+												<div class="row-fluid">
+													<div class="span1">
+													</div>
+													<div class="span10">
+	
+														<!--BEGIN TABS-->
+				
+														<div class="tabbable tabbable-custom">
+																
+															<table class="table table-striped table-bordered table-hover" id="sample">
+			
+																<thead>
+								
+																	<tr>
+																		<th class="hidden-480">检验日期</th>
+																		<th class="hidden-480">质检人员</th>
+																		<th class="hidden-480">检验结果</th>
+																		<th class="hidden-480">不合格描述</th>
+																	</tr>
+								
+																</thead>
+								
+																<tbody id="tablelist">
+																	
+																</tbody>
+								
+															</table>
+															
+														</div>
+				
+														<!--END TABS-->
+				
+													</div>
+												</div>
+												<div class="row-fluid">
+													<div class="control-group span4">
+														<label class="control-label">处理结果</label>
+														<div class="controls">
+															
+															<input type="text" class="span12 m-wrap" id="fanxiuquality_result_e" name="fanxiuquality_result_e" readonly/>
+																
+														</div>
+													</div>
+													<div class="control-group span4">
+														<label class="control-label">产品型号</label>
+														<div class="controls chzn-controls">
+
+															<input type="text" class="span12 m-wrap" id="fanxiuquality_product_e" name="fanxiuquality_product_e" readonly/>
+																
+														</div>
+
+													</div>
+													<div class="control-group span4">
+														<label class="control-label">硬件版本</label>
+														<div class="controls">
+															
+															<input type="text" class="span12 m-wrap" id="fanxiuquality_hv_e" name="fanxiuquality_hv_e" readonly/>
+																
+														</div>
+													</div>
+												</div>
+												<div class="row-fluid">
+													
+													
+													<div class="control-group span4">
+														<label class="control-label">软件版本</label>
+														<div class="controls chzn-controls">
+
+															<input type="text" class="span12 m-wrap" id="fanxiuquality_sv_e" name="fanxiuquality_sv_e" readonly/>
+																
+														</div>
+
+													</div>
+													
+												</div>
+												<div class="row-fluid">
+													<div class="control-group span4">
+														<label class="control-label">故障现象</label>
+														<div class="controls">
+														
+															<textarea id="fanxiuquality_fault_e" class="span12 m-wrap" style="height:80px;" name="fanxiuquality_fault_e" readonly></textarea>
+																
+														</div>
+													</div>
+													<div class="control-group span4">
+														<label class="control-label">修前正面</label>
+														<div class="controls">
+															
+															<img width="50%" id="imgqz" />
+															
+														</div>
+													</div>
+													
+													<div class="control-group span4">
+														<label class="control-label">修前背面</label>
+														<div class="controls chzn-controls">
+														
+															<img width="50%" id="imgqb" />
+															
+														</div>
+
+													</div>
+													
+												</div>
+												
+												<div class="row-fluid">
+													<div class="control-group span4">
+														<label class="control-label">维修过程</label>
+														<div class="controls">
+															
+															<textarea id="fanxiuquality_maint_e" class="span12 m-wrap" style="height:80px;" name="fanxiuquality_maint_e" readonly></textarea>
+																
+														</div>
+													</div>									
+													<div class="control-group span4">
+														<label class="control-label">修后正面</label>
+														<div class="controls">
+															
+															<img width="50%" id="imghz" />
+															
+														</div>
+													</div>
+													
+													<div class="control-group span4">
+														<label class="control-label">修后背面</label>
+														<div class="controls chzn-controls">
+														
+															<img width="50%" id="imghb" />
+															
+														</div>
+
+													</div>
+													
+												</div>
+												<input type="hidden" id="fanxiuquality_id_e" name="fanxiuquality_id_e"/>
+												
+			
+											</form>
+			
+											<!-- END FORM-->
+					
+										</div>
+					
+									</div>
+		
+								</div>
+		
+							</div>
+		
+							<!-- END EXAMPLE TABLE PORTLET-->
+		
+						</div>
+						
+		
+					<!-- END PAGE CONTENT-->
+				
+				</div>
+			
+				<!-- END PAGE CONTAINER--> 
+
+			</div>
+	
+		<!-- END PAGE -->
+		</div>
+		
+	</div>
+
+	<!-- END CONTAINER -->
+	
+</div>
+<!-- END LAYOUT-->

@@ -1,0 +1,44 @@
+<!-- BEGIN LAYOUT--> 
+<layout name="layout" />
+	<!-- BEGIN CONTAINER -->
+	
+	<div class="page-container page-full-width">
+		
+			<!-- BEGIN PAGE -->
+		
+			<div class="page-content">
+				<br>
+				<!-- BEGIN PAGE CONTENT-->
+				<div class="tiles span16">
+					<foreach name="mod_data" item="a">
+					<a href="{:U($a['mca'])}">
+					
+					<div class="tile bg-{$a['color']}">
+					
+						<div class="tile-body">
+							<i class="{$a['ico']}"></i>
+						</div>
+						
+						<div class="tile-object">
+							<div class="name">{$a['name']}</div>
+						</div>
+
+					</div>
+					
+					</a>
+					</foreach>
+
+				</div>
+
+				<!-- END PAGE CONTENT-->
+
+			</div>
+		
+			<!-- END PAGE -->
+		</div>
+		
+	<!-- END CONTAINER -->
+	
+</div>
+
+<!-- END LAYOUT-->

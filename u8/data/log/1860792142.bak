@@ -1,0 +1,7 @@
+2018-06-07 17:31:43 select barcode from hy_bar_scandetails where  keyval = '0000006439' and cinvcode= '02.02.10.018' and cvouchtype=05
+2018-06-07 17:31:43 select barcode from hy_bar_scandetails where  keyval = '0000006335' and cinvcode= '02.02.10.018' and cvouchtype=05
+2018-06-07 17:31:43 select barcode from hy_bar_scandetails where  keyval = '0000006938' and cinvcode= '02.02.03.01.034' and cvouchtype=05
+2018-06-07 17:31:43 select barcode from hy_bar_scandetails where  keyval = '0000009290' and cinvcode= '02.02.03.01.030' and cvouchtype=05
+2018-06-07 17:31:43 select barcode from hy_bar_scandetails where  keyval = '0000006284' and cinvcode= '02.02.10.018' and cvouchtype=05
+2018-06-07 17:31:43 select barcode from hy_bar_scandetails where  keyval = '0000006805' and cinvcode= '02.02.03.01.034' and cvouchtype=05
+2018-06-07 17:31:43 select barcode from hy_bar_scandetails where  keyval = '0000009289' and cinvcode= '02.02.03.01.030' and cvouchtype=05

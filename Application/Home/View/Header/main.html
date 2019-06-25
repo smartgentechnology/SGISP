@@ -1,0 +1,94 @@
+<!-- BEGIN SIDEBAR -->
+
+<div class="page-sidebar nav-collapse collapse">
+
+	<!-- BEGIN SIDEBAR MENU -->        
+
+	<ul class="page-sidebar-menu">
+
+		<li>
+
+			<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+
+			<div class="sidebar-toggler hidden-phone"></div>
+
+			<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+
+		</li>
+		<br>
+		<!-- BEGIN RESPONSIVE QUICK SEARCH FORM 
+		<li>
+
+			<form class="sidebar-search">
+
+				<div class="input-box">
+
+					<a href="javascript:;" class="remove"></a>
+
+					<input type="text" placeholder="Search..." />
+
+					<input type="button" class="submit" value=" " />
+
+				</div>
+
+			</form>
+
+		</li>
+		 END RESPONSIVE QUICK SEARCH FORM -->
+		
+		<foreach name="nav_data" item="a">
+			<empty name="a['_data']">
+				<li class="">
+
+					<a href="{:U($a['mca'])}">
+		
+					<i class="{$a['ico']}"></i> 
+		
+					<span class="title">{$a['name']}</span>
+		
+					</a>
+		
+				</li>
+			<else/>
+				<li class="">
+
+				<a href="javascript:;">
+	
+				<i class="{$a['ico']}"></i> 
+	
+				<span class="title">{$a['name']}</span>
+	
+				<span class="arrow "></span>
+	
+				</a>
+	
+				<ul class="sub-menu">
+					<foreach name="a['_data']" item="b">
+						<li >
+	
+						<a href="{:U($b['mca'])}">
+	
+						{$b['name']}</a>
+	
+						</li>
+					</foreach>
+	
+				</ul>
+	
+			</li>
+				
+				
+			</empty>
+		
+		</foreach>
+
+	</ul>
+
+	<!-- END SIDEBAR MENU -->
+
+</div>
+
+<!-- END SIDEBAR -->
+
+	
+

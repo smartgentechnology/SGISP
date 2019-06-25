@@ -1,0 +1,128 @@
+<!-- BEGIN LAYOUT--> 
+<layout name="layout" />
+	<!-- BEGIN CONTAINER -->
+	
+	<div class="page-container  page-full-width">
+	
+		<!-- 页面光被导航栏覆盖掉 -->
+		
+		<div style="margin-top:42px;">
+		
+		<!-- BEGIN PAGE -->
+	
+		<div class="page-content">
+		
+			<!-- BEGIN PAGE CONTAINER-->
+
+			<div class="container-fluid">
+				
+				<!--添加数据层开始-->
+									
+					<div id="add" title="修改密码">
+					<br>
+						<div class="row-fluid">
+			
+							<div class="span12">
+			
+								<!-- BEGIN VALIDATION STATES-->
+			
+								<div class="portlet box green">
+			
+									<div class="portlet-title">
+			
+										<div class="caption"><i class="icon-reorder"></i>修改密码</div>
+							
+									</div>
+			
+									<div class="portlet-body form">
+			
+										<!-- BEGIN FORM-->
+			
+										<form name="{:U('Main/resetpw')}" id="form_manager_resetpw" class="form-horizontal">
+			
+											<div class="alert alert-error hide">
+			
+												<button class="close" data-dismiss="alert"></button>
+			
+												您输入的信息有误，请重新输入！
+			
+											</div>
+			
+											<div class="alert alert-success hide">
+			
+												<button class="close" data-dismiss="alert"></button>
+			
+												完成验证！
+			
+											</div>
+			
+											<div class="control-group">
+			
+												<label class="control-label">密码<span class="required">*</span></label>
+			
+												<div class="controls">
+			
+													<input name="manager_passwd" id="manager_passwd" type="password" class="span6 m-wrap"/>
+			
+												</div>
+			
+											</div>
+			
+											<div class="control-group">
+			
+												<label class="control-label">重复密码<span class="required">*</span></label>
+			
+												<div class="controls">
+			
+													<input name="manager_repasswd" id="manager_repasswd" type="password" class="span6 m-wrap"/>
+			
+												</div>
+			
+											</div>
+			
+											<input type="hidden" name="manager_id" id="manager_id" value="{$Think.session.manager_id}" />
+			
+											<div class="form-actions">
+			
+												<button type="submit" class="btn green">修改</button>
+			
+											</div>
+			
+										</form>
+			
+										<!-- END FORM-->
+			
+									</div>
+			
+								</div>
+			
+								<!-- END VALIDATION STATES-->
+			
+							</div>
+			
+						</div>
+			
+			
+						
+					</div>
+					
+					<!--添加数据层结束-->
+			
+				</div>
+			
+				<!-- END PAGE CONTAINER--> 
+
+			</div>
+	
+		<!-- END PAGE -->
+		</div>
+		
+	</div>
+
+	<!-- END CONTAINER -->
+	
+</div>
+
+<!-- END LAYOUT-->
+
+

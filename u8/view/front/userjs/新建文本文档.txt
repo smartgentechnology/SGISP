@@ -1,0 +1,104 @@
+//评论提交
+	$("#tijiao").bind("click",function(){
+		var product_id=$("#product_id").val();
+		var eval_product=$("#eval_product").val();
+		var eval_impress=$("#stars1-input").val();
+		var eval_quality=$("#stars2-input").val();
+		var eval_service=$("#stars3-input").val();
+		var eval_city=$("#eval_city").val();
+		$.ajax({
+				url:'evaluationpost.php',
+				type:'POST',
+				data:{
+					product_id:product_id,
+					eval_product:eval_product,
+					eval_impress:eval_impress,
+					eval_quality:eval_quality,
+					eval_service:eval_service,
+					eval_city:eval_city
+				},
+				success: function(data){
+					if(parseInt(data)==1){
+						alert("评论成功！");
+						location.reload();
+					}else{
+						alert(data);
+					}
+				}
+		});	
+	});
+
+
+
+//验证码用
+	 var handlerPopup = function (captchaObj) {
+        // 成功的回调
+        captchaObj.onSuccess(function () {
+            var validate = captchaObj.getValidate();
+            $.ajax({
+                url: "lib/geetest/web/VerifyLoginServlet.php", // 进行二次验证
+                type: "post",
+                dataType: "json",
+                data: {
+                    type: "pc",
+                    geetest_challenge: validate.geetest_challenge,
+                    geetest_validate: validate.geetest_validate,
+                    geetest_seccode: validate.geetest_seccode
+                },
+                success: function (data) {
+                    if (data && (data.status === "success")) {
+						var product_id=$("#product_id").val();
+						var eval_product=$("#eval_product").val();
+						var eval_impress=$("#stars1-input").val();
+						var eval_quality=$("#stars2-input").val();
+						var eval_service=$("#stars3-input").val();
+						var eval_city=$("#eval_city").val();
+						$.ajax({
+								url:'evaluationpost.php',
+								type:'POST',
+								data:{
+									product_id:product_id,
+									eval_product:eval_product,
+									eval_impress:eval_impress,
+									eval_quality:eval_quality,
+									eval_service:eval_service,
+									eval_city:eval_city
+								},
+								success: function(data){
+									if(parseInt(data)==1){
+										alert("评论成功！");
+										location.reload();
+									}else{
+										alert(data);
+									}
+								}
+						});
+                    } 
+                }
+            });
+        });
+        $("#tijiao").click(function () {
+            captchaObj.show();
+        });
+        // 将验证码加到id为captcha的元素里
+        captchaObj.appendTo("#popup-captcha");
+        // 更多接口参考：http://www.geetest.com/install/sections/idx-client-sdk.html
+    };
+    // 验证开始需要向网站主后台获取id，challenge，success（是否启用failback）
+    $.ajax({
+        url: "lib/geetest/web/StartCaptchaServlet.php?type=pc&t=" + (new Date()).getTime(), // 加随机数防止缓存
+        type: "get",
+        dataType: "json",
+        success: function (data) {
+            // 使用initGeetest接口
+            // 参数1：配置参数
+            // 参数2：回调，回调的第一个参数验证码对象，之后可以使用它做appendTo之类的事件
+            initGeetest({
+                gt: data.gt,
+                challenge: data.challenge,
+                product: "popup", // 产品形式，包括：float，embed，popup。注意只对PC版验证码有效
+                offline: !data.success // 表示用户后台检测极验服务器是否宕机，一般不需要关注
+                // 更多配置参数请参见：http://www.geetest.com/install/sections/idx-client-sdk.html#config
+            }, handlerPopup);
+        }
+    });

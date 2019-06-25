@@ -1,0 +1,107 @@
+<!-- BEGIN HEADER -->
+<div class="header navbar navbar-inverse navbar-fixed-top">
+
+	<!-- BEGIN TOP NAVIGATION BAR -->
+
+	<div class="navbar-inner">
+
+		<div class="container-fluid">
+
+			<!-- BEGIN LOGO -->
+
+			<a class="brand" href="{:U('Main/index')}">
+
+			<img src="__PUBLIC__/media/lc/image/logo.png" alt="logo"/>
+
+			</a>
+
+			<!-- END LOGO -->
+			
+			<!-- BEGIN RESPONSIVE MENU TOGGLER -->
+
+				<a href="javascript:;" class="btn-navbar collapsed" data-toggle="collapse" data-target="#example-navbar-collapse">
+
+				<img src="__PUBLIC__/media/image/menu-toggler.png" alt="" />
+
+				</a>
+			<!-- END RESPONSIVE MENU TOGGLER -->
+				
+			<!-- BEGIN HORIZANTAL MENU -->
+
+			<div class="navbar hor-menu hidden-phone hidden-tablet">
+
+				<div class="navbar-inner">
+
+					<ul class="nav">
+					
+						<foreach name="nav_data" item="a">
+							<empty name="a['_data']">
+								<li>
+				
+									<a href="{:U($a['mca'].'/id/'.$a['id'])}">
+						
+									<i class="{$a['ico']}"></i> 
+						
+									<span class="title">{$a['name']}</span>
+						
+									</a>
+						
+								</li>
+
+							</empty>
+							
+						</foreach>
+						
+
+					</ul>
+
+				</div>
+
+			</div>
+
+			<!-- END HORIZANTAL MENU -->           
+
+		</div>
+		
+		
+
+	</div>
+	
+	
+
+	<!-- END TOP NAVIGATION BAR -->
+
+</div>
+<!-- END HEADER -->
+
+<div class="page-container">
+
+	<div class="page-sidebar collapse navbar-collapse visible-phone visible-tablet" id="example-navbar-collapse">
+			
+		<ul class="page-sidebar-menu">
+		
+			<foreach name="nav_data" item="a">
+			
+				<empty name="a['_data']">
+				
+					<li>
+					
+						<a href="{:U($a['mca'].'/id/'.$a['id'])}">
+							
+							<i class="{$a['ico']}"></i> 
+							
+							<span class="title">{$a['name']}</span>
+						
+						</a>
+					
+					</li>
+				
+				</empty>
+			
+			</foreach>
+		
+		</ul>
+	
+	</div>
+	
+</div>

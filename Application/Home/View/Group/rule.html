@@ -1,0 +1,122 @@
+<!-- BEGIN LAYOUT--> 
+<layout name="layout" />
+	<!-- BEGIN CONTAINER -->
+	
+	<div class="page-container  page-full-width">
+	
+		<!-- 页面光被导航栏覆盖掉 -->
+		
+		<div style="margin-top:42px;">
+		
+		<!-- BEGIN PAGE -->
+	
+		<div class="page-content">
+		
+		<!-- BEGIN PAGE CONTAINER-->
+		
+			<div class="container-fluid">
+			
+				<br>
+				
+				<!-- BEGIN PAGE CONTENT-->
+		
+					<div class="row-fluid">
+		
+						<div class="span12">
+		
+							<!-- BEGIN EXAMPLE TABLE PORTLET-->
+		
+							<div class="portlet box light-grey">
+		
+								<div class="portlet-title">
+		
+									<div class="caption"><i class="icon-globe"></i>分配权限</div>
+		
+									<div class="tools">
+		
+										<a href="javascript:;" class="collapse"></a>
+		
+									</div>
+		
+								</div>
+								<div class="portlet-body form">
+						
+									<!-- BEGIN FORM-->
+		
+									<form action="{:U('Group/rule')}" method="post"  class="form-horizontal">
+		
+										<table class="table table-striped table-bordered table-hover">
+			
+											<tbody>
+												
+												<foreach name="rule_data" item="r">
+													<empty name="r['_data']">
+														<tr class="odd gradeX">
+															<td colspan="4"><input type="checkbox" class="checkboxes" name="rule_ids[]" value="{$r['id']}" <if condition="in_array($r['id'],$group_data['rules'])"> checked="checked"</if>/>{$r['title']}</td>
+					
+														</tr>
+													<else/>
+														<tr class="odd gradeX">
+															<td width="10%"><input type="checkbox" class="checkboxes" name="rule_ids[]" value="{$r['id']}"  <if condition="in_array($r['id'],$group_data['rules'])"> checked="checked"</if>/>{$r['title']}</td>
+															<td colspan="3">
+																<foreach name="r['_data']" item="n">																			
+																	<table class="table table-striped table-bordered table-hover">
+																		<tr class="odd gradeX">
+																			<td width="10%"><input type="checkbox" name="rule_ids[]" class="checkboxes" value="{$n['id']}"  <if condition="in_array($n['id'],$group_data['rules'])"> checked="checked"</if>/>{$n['title']}
+																			</td>
+																			<td>
+																				<notempty name="n['_data']">
+																					<volist name="n['_data']" id="c"> 
+																						<input type="checkbox" class="checkboxes" name="rule_ids[]" value="{$c['id']}"  <if condition="in_array($c['id'],$group_data['rules'])"> checked="checked"</if>/>{$c['title']}
+																					</volist>
+																				</notempty>
+																			</td>		
+																		</tr>
+																	</table>
+																</foreach>
+															</td>
+														</tr>
+													</empty>
+												</foreach>
+			
+											</tbody>
+			
+										</table>
+										
+										<input type="hidden" name="id" value="{$group_data['id']}"/>
+										<div class="form-actions">
+		
+											<button type="submit" class="btn green">修改</button>
+		
+										</div>
+		
+									</form>
+		
+									<!-- END FORM-->
+		
+								</div>
+		
+							</div>
+		
+							<!-- END EXAMPLE TABLE PORTLET-->
+		
+						</div>
+		
+					<!-- END PAGE CONTENT-->
+				
+				</div>
+			
+				<!-- END PAGE CONTAINER--> 
+
+			</div>
+	
+		<!-- END PAGE -->
+		</div>
+		
+	</div>
+
+	<!-- END CONTAINER -->
+	
+</div>
+
+<!-- END LAYOUT-->
