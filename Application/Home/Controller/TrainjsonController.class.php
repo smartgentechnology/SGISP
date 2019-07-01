@@ -50,6 +50,7 @@ class TrainjsonController{
      $datalist=array();
      $datalist=$model->where("cn like '%".$keyword."%' or remarks like '%".$keyword."%'")->select();
      if($datalist){
+       $datalist['mdate'] = date('Y-m-d',$datalist['mdate']);
        $data['state']='access';
        $data['info']='查询成功！';
        $data['data']=$datalist;
@@ -138,9 +139,15 @@ class TrainjsonController{
      $id=I('post.id');
      $result=$model->where('id=%d',$id)->find();
       $result['mdate']=date('Y-m-d',$result['mdate']);
-      $jsondata['state']='access';
-      $jsondata['info']='查询成功！';
-      $jsondata['data']=$result;
+      if($result){
+        $jsondata['state']='access';
+        $jsondata['info']='查询成功！';
+        $jsondata['data']=$result;
+      }else{
+        $jsondata['state']='error';
+        $jsondata['info']='查询失败！';
+      }
+
       header('Content-Type:text/html; charset=utf-8');
       exit(json_encode($jsondata,JSON_UNESCAPED_UNICODE));
    }

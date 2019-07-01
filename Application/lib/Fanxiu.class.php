@@ -95,7 +95,7 @@ class Fanxiu {
 						$value['flag']='批量返生产';
 						break;
 				}
-				
+
 				if($value['add_id']!=0){
 					$value['add_id']=$memberModel->where("ID='%s'",$value['add_id'])->getField('NAME');
 				}
@@ -111,14 +111,14 @@ class Fanxiu {
 				if($value['maint_id']!=0){
 					$value['maint_id']=$memberModel->where("ID='%s'",$value['maint_id'])->getField('NAME');
 				}
-				
+
 				if($value['maint_date']!=0){
 					$value['maint_date']=date('Y-m-d',$value['maint_date']);
 				}
 				if($value['leader_id']!=0){
 					$value['leader_id']=$memberModel->where("ID='%s'",$value['leader_id'])->getField('NAME');
 				}
-				
+
 				if($value['leader_date']!=0){
 					$value['leader_date']=date('Y-m-d',$value['leader_date']);
 				}
@@ -141,7 +141,142 @@ class Fanxiu {
 		}
 		return $changelist;
 	}
-	
+	public function info($value){
+		//OA人员信息表
+		$memberModel=M('member','org_','OA');
+		//U8型号表
+		$InventoryModel=M('Inventory','dbo.','U8');
+		//U8人员
+		$PersonModel=M('Person','dbo.','U8');
+		$express=D('Express');
+		if(!empty($value)){
+				if(is_numeric($value['product'])){
+					$value['product']=$InventoryModel->where("I_id = '".$value['product']."'")->getField("cInvStd");
+				}
+				if(!empty($value['person'])){
+					$value['person']=$PersonModel->where("cPersonCode = '%s'",$value['person'])->getField("cPersonName");
+				}
+				switch($value['result']){
+					case 1:
+						$value['result']='修好退回';
+						break;
+					case 2:
+						$value['result']='加试入库';
+						break;
+					case 3:
+						$value['result']='修好入库';
+						break;
+					case 4:
+						$value['result']='报废';
+						break;
+					case 5:
+						$value['result']='批量退回-生产';
+						break;
+				}
+				switch($value['bad']){
+					case 1:
+						$value['bad']='材料不良';
+						break;
+					case 2:
+						$value['bad']='客户使用';
+						break;
+					case 3:
+						$value['bad']='其他';
+						break;
+					case 4:
+						$value['bad']='设计不良';
+						break;
+					case 5:
+						$value['bad']='原因不明';
+						break;
+					case 6:
+						$value['bad']='作业不良';
+						break;
+					case 7:
+						$value['bad']='正常';
+						break;
+				}
+				$value['flagid']=$value['flag'];
+				switch($value['flag']){
+					case 1:
+						$value['flag']='已登记';
+						break;
+					case 2:
+						$value['flag']='维修暂存';
+						break;
+					case 3:
+						$value['flag']='已修';
+						break;
+					case 4:
+						$value['flag']='功能不合格';
+						break;
+					case 5:
+						$value['flag']='功能合格';
+						break;
+					case 6:
+						$value['flag']='包装不合格';
+						break;
+					case 7:
+						$value['flag']='包装合格';
+						break;
+					case 8:
+						$value['flag']='领导审完';
+						break;
+					case 9:
+						$value['flag']='已出库';
+						break;
+					case 10:
+						$value['flag']='已退回';
+						break;
+					case 11:
+						$value['flag']='批量返生产';
+						break;
+				}
+
+				if($value['add_id']!=0){
+					$value['add_id']=$memberModel->where("ID='%s'",$value['add_id'])->getField('NAME');
+				}
+				if($value['receive_date']!=0){
+					$value['receive_date']=date('Y-m-d',$value['receive_date']);
+				}
+				if($value['pdate']!=0){
+					$value['pdate']=date('Y-m-d',$value['pdate']);
+				}
+				if($value['prdate']!=0){
+					$value['prdate']=ceil($value['prdate']/2592000);
+				}
+				if($value['maint_id']!=0){
+					$value['maint_id']=$memberModel->where("ID='%s'",$value['maint_id'])->getField('NAME');
+				}
+
+				if($value['maint_date']!=0){
+					$value['maint_date']=date('Y-m-d',$value['maint_date']);
+				}
+				if($value['leader_id']!=0){
+					$value['leader_id']=$memberModel->where("ID='%s'",$value['leader_id'])->getField('NAME');
+				}
+
+				if($value['leader_date']!=0){
+					$value['leader_date']=date('Y-m-d',$value['leader_date']);
+				}
+				if($value['entry_date']!=0){
+					$value['entry_date']=date('Y-m-d',$value['entry_date']);
+				}
+				if($value['return_date']!=0){
+					$value['return_date']=date('Y-m-d',$value['return_date']);
+				}
+				if($value['tabflag']==1){
+					$value['tabflag']="Y";
+				}else{
+					$value['tabflag']="";
+				}
+				if($value['express']!=""){
+					$value['express']=$express->where("pinyin='%s'",$value['express'])->getField("name");
+				}
+		}
+		return $value;
+	}
+
 	public function export($datalist){
 		$changelist=array();
 		//OA人员信息表
@@ -300,14 +435,14 @@ class Fanxiu {
 		}
 		return $changelist;
 	}
-	
+
 	public function set($datalist){
 		$changelist=array();
 		$model=D('Column');
 		if(!empty($datalist)){
 			foreach($datalist as $value){
 				$value['name']=$model->where("id = %d",$value['columnid'])->getField("name");
-				
+
 				$changelist[]=$value;
 			}
 		}
